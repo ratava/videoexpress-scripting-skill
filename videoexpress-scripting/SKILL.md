@@ -1,6 +1,6 @@
 ---
 name: videoexpress-scripting
-description: Create clip-by-clip production scripts, storyboards and prompt packs for VideoExpress (VE) 3.5 and similar image-to-video tools, where a video is built from 3–10 second clips each defined by a start image plus a motion prompt. Covers the VE multishot prompt format ([REFERENCE USE], [IDENTITY / CONTINUITY], [SCENE], [ACTION], [CAMERA], [LIGHT AND IMAGE], [PRODUCTION SOUND], [NEGATIVES]), the ten Create Mode animation styles plus photoreal, start-image prompts and clip chaining. Use this skill whenever the user wants to script or produce a music video or any multi-clip video with VideoExpress or a comparable tool (Runway, Kling, Hailuo, Pika), asks for video or start-image prompts, a shot list or a multishot prompt, or reports AI-video problems such as camera direction flipping between clips, outfit or accessory drift, environments changing, wrong dance speed, crowd scale errors, scenes going dark, or text rendering in footage.
+description: Create clip-by-clip production scripts, storyboards and prompt packs for VideoExpress (VE) 3.5 and similar image-to-video tools, where a video is built from 3–10 second clips each defined by a start image plus a motion prompt. Covers the VE multishot prompt format ([REFERENCE USE], [IDENTITY / CONTINUITY], [SCENE], [ACTION], [CAMERA], [LIGHT AND IMAGE], [PRODUCTION SOUND], [NEGATIVES]), the ten Create Mode animation styles plus photoreal, start-image prompts and clip chaining. Use this skill whenever the user wants to script or produce a music video or any multi-clip video with VideoExpress or a comparable tool (Runway, Kling, Hailuo, Pika), asks for video or start-image prompts, a shot list or a multishot prompt, asks Claude to operate app.videoexpress.ai in the browser (Claude in Chrome) to generate start images and clips, review takes, save last frames and build the timeline from an approved script, or reports AI-video problems such as camera direction flipping between clips, outfit or accessory drift, environments changing, wrong dance speed, crowd scale errors, scenes going dark, or text rendering in footage.
 ---
 
 # VideoExpress Scripting
@@ -16,6 +16,7 @@ Two facts drive almost everything in this skill:
 
 - `references/multishot-template.md` — the VE 3.5 multishot prompt structure, a blank template, block conventions and a worked generic example. Read before writing any video prompt.
 - `references/create-modes.md` — the ten VE Create Mode styles (and cinematic photoreal): image-prompt recipe, style vocabulary, motion cadence and style-guard negatives for each. Read when choosing or writing for a style.
+- `references/browser-workflow.md` — driving app.videoexpress.ai with Claude in Chrome: Creation and Review tabs, dialog settings, generating and monitoring takes, user review checkpoints, Save Last Frame, the timeline, and prompt hardening. Read before touching the browser.
 
 ## Workflow overview
 
@@ -138,3 +139,7 @@ Keep clip numbering stable once generation starts; if clips are cut, keep the ga
 - When the user edits the pack directly, re-read before writing and never overwrite their changes without saying so.
 - When the user states a preference ("keep it", "I prefer this look"), treat it as a new rule and apply it everywhere.
 - Protect payoff shots: guard their preconditions in every earlier prompt.
+
+## 10. Operating VideoExpress in the browser
+
+When the user wants Claude to drive app.videoexpress.ai itself rather than just write the pack, read `references/browser-workflow.md` first and follow it step by step. The user approves every start image, take and prompt change; Claude pastes prompts exactly as written, never skips a checkpoint, and leaves drift judgements to the user unless a problem is obvious. Prompt hardening from a generated frame (section 2's "rewrite the block to match that frame") is offered after the first clip is on the timeline, and again after the second if deferred.
