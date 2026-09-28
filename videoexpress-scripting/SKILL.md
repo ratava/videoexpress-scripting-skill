@@ -1,6 +1,6 @@
 ---
 name: videoexpress-scripting
-description: Create clip-by-clip scripts and prompt packs for VideoExpress (VE) 3.5 and later by PaulPonna.com, where a video is built from 3–10 second clips, each a start image plus a motion prompt. Covers the VE multishot prompt format, the ten Create Mode styles plus cinematic photoreal, custom Creative mode styles, start-image prompts, clip chaining, Consistent Character references, Lipsync dialogue, multi-shot hard cuts, and driving app.videoexpress.ai in the browser with Claude in Chrome (generating clips, review checkpoints, saving last frames, building the timeline). Use whenever the user wants to script or produce a multi-clip video in VideoExpress; asks for VideoExpress video, start-image or multishot prompts or a shot list; asks Claude to operate VideoExpress from an approved script; or reports VideoExpress generation problems such as camera direction flipping, outfit or accessory drift, changing environments, stylised clips turning realistic, props or weapons changing shape, actions happening in place or in the wrong order, motion at the wrong speed, crowd scale errors, dark scenes, text in footage, background hiss, thin gunfire or unwanted music.
+description: Create clip-by-clip scripts and prompt packs for VideoExpress (VE) 3.5 and later by PaulPonna.com, where a video is built from 3–10 second clips, each a start image plus a motion prompt. Covers the VE multishot prompt format, the ten Create Mode styles plus cinematic photoreal, custom Creative mode styles, start-image prompts, clip chaining, Consistent Character references, Lipsync dialogue, multi-shot hard cuts, and driving app.videoexpress.ai in the browser with Claude in Chrome (generating clips, review checkpoints, saving last frames, building the timeline). Use whenever the user wants to start a new VideoExpress project from an idea or a script (guided project intake), or to script or produce a multi-clip video in VideoExpress; asks for VideoExpress video, start-image or multishot prompts or a shot list; asks Claude to operate VideoExpress from an approved script; or reports VideoExpress generation problems such as camera direction flipping, outfit or accessory drift, changing environments, stylised clips turning realistic, props or weapons changing shape, actions happening in place or in the wrong order, motion at the wrong speed, crowd scale errors, dark scenes, text in footage, background hiss, thin gunfire or unwanted music.
 ---
 
 # VideoExpress Scripting
@@ -14,12 +14,14 @@ Two facts drive almost everything in this skill:
 
 ## Reference files
 
+- `references/project-intake.md` — the design-phase question system: starting from a concept or a script, the decision checklist (delivery, look, characters, sound and dialogue, script, logistics), the feasibility check, development tests, and the outputs (project brief, Core Bible, clip breakdown, production plan). Read first on every new project.
 - `references/multishot-template.md` — the VE 3.5 multishot prompt structure, a blank template, block conventions and a worked generic example. Read before writing any video prompt.
 - `references/create-modes.md` — the ten VE Create Mode styles (and cinematic photoreal): image-prompt recipe, style vocabulary, motion cadence and style-guard negatives for each. Read when choosing or writing for a style.
 - `references/browser-workflow.md` — driving app.videoexpress.ai with Claude in Chrome: Creation and Review tabs, dialog settings, Consistent Character reference slots, image candidates, the Lipsync dialog, generating takes and tracking their positions, user review checkpoints, Save Last Frame, the timeline, project saving and recovery, and prompt hardening. Read before touching the browser.
 
 ## Workflow overview
 
+0. **Intake** — run the question system in `references/project-intake.md`: choose the starting point (concept or script), work through the decision checklist with suggestions, run the feasibility check and any development tests the user wants, and get sign-off on the brief and Core Bible.
 1. **Concept** — scenes, motifs, characters, world, and a visual arc mapped to the source's structure.
 2. **Bible** — locked character blocks, outfit blocks and location blocks written once and pasted verbatim everywhere.
 3. **Timing** — a clip grid at the tool's clip length, with key hits verified against the real audio by the user.
