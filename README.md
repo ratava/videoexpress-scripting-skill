@@ -4,11 +4,16 @@ A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress
 
 ## What it covers
 
-- **The VE 3.5 multishot prompt format**: `[REFERENCE USE]`, `[IDENTITY / CONTINUITY]`, `[SCENE]`, `[ACTION]`, `[CAMERA]`, `[LIGHT AND IMAGE]`, `[PRODUCTION SOUND]`, `[NEGATIVES]`, with a blank template and a worked example.
-- **The ten Create Mode styles**: 3D animation, claymation, 8-bit pixel, stop-motion, comic book, watercolor, wool, paper cut, hand-drawn Japanese animation and low-poly, plus cinematic photoreal. Each has an image-prompt recipe, style vocabulary, motion cadence and style-guard negatives.
-- **Continuity across chained clips**: character, outfit and location blocks; reference-image roles; chaining from the cut frame; explicit camera direction; ending on full-body framing.
-- **Driving VideoExpress in the browser**: with Claude in Chrome, Claude can run an approved pack through app.videoexpress.ai — separate Creation and Review tabs, the right dialog settings, simultaneous generations, the library refresh workaround, user review checkpoints, saving last frames for chaining, building the timeline and prompt hardening from a generated frame.
-- **Failure-mode fixes**: camera direction flipping between clips, accessory and outfit drift, environments changing when the camera returns, time-lapse bleeding onto the subject, frozen or erratic dancing, crowd scale and cloning, scenes darkening, and text rendering in footage.
+- **The VE 3.5 multishot prompt format**: `[REFERENCE USE]`, `[IDENTITY / CONTINUITY]`, `[SCENE]`, `[ACTION]`, `[CAMERA]`, `[LIGHT AND IMAGE]`, `[PRODUCTION SOUND]`, `[NEGATIVES]`, with a blank template, a worked example, and a hard-cut multi-shot variant (several shots in one generation).
+- **The ten Create Mode styles**: 3D animation, claymation, 8-bit pixel, stop-motion, comic book, watercolor, wool, paper cut, hand-drawn Japanese animation and low-poly, plus cinematic photoreal. Each has an image-prompt recipe, style vocabulary, motion cadence and style-guard negatives. It also covers **custom Creative mode styles** (e.g. cel-shaded anime) and the style anchor that keeps them from drifting toward realism.
+- **Continuity across chained clips**: character, outfit and location blocks; Consistent Character reference slots and their side effects; matching prompts to the frame; chaining from the cut frame; explicit camera direction; ending on the framing the next clip needs.
+- **Action and staging**: describing actions against the frame's real geometry, cause-and-effect beat order, fixed left/right layouts for two-character fights, near-misses, and when to split a beat into its own clip.
+- **Characters and props**: why humanoid designs beat multi-limbed ones, describing weapon-limbs joint by joint, and stopping mechanical arms turning into hands.
+- **Sound**: transient-only production sound that avoids background hiss, heavy weapon sound vocabulary, and what's known (and not) about unwanted music.
+- **Dialogue**: the Lipsync HD dialog with one or two actors, and voices for mouthless characters.
+- **Point-of-view and special shots**: helmet POV framing, tints, HUD overlays, and what didn't work (see-through-wall thermal effects).
+- **Driving VideoExpress in the browser**: with Claude in Chrome, Claude can run an approved pack through app.videoexpress.ai. That covers separate Creation and Review tabs, the right dialog settings, Consistent Character slots, image candidate passes, five-take batches with position tracking, a question-driven render cycle that respects Claude's per-reply action budget, the library refresh workaround, user review checkpoints, saving last frames, building and saving the timeline, recovery after reloads, and prompt hardening.
+- **Failure-mode fixes**: camera direction flipping, accessory and outfit drift, environments changing, time-lapse bleeding onto the subject, frozen or erratic motion, crowd scale and cloning, scenes darkening, text in footage, stylised clips turning realistic, props changing shape, actions happening in place or late, and background hiss. It also sets out a method for isolating stubborn failures with single-variable test takes and a control.
 
 ## Contents
 
@@ -16,8 +21,8 @@ A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress
 videoexpress-scripting/
 ├── SKILL.md                         core method and rules
 └── references/
-    ├── multishot-template.md        prompt structure, template, example
-    ├── create-modes.md              the Create Mode style sheets
+    ├── multishot-template.md        prompt structure, templates, example
+    ├── create-modes.md              Create Mode style sheets and custom styles
     └── browser-workflow.md          driving VideoExpress in the browser
 ```
 
@@ -34,7 +39,8 @@ Ask Claude things like:
 - "Script a ten-clip VideoExpress music video for my track, in claymation style."
 - "Write a multishot prompt for this start frame: the camera should orbit her while she dances."
 - "My chained clips keep reversing camera direction. How do I fix it?"
-- "Open VideoExpress and generate clips 1 to 5 from my approved script, stopping for me to pick each take."
+- "Write a two-character standoff with dialogue, then a fight, for VideoExpress."
+- "Open VideoExpress and generate clips 1 to 5 from my approved script, five takes each, stopping for me to pick each take."
 
 ## Notes
 
