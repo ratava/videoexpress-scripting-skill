@@ -4,6 +4,7 @@ A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress
 
 ## What it covers
 
+- **Guided project intake**: a question system that starts from a concept or a script. It covers delivery (use, platform, aspect ratio, length, audience), look (art style, palette, camera, on-screen text), characters (Consistent Character, references, likeness rights), sound and dialogue (production sound, music, Lipsync, narration, voices), script development, and logistics (budget, takes, who operates VE, chaining, editing). It also has a feasibility check against what VE does well and badly, optional image, video, sound and lip-sync tests, and a signed-off Core Bible.
 - **The VE 3.5 multishot prompt format**: `[REFERENCE USE]`, `[IDENTITY / CONTINUITY]`, `[SCENE]`, `[ACTION]`, `[CAMERA]`, `[LIGHT AND IMAGE]`, `[PRODUCTION SOUND]`, `[NEGATIVES]`, with a blank template, a worked example, and a hard-cut multi-shot variant (several shots in one generation).
 - **The ten Create Mode styles**: 3D animation, claymation, 8-bit pixel, stop-motion, comic book, watercolor, wool, paper cut, hand-drawn Japanese animation and low-poly, plus cinematic photoreal. Each has an image-prompt recipe, style vocabulary, motion cadence and style-guard negatives. It also covers **custom Creative mode styles** (e.g. cel-shaded anime) and the style anchor that keeps them from drifting toward realism.
 - **Continuity across chained clips**: character, outfit and location blocks; Consistent Character reference slots and their side effects; matching prompts to the frame; chaining from the cut frame; explicit camera direction; ending on the framing the next clip needs.
@@ -21,6 +22,7 @@ A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress
 videoexpress-scripting/
 ├── SKILL.md                         core method and rules
 └── references/
+    ├── project-intake.md            design-phase question system
     ├── multishot-template.md        prompt structure, templates, example
     ├── create-modes.md              Create Mode style sheets and custom styles
     └── browser-workflow.md          driving VideoExpress in the browser
@@ -36,6 +38,8 @@ videoexpress-scripting/
 
 Ask Claude things like:
 
+- "I've got an idea for a VideoExpress video. Help me plan it."
+- "Here's my script. Turn it into a VideoExpress production."
 - "Script a ten-clip VideoExpress short film in claymation style."
 - "Write a multishot prompt for this start frame: the camera should orbit her while she walks through the market."
 - "My chained clips keep reversing camera direction. How do I fix it?"
