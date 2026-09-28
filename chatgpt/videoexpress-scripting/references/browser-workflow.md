@@ -1,28 +1,36 @@
 # Operating VideoExpress in the browser
 
-How to run an approved prompt pack through app.videoexpress.ai (VE 3.5) with Claude in Chrome, with the user approving every generation. Learned in supervised production runs; follow it step by step.
+How to run an approved prompt pack through app.videoexpress.ai (VE 3.5) with an assistant that can control a browser (ChatGPT agent mode, the Codex app or Chrome extension, or similar), with the user approving every generation. Learned in supervised production runs; follow it step by step.
 
-Assume the script is approved (or approved enough for a test). The user owns every creative decision. Claude drives the UI, enters prompts exactly as written, and stops at each checkpoint.
+Assume the script is approved (or approved enough for a test). The user owns every creative decision. The assistant drives the UI, enters prompts exactly as written, and stops at each checkpoint.
 
 ## Ground rules
 
 - **Stop at every checkpoint.** Never accept an image or take, chain from a frame, or change a prompt without the user's pick. After any image generation, ask which image to use **immediately**, in the same reply.
-- **Every choice is a question card.** Go-ahead questions are yes/no. Cards hold four options at most. If a choice has more (e.g. five takes), use three direct options plus a combined "2/1 (I'll type) / none" option, then ask in plain text if needed.
-- **Drift checks are the user's job.** Claude sees single frames, not motion. Flag obvious drift only. Don't edit prompts unasked.
+- **Every choice is a short, numbered question.** Go-ahead questions are yes/no. Offer at most four options per question; if the platform provides a tappable-options widget, use it, otherwise ask in plain text with numbered options and wait for the user's reply.
+- **Drift checks are the user's job.** The assistant sees single frames, not motion. Flag obvious drift only. Don't edit prompts unasked.
 - **Paste prompts exactly.** Only code-block text from the script. Never paraphrase.
 - **Never announce an action without doing it** in the same reply ("Generating image B now" must be followed by the actual clicks).
-- **The user may be working in the same tabs.** If a dialog, prompt or selection has changed since Claude last touched it, don't undo it. Report what's there and ask.
+- **The user may be working in the same tabs.** If a dialog, prompt or selection has changed since the assistant last touched it, don't undo it. Report what's there and ask.
 - **Say when unsure.** If an image is ambiguous (how a prop is held, whether a feature is present), describe what you see, say it's uncertain, and ask. Don't assert.
+
+## Platform notes
+
+This workflow was developed with an assistant that can only act while writing a reply, has a limit on tool actions per reply, and offers a tappable question widget. Adjust for the platform in use:
+
+- **ChatGPT agent mode / Codex app or Chrome extension:** sessions can run for many minutes, so the assistant may poll the library until renders finish instead of ending the reply. Keep every user checkpoint below regardless; a long session is not permission to pick images or takes.
+- **Reply-bounded assistants:** follow the render cycle below exactly. Never wait inside a reply for renders.
+- **No question widget:** ask in plain text with numbered options and stop until the user answers.
 
 ## Turn budget and the render cycle
 
-Claude can only act while writing a reply, and each reply has a limit on tool actions. Renders take several minutes. **Never wait inside a reply for renders to finish.** Long chains of waits exhaust the budget and the reply ends silently mid-task.
+Where the assistant can only act while writing a reply and each reply has a limit on tool actions: renders take several minutes, so **never wait inside a reply for renders to finish.** Long chains of waits exhaust the budget and the reply ends silently mid-task.
 
 The cycle per clip:
 
 1. Set up and submit the takes.
 2. Confirm the tiles exist in the library (a rendering tile shows a percentage).
-3. Report each take's grid position, then ask with a card: **"Have the generations finished?"** Yes / No. Include the refresh note: *click the purple back arrow at the bottom of the Media Library panel, then open My AI Videos again.*
+3. Report each take's grid position, then ask: **"Have the generations finished?"** Yes / No. Include the refresh note: *click the purple back arrow at the bottom of the Media Library panel, then open My AI Videos again.*
 4. On "yes", ask which take to keep.
 
 Be efficient with actions: batch clicks and checks, read page state with one script instead of screenshots where possible, and avoid navigating back and forth in the library.
@@ -100,7 +108,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 - **Media Library → My AI Videos**, sorted Newest.
 - **The grid goes stale.** Refresh by clicking the purple back arrow (bottom left of the panel), then reopening **My AI Videos**. If the panel won't reopen, toggle Media Library in the right sidebar.
 - The Creation tab's "generation … completed" notification is unreliable.
-- Claude's view of the library can lag behind the user's. If the user says tiles exist, believe them.
+- The assistant's view of the library can lag behind the user's. If the user says tiles exist, believe them.
 
 ## Review checkpoint
 

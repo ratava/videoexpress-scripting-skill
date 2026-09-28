@@ -73,14 +73,14 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Voices:** a voice description for each speaker (age, gender, pitch, accent, delivery), kept identical in every clip, plus the language.
 
 ### Script
-- **Who develops the script:** Claude writes it from the concept; Claude and the user write it together scene by scene; the user writes it and Claude adapts it; or the user provides it complete.
+- **Who develops the script:** the assistant writes it from the concept; the assistant and the user write it together scene by scene; the user writes it and the assistant adapts it; or the user provides it complete.
 - **Structure:** number of scenes, the beat per scene, and the ending (a final image, a fade, a line, a hard cut).
 - **Transitions:** hard cuts, match cuts, or fades and white dips done in the edit.
 
 ### Production logistics
 - **Generation budget:** how many credits or generations the user is prepared to spend. With five takes per clip, a twelve-clip video is about sixty generations plus start images and tests.
 - **Takes per clip:** one to five (five is the usual default). More takes cost more but give more choice.
-- **Who operates VideoExpress:** Claude drives the browser, the user does, or both. If Claude drives, follow `browser-workflow.md`.
+- **Who operates VideoExpress:** the assistant drives the browser, the user does, or both. If the assistant drives, follow `browser-workflow.md`.
 - **Chaining strategy:** mostly chained clips (smoother continuity, and drift builds up) or mostly fresh starts from designed start images (more control, more images to make). Suggest a mix: fresh starts at each scene and at difficult beats.
 - **Edit and finishing:** who edits, whether trims, transitions and audio happen in VE's timeline or elsewhere, VE Filters, and the export format.
 - **Review cadence:** approve every image and take, or approve in batches.
@@ -132,4 +132,4 @@ After the tests, update the Bible with any wording that worked, since a prompt t
 3. **Script and clip breakdown:** the scene table, then each clip with its length, fresh or chained start, dialogue (speaker and line), sound cues and role (establishing, action, dialogue, payoff).
 4. **Production plan:** start images to generate, takes per clip, the generation budget, the test results, and the order of work.
 
-The user signs off each output. Then production moves to the prompt pack (SKILL.md sections 1–9) and, if Claude operates VE, `browser-workflow.md`.
+The user signs off each output. Then production moves to the prompt pack (SKILL.md sections 1–9) and, if the assistant operates VE, `browser-workflow.md`.
