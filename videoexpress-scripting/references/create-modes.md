@@ -33,10 +33,19 @@ Every official video prompt uses the multishot tags (see `multishot-template.md`
 - **One camera move**, usually a slow push: "One move only: slow steady push in." Subject motion and camera motion are kept separate.
 - **Explicit holds**: what stays planted or still is named ("his feet and hands remain in place", "everything else stays structurally stable").
 - **Style-specific stability** in [LIGHT AND IMAGE]: materials stay tactile, painted details don't boil, pixels don't crawl, cadence matches the medium.
-- **Quiet, specific [PRODUCTION SOUND]**: one or two ambient sounds, "no speech or music".
+- **Quiet, specific [PRODUCTION SOUND]**: one or two sounds, "no speech or music". In production, prefer short transient sounds with silence between them over sustained ambience, which renders as background noise (see SKILL.md section 6a).
 - **Negatives guard the style** as well as anatomy: no conversion to another medium.
 
 For longer clips in any style, keep the same restraint per segment: one clear beat and one camera move per [ACTION] segment.
+
+### Custom styles (not one of the ten presets)
+
+Creative mode also renders styles described entirely in the prompt, such as cel-shaded anime or ink-and-wash. What made them hold:
+- **Image prompt:** open with the medium ("Cinematic hand-drawn cyberpunk anime film still, widescreen 16:9."), then describe every garment, prop and background element in detail, and close with the look ("Clean ink outlines, two-tone cel shading with hard shadow edges, muted … palette with warm neon accents, richly painted detailed city background, mature realistic character proportions."). A long, specific prompt held the style far better than a short one.
+- **Video prompt:** open with a style anchor sentence before [REFERENCE USE] ("Two-dimensional hand-drawn anime cel animation in the style of a late-1990s … anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered."). Say "including its drawing style" in the opening-frame sentence, and end each [LIGHT AND IMAGE] with "Strictly two-dimensional hand-drawn … cel art, clean ink outlines, … stable line art and colour throughout."
+- **Negatives:** "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting".
+- **Consistent Character pulls toward realism.** A clip generated with a face reference in slot 1 came out far more realistic until the style anchor was added. Keep the anchor in every clip once references are in use.
+- **Reusing a good image's exact prompt** (with only the needed changes) beat rewriting the look from scratch.
 
 ## 3. Style sheets
 
