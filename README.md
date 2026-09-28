@@ -1,6 +1,6 @@
 # VideoExpress Scripting — a Claude skill
 
-A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress 3.5** and similar image-to-video tools (Runway, Kling, Hailuo, Pika). It turns a song, story or narration into a clip-by-clip prompt pack: start-image prompts, VE multishot video prompts, timing, and a generation QC checklist.
+A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress 3.5 and later** by [PaulPonna.com](https://paulponna.com). It turns a song, story or narration into a clip-by-clip prompt pack: start-image prompts, VE multishot video prompts, timing, and a generation QC checklist.
 
 ## What it covers
 
@@ -44,7 +44,7 @@ Ask Claude things like:
 
 ## Notes
 
-This is an independent community skill. It is not affiliated with, endorsed by or supported by VideoExpress or its makers. VideoExpress and other product names are trademarks of their respective owners. The guidance reflects hands-on production experience with VideoExpress 3.5 and may need updating as the tool changes.
+This is an independent community skill. It is not affiliated with, endorsed by or supported by VideoExpress or PaulPonna.com. VideoExpress and other product names are trademarks of their respective owners. The guidance reflects hands-on production experience with VideoExpress 3.5 and may need updating as the tool changes.
 
 ## License
 
