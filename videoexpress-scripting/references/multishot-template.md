@@ -15,7 +15,7 @@ For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` t
 **[REFERENCE USE]** — tell the model what each supplied image is for.
 - Fresh clip: "Use the supplied image as the exact opening frame and visual reference for a ten-second continuous shot, including its drawing style."
 - Chained clip: "Use the supplied image, the last frame of the previous shot, as the exact opening frame for a ten-second continuous shot."
-- With Consistent Character: "use the supplied reference image of [Name] for her face, hair, outfit and props, and use the supplied second reference image of [Other] for its body, head and weapon".
+- With Consistent Character: "use the supplied reference image of [Name] for her face, hair, outfit and props, and use the supplied second reference image of [Other] for his face, hair and outfit".
 - Add roles for other images: "use the supplied reference images of [Name] for her face and hair, the supplied outfit reference image for her outfit, and the supplied wide image of the location as the reference for the environment, which matches it exactly whenever it is in view."
 - The official 3D example frames it as control: the opening frame "controls the composition, the world, the lighting and the exact framing of this shot".
 
@@ -33,7 +33,7 @@ For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` t
 
 **[LIGHT AND IMAGE]** — lighting direction and colour, then the style line. Official examples add style-stability phrases: "painted details remain stable rather than boiling or crawling", "maintain coherent square pixel clusters with no smoothing or texture crawling", "materials stay tactile and stable".
 
-**[PRODUCTION SOUND]** — the scene's generated audio. List short, distinct, unpitched sounds in order and fill the clip's duration: "One heavy boot thud on wet stone, then one metallic clack as she grips the rifle, with complete silence before, between and after them." End with an exclusion tail: "Close-miked sound effects only. No city hum, no traffic, no ambient sound, no background noise, no hiss, no static, no rain, no wind noise, no hum, no drone, no speech, no voices."
+**[PRODUCTION SOUND]** — the scene's generated audio. List short, distinct, unpitched sounds in order and fill the clip's duration: "One heavy boot thud on stone, then one short metallic click as she picks up the case, with complete silence before, between and after them." End with an exclusion tail: "Close-miked sound effects only. No ambient hum, no traffic, no ambient sound, no background noise, no hiss, no static, no rain, no wind noise, no hum, no drone, no speech, no voices."
 - Sustained ambience (lapping water, wind, hum, whir) renders as a continuous noise floor, so avoid it unless the user wants it.
 - Pitched sounds (beeps, rising tones) can turn into music.
 - Naming music words ("no music, no score") didn't stop music appearing in testing; see SKILL.md section 6a.

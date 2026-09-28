@@ -36,8 +36,8 @@ videoexpress-scripting/
 
 Ask Claude things like:
 
-- "Script a ten-clip VideoExpress music video for my track, in claymation style."
-- "Write a multishot prompt for this start frame: the camera should orbit her while she dances."
+- "Script a ten-clip VideoExpress short film in claymation style."
+- "Write a multishot prompt for this start frame: the camera should orbit her while she walks through the market."
 - "My chained clips keep reversing camera direction. How do I fix it?"
 - "Write a two-character standoff with dialogue, then a fight, for VideoExpress."
 - "Open VideoExpress and generate clips 1 to 5 from my approved script, five takes each, stopping for me to pick each take."
