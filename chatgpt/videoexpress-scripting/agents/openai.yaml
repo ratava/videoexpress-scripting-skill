@@ -1,0 +1,8 @@
+interface:
+  display_name: "VideoExpress Scripting"
+  short_description: "Plan, script and run multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, chaining, dialogue and sound."
+  brand_color: "#6D28D9"
+  default_prompt: "I've got an idea for a VideoExpress video. Help me plan it."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,15 @@
-# VideoExpress Scripting — a Claude skill
+# VideoExpress Scripting — an Agent Skill
 
-A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress 3.5 and later** by [PaulPonna.com](https://paulponna.com). It turns a song, story or narration into a clip-by-clip prompt pack: start-image prompts, VE multishot video prompts, timing, and a generation QC checklist.
+An [Agent Skill](https://agentskills.io) for planning and scripting multi-clip AI videos in **VideoExpress 3.5 and later** by [PaulPonna.com](https://paulponna.com). It turns a song, story or narration into a clip-by-clip prompt pack: start-image prompts, VE multishot video prompts, timing, and a generation QC checklist.
+
+The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide:
+
+| Platform | Folder | Guide | Release package |
+|---|---|---|---|
+| Claude (web, desktop, mobile) and Claude Code | [`claude/`](claude/) | [claude/README.md](claude/README.md) | `videoexpress-scripting-claude.zip` |
+| ChatGPT and OpenAI Codex | [`chatgpt/`](chatgpt/) | [chatgpt/README.md](chatgpt/README.md) | `videoexpress-scripting-chatgpt.zip` |
+
+The two builds share the same method, bible rules, prompt template, style sheets and failure fixes. They differ only in wording (which assistant is being addressed), the platform notes in the browser workflow, and platform metadata (`agents/openai.yaml` in the ChatGPT build).
 
 ## What it covers
 
@@ -16,35 +25,24 @@ A Claude skill for planning and scripting multi-clip AI videos in **VideoExpress
 - **Driving VideoExpress in the browser**: with Claude in Chrome, Claude can run an approved pack through app.videoexpress.ai. That covers separate Creation and Review tabs, the right dialog settings, Consistent Character slots, image candidate passes, five-take batches with position tracking, a question-driven render cycle that respects Claude's per-reply action budget, the library refresh workaround, user review checkpoints, saving last frames, building and saving the timeline, recovery after reloads, and prompt hardening.
 - **Failure-mode fixes**: camera direction flipping, accessory and outfit drift, environments changing, time-lapse bleeding onto the subject, frozen or erratic motion, crowd scale and cloning, scenes darkening, text in footage, stylised clips turning realistic, props changing shape, actions happening in place or late, and background hiss. It also sets out a method for isolating stubborn failures with single-variable test takes and a control.
 
-## Contents
+## Repo layout
 
 ```
-videoexpress-scripting/
-├── SKILL.md                         core method and rules
-└── references/
-    ├── project-intake.md            design-phase question system
-    ├── multishot-template.md        prompt structure, templates, example
-    ├── create-modes.md              Create Mode style sheets and custom styles
-    └── browser-workflow.md          driving VideoExpress in the browser
+claude/
+├── README.md                        Claude install and usage
+└── videoexpress-scripting/          the skill folder (upload or copy this)
+    ├── SKILL.md
+    └── references/
+
+chatgpt/
+├── README.md                        ChatGPT and Codex install and usage
+└── videoexpress-scripting/          the skill folder (upload or copy this)
+    ├── SKILL.md
+    ├── agents/openai.yaml           Codex app metadata
+    └── references/
 ```
 
-## Installing
-
-**Claude (web, desktop or mobile):** zip the `videoexpress-scripting` folder (the zip should contain the folder itself), then upload it under Settings → Capabilities → Skills.
-
-**Claude Code:** copy the `videoexpress-scripting` folder into `~/.claude/skills/` (or your project's `.claude/skills/`).
-
-## Using it
-
-Ask Claude things like:
-
-- "I've got an idea for a VideoExpress video. Help me plan it."
-- "Here's my script. Turn it into a VideoExpress production."
-- "Script a ten-clip VideoExpress short film in claymation style."
-- "Write a multishot prompt for this start frame: the camera should orbit her while she walks through the market."
-- "My chained clips keep reversing camera direction. How do I fix it?"
-- "Write a two-character standoff with dialogue, then a fight, for VideoExpress."
-- "Open VideoExpress and generate clips 1 to 5 from my approved script, five takes each, stopping for me to pick each take."
+Each `references/` folder holds the same four files: `project-intake.md` (design-phase question system), `multishot-template.md` (prompt structure and worked example), `create-modes.md` (Create Mode style sheets and custom styles) and `browser-workflow.md` (driving VideoExpress in the browser).
 
 ## Notes
 
