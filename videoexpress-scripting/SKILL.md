@@ -1,6 +1,6 @@
 ---
 name: videoexpress-scripting
-description: Create clip-by-clip scripts and prompt packs for VideoExpress (VE) 3.5 and similar image-to-video tools, where a video is built from 3–10 second clips, each a start image plus a motion prompt. Covers the VE multishot prompt format, the ten Create Mode styles plus photoreal, start-image prompts, clip chaining, and driving app.videoexpress.ai in the browser with Claude in Chrome (generating clips, review checkpoints, saving last frames, building the timeline). Use whenever the user wants to script or produce a music video or multi-clip video with VideoExpress, Runway, Kling, Hailuo or Pika; asks for video, start-image or multishot prompts or a shot list; asks Claude to operate VideoExpress from an approved script; or asks about VE Consistent Character references, Lipsync dialogue, multi-shot hard cuts or two-character fight scenes; or reports AI-video problems such as camera direction flipping, outfit or accessory drift, changing environments, stylised clips turning realistic, props or weapons changing shape, actions happening in place or in the wrong order, wrong dance speed, crowd scale errors, dark scenes, text in footage, background hiss, thin gunfire or unwanted music.
+description: Create clip-by-clip scripts and prompt packs for VideoExpress (VE) 3.5 and similar image-to-video tools, where a video is built from 3–10 second clips, each a start image plus a motion prompt. Covers the VE multishot prompt format, the ten Create Mode styles plus photoreal, start-image prompts, clip chaining, and driving app.videoexpress.ai in the browser with Claude in Chrome (generating clips, review checkpoints, saving last frames, building the timeline). Use whenever the user wants to script or produce any multi-clip video (short film, story, ad, explainer, music video) with VideoExpress, Runway, Kling, Hailuo or Pika; asks for video, start-image or multishot prompts or a shot list; asks Claude to operate VideoExpress from an approved script; or asks about VE Consistent Character references, Lipsync dialogue, multi-shot hard cuts or two-character fight scenes; or reports AI-video problems such as camera direction flipping, outfit or accessory drift, changing environments, stylised clips turning realistic, props or weapons changing shape, actions happening in place or in the wrong order, motion at the wrong speed, crowd scale errors, dark scenes, text in footage, background hiss, thin gunfire or unwanted music.
 ---
 
 # VideoExpress Scripting
@@ -32,10 +32,10 @@ The pack is a living document. Expect many revision rounds as the user generates
 
 - Design **2–4 recurring motifs** that carry the video (an accent colour, a gesture, a light effect, a returning prop). Motifs give continuity AI generation can't provide on its own.
 - Map source structure to a **scene table**: scene → time range → clips → outfit → location → motif state. Escalate motifs across scenes.
-- **Musical hits deserve visual events**: drops get reveals or bursts of motion; build-ups get stillness so the hit lands; scene changes land on section boundaries.
-- **Give each scene a logical opening.** Don't open mid-action for no reason — establish the character arriving, starting the music, or reacting before the main action.
+- **Key moments deserve visual events.** If the piece is set to music or narration, big hits or key lines get reveals or bursts of motion, build-ups get stillness so the hit lands, and scene changes land on section boundaries.
+- **Give each scene a logical opening.** Don't open mid-action for no reason — establish the character arriving, noticing something, or reacting before the main action.
 - Favour what generates reliably: steady camera moves, light changes, drifting atmosphere, one clear subject. Put spectacle in the background, the performance in the foreground.
-- Plan lip-sync avoidance unless the tool supports it: profile, silhouette, backs, held poses.
+- VE 3.5 supports lip-synced dialogue (section 6b). In tools without lip-sync, plan speaking shots around profiles, silhouettes, backs and held poses.
 - Background interest (vehicles, crowds, city life) should be named explicitly and kept at a distance ("far beyond the railing") so it never crosses the subject.
 
 ## 2. The bible: character, outfit and location blocks
@@ -45,13 +45,13 @@ Write these once, paste them **word for word** into every image and video prompt
 **Character core block** (identity, constant across scenes): age range, build, skin, face, eye colour, expression baseline, hair (cut, colour, how it's worn — use "always"), signature accessory (e.g. a hat, glasses or jewellery) with material, shape and how it's worn. Give the character a short unique name used in every prompt.
 
 **Outfit blocks** (one per scene): every garment with colour, material, cut, neckline, length, fastenings, and exactly which body parts are bare.
-- **Describe asymmetric items per side, positively and separately.** "Her right hand is completely bare, with only a small, snug, flat white wristband at the wrist. Her left hand alone wears a black glove…" Adjacent mentions ("wristbands on both wrists; a glove on her left hand") bleed into each other.
+- **Describe asymmetric items per side, positively and separately.** "Her right wrist wears a slim silver watch. Her left wrist is bare." Adjacent mentions ("a watch and a bracelet on her wrists") bleed into each other.
 - Prefer **snug, flat, close-fitting** wording for small accessories; "fluffy", "thick" or a second mention of the same item invites extra fabric.
 - If the user prefers a look that emerged in a generation, rewrite the block to match that frame rather than fighting it.
 
 **Location blocks** (one per environment): describe the whole space — floor, walls or railings, structures, skyline or ceiling, light sources, atmosphere, crowd — **including what is out of frame at the start**, so camera moves reveal defined space instead of invented space. Add sky/weather direction rules here if clouds are present ("any clouds always travel directly away from the camera toward the horizon, never sideways").
 
-**Crowd rule**: crowds need their own look distinct from the lead (different clothing), "a varied mix of people with different faces, hairstyles and builds", and "only [Name] wears [signature accessory]". For scale, say "every dancer a real person at true human scale with natural proportions", "the foreground dancers are the same size as [Name]", "the crowd recedes naturally with perspective". Avoid wording that invites mixed scales: a very tall stage lifting the lead "high above", "thousands", "shrinking into tiny figures".
+**Crowd rule**: crowds need their own look distinct from the lead (different clothing), "a varied mix of people with different faces, hairstyles and builds", and "only [Name] wears [signature accessory]". For scale, say "every person a real person at true human scale with natural proportions", "the nearest people are the same size as [Name]", "the crowd recedes naturally with perspective". Avoid wording that invites mixed scales: a raised platform lifting the lead "high above", "thousands", "shrinking into tiny figures".
 
 **Reference images**: supply a face/hair reference and an outfit reference (a clean frame of the current outfit) with every clip, and an environment reference image when a move will reveal environment seen earlier. State each role explicitly in [REFERENCE USE].
 
@@ -65,12 +65,12 @@ Write these once, paste them **word for word** into every image and video prompt
 
 **Match prompts to the image that worked.** When a start-image prompt produces the look you want, reuse its exact character, outfit and location wording in the video prompts for that sequence, rather than the bible's older wording. A mismatch between the frame and the text (different hair side, garment names, a feature that isn't drawn) makes the video drift toward the text.
 
-**Props: describe exactly how the frame shows them.** If the start image shows a rifle slung but resting under the arm, write that, not "slung across her back". The model reconciles the frame and the text by moving the prop, often mid-clip.
+**Props: describe exactly how the frame shows them.** If the start image shows a bag hanging from one shoulder and resting at the hip, write that, not "a backpack on her back". The model reconciles the frame and the text by moving the prop, often mid-clip.
 
 **Non-human and mechanical characters**:
 - **Humanoid designs generate far more reliably** than multi-legged or unusual body plans. Leg and limb counts are ignored, and bodies with many thin limbs lose consistency between frames. Prefer two arms and two legs with a distinctive head, silhouette and weapon.
-- **Describe complex limbs and weapons by structure, joint by joint**, in the order they attach: "a huge rounded shoulder pauldron over a pale-grey upper-arm plate and a large cylindrical elbow joint; from the elbow down there is no forearm and no hand, the forearm is the weapon itself, a boxy gun housing leading into a cluster of six barrels". Naming the part ("arm cannon", "minigun") alone lets the model draw a hand holding a gun.
-- **Mechanical limbs revert to hands during gestures.** When a character with a weapon-arm yells, points or raises an arm, the weapon can morph into a fist. Give gestures to the other limb ("raising its left fist while its right-arm minigun stays pointed at the ground") and add "the minigun keeps exactly the same shape, never turning into a hand or fist".
+- **Describe complex limbs and weapons by structure, joint by joint**, in the order they attach: "a rounded shoulder plate over an armoured upper arm and a large cylindrical elbow joint; from the elbow down there is no forearm and no hand, the forearm is the weapon itself, a boxy housing leading into a cluster of barrels". Naming the part ("arm cannon", "rotary gun") alone lets the model draw a hand holding a gun.
+- **Mechanical limbs revert to hands during gestures.** When a character with a weapon-arm yells, points or raises an arm, the weapon can morph into a fist. Give gestures to the other limb ("raising its left fist while its right-arm weapon stays pointed at the ground") and add "the weapon keeps exactly the same shape, never turning into a hand or fist".
 - VE adds generic gun furniture (carry handles, grips, top rails). Negate it explicitly: "nothing mounted on top: no carry handle, no top handle, no grip".
 
 **Start images**: write each start-image prompt as a **self-contained** prompt with the full character, outfit and location blocks inlined — no "derived from reference X" split prompts. Put the subject **mid-action** if the clip must start moving (a still pose in the start frame makes the model hesitate). Always include the character's head. Derive later start images from the best frame of the character, never from a drifted frame.
@@ -78,8 +78,8 @@ Write these once, paste them **word for word** into every image and video prompt
 ## 3. Timing
 
 - VideoExpress clip length is set per generation (3–10 s, default 5). Plan most clips at the length the user actually uses (often 10 s) and let the grid fall on those boundaries — don't force bar-accurate clip lengths the tool can't honour.
-- Use short clips (3–5 s) for accents, transitions and inserts; the last clip can be sized to end on the track's final hit.
-- Verify key anchors (drops, section changes, the final hit) with the user against the real audio before generating the clips around them.
+- Use short clips (3–5 s) for accents, transitions and inserts; the last clip can be sized to end on the piece's final beat, line or hit.
+- If the video is cut to audio (music, narration, dialogue), verify key anchors (big hits, section changes, key lines, the ending) with the user against the real audio before generating the clips around them.
 - **Generate full clips, trim tails in the edit.** Heads carry the prompted action; tails wander.
 - Mild retimes (0.9–1.2x) fix small tempo mismatches: `ffmpeg -i in.mp4 -filter:v "setpts=<factor>*PTS" -an -c:v libx264 -crf 16 out.mp4` (factor < 1 speeds up). Always work on copies of original outputs.
 - Transitions the prompt can't do cleanly (white dips, fades) belong in the edit. A clip can end on pure white or a held pose for the edit to cut from.
@@ -91,7 +91,7 @@ Chaining = starting a clip from the previous clip's cut frame. It gives continui
 - **Always chain from the frame where you actually cut**, not the raw last frame: `ffmpeg -ss <time> -i clip.mp4 -frames:v 1 frame.png`. Trim before any tail drift and chain from there.
 - **Inspect the cut frame before chaining.** If it is mid-flick, motion-blurred, darkened, drifted or oddly framed, the child inherits it. Fix the parent (trim or re-roll), don't prompt harder on the child.
 - Deep chains are fine while quality holds; restart fresh (from a clean derived image in the same pose and framing) when the character or outfit drifts badly.
-- **Never write camera moves relative to another clip** ("continue the same direction as the previous shot") — the model can't see it. Name the direction explicitly in every clip, using the **identical phrase** each time ("circles slowly clockwise around the stage, as seen from above", "arcs around her to the right").
+- **Never write camera moves relative to another clip** ("continue the same direction as the previous shot") — the model can't see it. Name the direction explicitly in every clip, using the **identical phrase** each time ("circles slowly clockwise around her, as seen from above", "arcs around her to the right").
 - **Describe motion already in progress at the start of a chained clip** if the parent ended moving: "From the opening frame the camera is already circling slowly clockwise…" Then ease it ("the pull-out eases to a gentle stop") before any change of direction.
 - **Never return the camera to space that has left the frame.** Moves continue forward into unseen space, which the model can invent freely. Returning makes it reinvent what was there, inconsistently.
 - **Strip out-of-view landmarks from later prompts.** Naming something that is no longer visible makes the model pan back to find it.
@@ -111,19 +111,19 @@ A single VE 3.5 generation can contain two or three shots joined by hard cuts. U
 
 ## 5. Motion rules
 
-- **Lead the action with the subject**, not the crowd or background: "From the very first frame, with no pause and no delay, [Name] is already dancing…" Crowd follows "from that same first frame".
-- **Restate continuous motion in every [ACTION] segment** and end with "still dancing in the very last frame". Transition-heavy segments (sky changes, reveals) steal the motion budget unless the subject's moves are restated specifically.
-- **Real time vs time-lapse.** When the background is time-lapsed, add: "[Name] moves in normal real time, completely separate from the time-lapse behind her: only the sky and the city are sped up, and her dancing stays a smooth, steady, controlled groove locked to the beat, fluid and never frantic. Her hair also moves in normal real time, bouncing and swaying gently only with her own movements, untouched by the time-lapse or any wind." Negatives: "no sped-up or time-lapsed motion on [Name], no jerky, erratic, twitching or flailing movement, no whipping or flicking hair, no wind-blown hair".
-- **Rate words bleed.** Slow words written for the camera slow the dancers; racing words written for the sky speed them up. Keep rate words attached to their own subject, in separate sentences or segments. "Cinematic" plus lasers/smoke/crowds is a strong slow-motion cue — use "real-time footage at natural speed, no slow motion" for energetic scenes.
-- **One groove beats many moves.** A smooth repeating pattern (side step, gentle bounce, rolling shoulders, arm pump on every other beat) reads better than many simultaneous actions, which read as flailing.
+- **Lead the action with the subject**, not the crowd or background: "From the very first frame, with no pause and no delay, [Name] is already [walking / running / working]…" Background action follows "from that same first frame".
+- **Restate continuous motion in every [ACTION] segment** and end with "still [moving] in the very last frame". Transition-heavy segments (sky changes, reveals) steal the motion budget unless the subject's moves are restated specifically.
+- **Real time vs time-lapse.** When the background is time-lapsed, add: "[Name] moves in normal real time, completely separate from the time-lapse behind her: only the sky and the city are sped up, and her movement stays smooth, steady and controlled, never frantic. Her hair also moves in normal real time, swaying gently only with her own movements, untouched by the time-lapse or any wind." Negatives: "no sped-up or time-lapsed motion on [Name], no jerky, erratic, twitching or flailing movement, no whipping or flicking hair, no wind-blown hair".
+- **Rate words bleed.** Slow words written for the camera slow the subject; racing words written for the sky speed it up. Keep rate words attached to their own subject, in separate sentences or segments. "Cinematic" plus lights, smoke or crowds is a strong slow-motion cue — use "real-time footage at natural speed, no slow motion" for energetic scenes.
+- **One repeating motion beats many moves.** A smooth, steady pattern (a walk, a rhythmic step, a repeated gesture) reads better than many simultaneous actions, which read as flailing.
 - **Give features you want kept a motion**: "her ponytail swaying behind her" keeps the ponytail; unmentioned features drift.
 - Holds: when a subject must stop (a pose, a point), say so for that segment only, and write "no stopping before…" in negatives so earlier segments keep moving.
 
 ### Actions, geometry and cause-and-effect
 
-- **Describe actions against the frame's real geometry.** Look at where things are in the start image: is the wall beside her, or behind her running parallel to the camera? "Backflips backwards over the wall" failed when the wall was behind her in depth, because "backwards" relative to her facing pointed at empty space. Write the direction as it exists in the frame: "a backflip that carries her away from the camera, up and over the hedge-topped wall directly behind her; she lands on the far side, so the wall is now between her and the camera; the spot where she stood is left empty."
+- **Describe actions against the frame's real geometry.** Look at where things are in the start image: is the wall beside her, or behind her running parallel to the camera? "Backflips backwards over the wall" failed when the wall was behind her in depth, because "backwards" relative to her facing pointed at empty space. Write the direction as it exists in the frame: "a backflip that carries her away from the camera, up and over the low wall directly behind her; she lands on the far side, so the wall is now between her and the camera; the spot where she stood is left empty."
 - **One direction of action per beat.** Opposed motions in one beat (running one way while shooting behind) get simplified or dropped. Give each beat one mover or one shooter.
-- **Cause-and-effect needs an explicit beat order in separate timed segments.** A reaction written in the same sentence as its trigger happens late or not at all (the subject "just stands there until the firing is almost over"). Write the anticipation, the reaction and the consequence as separate segments: "[ACTION 0-3s] the barrels spin up, not firing yet… [ACTION 3-5s] while the barrels are still spinning, before a single shot is fired, she dives… [ACTION 5-10s] only now, with her already behind the wall, it opens fire…". Add negatives such as "no firing before she has dived".
+- **Cause-and-effect needs an explicit beat order in separate timed segments.** A reaction written in the same sentence as its trigger happens late or not at all (the subject "just stands there until the firing is almost over"). Write the anticipation, the reaction and the consequence as separate segments: "[ACTION 0-3s] the weapon powers up, not firing yet… [ACTION 3-5s] while it is still powering up, before a single shot is fired, she dives for cover… [ACTION 5-10s] only now, with her already behind cover, it opens fire…". Add negatives such as "no firing before she has dived".
 - **If a complex beat still fails after two rounds, split it** into separate short clips (a three-second clip is enough for one athletic move), or change the point of view (e.g. a shot from the attacker's viewpoint for the attack itself).
 - **Near-misses:** "misses her by a narrow margin, hitting the wall and paving beside her" is safer than a dodge that must be perfectly timed. Add "no bolts hitting her".
 - **Hidden characters:** if a character is behind cover, keep them out of the shot entirely rather than trying to show them through the cover.
@@ -131,17 +131,17 @@ A single VE 3.5 generation can contain two or three shots joined by hard cuts. U
 ### Two-character fights and standoffs
 
 - **Fix the screen layout for the whole sequence**: "A is always on the left side of the frame and B is always on the right; neither ever crosses to the other side." Repeat it in every clip and in the negatives.
-- **Colour-code shots per shooter** (amber for one, crimson for the other) and give directions ("from left to right"). This keeps "who is firing at whom" readable.
+- **Colour-code shots per shooter** (one colour for each side) and give directions ("from left to right"). This keeps "who is firing at whom" readable.
 - **Cuts keep the layout.** A close-up after a cut keeps the subject facing the other character's side.
 - **Avoid over-the-shoulder push-ins in key beats.** They let the model rearrange the pair (one ends up behind the other, or the shooter fires at nothing). A side-on wide that holds both characters head to foot is the most reliable.
 - **Distance rules need a hard number in two places**: "at least three of its own body-lengths away" in the identity block and the negatives. Don't let the start image contradict it.
 
 ## 6. Light and look
 
-- **Custom Creative mode styles need a style anchor at the very start of the video prompt**, before [REFERENCE USE], or clips drift toward realism: "Two-dimensional hand-drawn anime cel animation in the style of a late-1990s cyberpunk anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered." Add "strictly two-dimensional hand-drawn … cel art" to each [LIGHT AND IMAGE], and "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting" to the negatives. Also add "including its drawing style" to the opening-frame sentence in [REFERENCE USE].
+- **Custom Creative mode styles need a style anchor at the very start of the video prompt**, before [REFERENCE USE], or clips drift toward realism: "Two-dimensional hand-drawn anime cel animation in the style of a late-1990s [genre] anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered." Add "strictly two-dimensional hand-drawn … cel art" to each [LIGHT AND IMAGE], and "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting" to the negatives. Also add "including its drawing style" to the opening-frame sentence in [REFERENCE USE].
 - A detailed, specific image prompt (every garment, prop and background element named) produces better style fidelity than a short one. When one start image nails the style, reuse its wording.
 - End every [LIGHT AND IMAGE] with the same style line (e.g. "Crisp cinematic photorealistic look, vivid saturated colour, natural skin and fabric detail, sharp focus, stable colour and exposure throughout.") or the Create Mode style line from `references/create-modes.md`.
-- **Lasers, neon and smoke drift dark.** Rule: effects add light, never replace it. Keep a key light on the subject ("a soft key light keeps her face and outfit clearly lit"), make smoke "pale, luminous", give the subject a physical light source (a spotlight from above) and restate brightness in the final segment. Never chain from a darkened frame.
+- **Lasers, neon, smoke and night scenes drift dark.** Rule: effects add light, never replace it. Keep a key light on the subject ("a soft key light keeps her face and outfit clearly lit"), make smoke "pale, luminous", give the subject a physical light source (a spotlight from above) and restate brightness in the final segment. Never chain from a darkened frame.
 - For sky/time transitions, allow the sky to change but state "the subject's lighting stays stable".
 - Sun paths and cloud directions must be stated explicitly and consistently if they matter (e.g. the sun rises on the left, sets on the right; clouds travel directly away from the camera).
 
@@ -167,7 +167,7 @@ VE 3.5 generates audio with the clip. The prompt wording controls it only partly
 
 ## 6c. Point-of-view, HUD and special-vision shots
 
-- **Point-of-view shots show only what the viewer would see.** From inside a helmet, only the tip of a weapon pokes into the frame; describe exactly which part is visible and where ("in the bottom right corner, only the very tips of the six barrels poke up into the frame, pointing straight ahead"), and that nothing else of the arm is visible.
+- **Point-of-view shots show only what the viewer would see.** From inside a helmet, only the tip of a weapon pokes into the frame; describe exactly which part is visible and where ("in the bottom right corner, only the very tip of the weapon pokes up into the frame, pointing straight ahead"), and that nothing else of the arm is visible.
 - **Put foreground objects in a named image region** ("well to the right of centre; the centre and left of the view are clear"). Otherwise VE centres them.
 - **Tint and framing:** "the entire picture is evenly tinted deep translucent red from edge to edge, framed by the dark curved edges of the helmet interior" worked. A partial tint needs "from edge to edge".
 - **HUD overlays and numerals can work in stills** when asked for explicitly and simply ("a thin vertical bar graph on the right edge; a few small plain white numerals near the top and bottom edges; flat, thin, white, never covering the centre"). Warn that digits can flicker or morph in motion.
@@ -185,10 +185,10 @@ VE 3.5 generates audio with the clip. The prompt wording controls it only partly
 | Camera direction flips between clips | Relative or missing direction | Explicit, identical direction phrase in every clip; describe motion in progress at the start. |
 | Environment changes when the camera returns | Out-of-view space regenerated | Move only into unseen space; strip vanished landmarks; supply an environment reference. |
 | Accessories migrate or grow | Adjacent, ambiguous item wording | Per-side positive descriptions, snug/flat wording, specific negatives. |
-| Dancing too fast, erratic, or hair whipping | Time-lapse or rate-word bleed | Real-time separation sentence plus negatives. |
+| Motion too fast, erratic, or hair whipping | Time-lapse or rate-word bleed | Real-time separation sentence plus negatives. |
 | Subject frozen at the start or slowing mid-clip | Background mentioned first; still start pose; slow words | Subject first, "no pause and no delay", mid-move start image, restate in every segment. |
 | Scene darkens | Laser/smoke default look | Effects add light, key light, spotlight, luminous smoke, restated brightness. |
-| Crowd at wrong scale or fake-looking | Scale-mixing wording | True human scale wording, low stage, natural perspective. |
+| Crowd at wrong scale or fake-looking | Scale-mixing wording | True human scale wording, no raised platforms, natural perspective. |
 | Similes rendered literally | The model renders nouns | Audit every noun; replace figurative nouns with literal descriptions. |
 | Too-close ending ruins the next chain | Close framing | Pull back to full body by the last frame, or start the next clip fresh from a new start image. |
 | Stylised clip turns realistic | Face references pull toward realism; weak style wording | Style anchor at the start of the prompt, cel-art style line in every segment, anti-realism negatives. |
@@ -205,7 +205,7 @@ VE 3.5 generates audio with the clip. The prompt wording controls it only partly
 | Speaker keeps walking or looks away while talking | No reaction beat | "She turns to face [the other character], then answers." |
 | Hidden character appears in front of cover | See-through effects | Keep hidden characters out of the shot. |
 
-**Per-take QC checklist** (include in every pack): character hair, face and signature accessory; outfit matches the scene block, per side; environment matches the location block, including newly revealed areas; brightness holds to the last frame; no digits, letters or symbols; camera direction as prompted; dance tempo reads as real time; crowd scale and faces varied; cut frame is clean for the next chain.
+**Per-take QC checklist** (include in every pack): character hair, face and signature accessory; outfit matches the scene block, per side; environment matches the location block, including newly revealed areas; brightness holds to the last frame; no digits, letters or symbols; camera direction as prompted; motion reads as real time; crowd scale and faces varied; cut frame is clean for the next chain.
 
 ## 8. The prompt pack document
 
@@ -224,7 +224,7 @@ Keep clip numbering stable once generation starts; if clips are cut, keep the ga
 ## 9. Working style during production
 
 - Users report failures one at a time, often with a frame. Diagnose the **mechanism**, fix it globally, and sweep every not-yet-generated clip with the same risk.
-- Read the frame the user sends: note what actually rendered (outfit, hologram shape, framing, lighting) and write the next prompt to match what exists rather than what was planned.
+- Read the frame the user sends: note what actually rendered (outfit, props, framing, lighting) and write the next prompt to match what exists rather than what was planned.
 - When the user edits the pack directly, re-read before writing and never overwrite their changes without saying so.
 - When the user states a preference ("keep it", "I prefer this look"), treat it as a new rule and apply it everywhere.
 - Protect payoff shots: guard their preconditions in every earlier prompt.
