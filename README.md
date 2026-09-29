@@ -2,6 +2,14 @@
 
 An [Agent Skill](https://agentskills.io) for planning and scripting multi-clip AI videos in **VideoExpress 3.5 and later** by [PaulPonna.com](https://paulponna.com). It turns a song, story or narration into a clip-by-clip prompt pack: start-image prompts, VE multishot video prompts, timing, and a generation QC checklist.
 
+## See it in action
+
+[![Watch the example video on YouTube](https://img.youtube.com/vi/Ckht6Nc49Y8/hqdefault.jpg)](https://youtu.be/Ckht6Nc49Y8)
+
+An example video planned, scripted and produced in VideoExpress with this skill. Click the image to watch on YouTube.
+
+## Platforms
+
 The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide:
 
 | Platform | Folder | Guide | Release package |
