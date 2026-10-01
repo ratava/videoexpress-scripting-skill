@@ -6,6 +6,7 @@ VideoExpress 3.5 Create Mode offers ten animation styles, each with an image pro
 1. The image-prompt recipe (all styles)
 2. The video-prompt pattern (all styles)
 3. Style sheets: 3D Animation · Claymation · 8-Bit Pixel · Stop-Motion · Comic Book · Watercolor · Wool · Paper Cut · Ghibli-style · Low-Poly · Cinematic Photoreal
+4. Tested custom styles: Pencil Sketch Stop-Motion · Pencil-over-Watercolour Picture Book
 
 ## 1. Image-prompt recipe
 
@@ -46,6 +47,9 @@ Creative mode also renders styles described entirely in the prompt, such as cel-
 - **Negatives:** "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting".
 - **Consistent Character pulls toward realism.** A clip generated with a face reference in slot 1 came out far more realistic until the style anchor was added. Keep the anchor in every clip once references are in use.
 - **Reusing a good image's exact prompt** (with only the needed changes) beat rewriting the look from scratch.
+- **Mixed media are a distinct risk.** When a style uses two media (a drawn character over a painted background), the model tends to unify them: the character picks up washes or the background turns into hatching. Name the medium per layer in every prompt, state the contrast as a rule ("strictly two media: … only, … only"), and negate each cross-over explicitly. Section 4 has worked examples.
+
+Section 4 collects custom styles that have been tried in production, with their medium phrases, anchors and guards, so they can be reused like the presets.
 
 ## 3. Style sheets
 
@@ -122,6 +126,33 @@ Creative mode also renders styles described entirely in the prompt, such as cel-
 - **Style line**: "Crisp cinematic photorealistic look, vivid saturated colour, natural skin and fabric detail, sharp focus, stable colour and exposure throughout."
 - **Notes**: the most prone to drift in long chains and to darkening in neon or smoke scenes; use the full bible, reference images and brightness rules. Energetic scenes need "real-time footage at natural speed, no slow motion".
 - **Guards**: add "no stylised, cartoon or animated look" if a style drift appears.
+
+## 4. Tested custom styles
+
+Styles described entirely in the prompt that have held in Creative mode. Use them like the preset style sheets: keep the medium phrase, the video style anchor and the [LIGHT AND IMAGE] closing line identical in every prompt of a scene. Status notes record how far each has been verified.
+
+### Pencil Sketch Stop-Motion (graphite on paper)
+- **Status**: image and clip prompts written to the recipe; verify the first generated frame and harden the wording to it before chaining.
+- **Medium phrase (image)**: "Hand-drawn pencil sketch stop-motion animation frame, graphite on textured cream drawing paper, widescreen 16:9. A single frame from a frame-by-frame paper animation: every line visibly hand-drawn in soft graphite with slight pencil wobble, light construction lines faintly showing through, gentle smudged graphite shading."
+- **Colour**: a pure graphite sketch flattens a character's markings into grey tones. Add "light coloured-pencil tinting laid over the graphite so colours read softly through the pencil texture", then map the character's colours explicitly: tinted areas as soft coloured pencil, dark areas as dense graphite, white areas "left as bare untinted cream paper with only a thin outline". Offer strict greyscale as the alternative.
+- **Rendering**: visible paper grain, soft graphite edges, the subject drawn sharp and detailed, the background looser and lighter; lighting as graphite shading and hatched cast shadows.
+- **Style anchor (video, before [REFERENCE USE])**: "Hand-drawn pencil sketch stop-motion animation: graphite on textured cream paper, visibly hand-drawn lines that slightly re-draw and flicker frame to frame in a gentle stepped stop-motion cadence, light coloured-pencil tinting, drawn, not rendered."
+- **[LIGHT AND IMAGE] closing line**: "Strictly hand-drawn graphite pencil on cream paper, stepped stop-motion cadence, paper grain visible throughout, stable composition and consistent character drawing."
+- **Motion**: one beat per segment (a few walking strides, a head turn, a stop and look), described as "each stride drawn in a gentle stepped stop-motion rhythm"; one slow tracking or push move.
+- **Guards**: no photorealism, no 3D rendering, no realistic fur or skin texture, no ink or paint look, no smooth digital lines, no live-action look; plus the usual anatomy and framing guards.
+
+### Pencil-over-Watercolour Picture Book (mixed media)
+- **Status**: start image verified in production; the user described the result as an old mid-century children's picture book. Clip prompt written to the same recipe; harden to the generated frame before chaining.
+- **Why it holds**: the Ghibli-style preset already pairs line-drawn characters with painted watercolour backgrounds, so this is a known-good pairing with graphite swapped for ink and a stepped cadence added.
+- **Medium phrase (image)**: "Mixed-media animation frame, widescreen 16:9: a hand-drawn graphite pencil character placed over a loosely painted watercolour background, in the manner of a frame-by-frame paper animation. Two distinct layers in two distinct media. The character is drawn only in soft graphite pencil with light coloured-pencil tinting, visibly hand-drawn with slight pencil wobble and faint construction lines. The background is painted only in transparent watercolour washes on textured cream paper, with soft bleeding edges, pigment granulation and no pencil hatching."
+- **Character layer**: "[Name] is drawn entirely in pencil, never painted", with the colour mapping from the pencil style above, and "crisp pencil lines with no watercolour bleed touching [her]".
+- **Background layer**: every element named in wash vocabulary ("warm grey and ochre washes", "blotted blue-green foliage", "very dilute blue wash fading to bare paper"), by image region. Anything the camera will reveal later (a house, a door) is also written in wash vocabulary in [SCENE] so it doesn't arrive as pencil.
+- **Lighting**: state how light reads on each layer: graphite shading on the character, a soft watercolour shadow pooled on the ground.
+- **Style anchor (video)**: "Mixed-media stop-motion animation: a graphite pencil character with light coloured-pencil tinting, hand-drawn lines that slightly re-draw and flicker frame to frame in a gentle stepped cadence, moving over a still, loosely painted watercolour background on textured cream paper, drawn and painted, not rendered."
+- **[LIGHT AND IMAGE] closing line**: "Strictly two media: [Name] in graphite pencil only, the background in watercolour wash only; painted details remain stable rather than boiling or crawling, paper grain visible throughout, consistent character drawing."
+- **Motion**: the watercolour layer behaves like a painted stop-motion backdrop ("the whole background behaves like a still painted backdrop and does not change"); a tracking move slides it past rather than animating it. One subject beat and one camera move per segment.
+- **Guards**: no watercolour on [Name], no pencil hatching in the background, no ink outlines, no boiling or crawling washes, no photorealism, no 3D rendering, no realistic fur or skin texture, no smooth digital lines, no live-action look.
+- **Naming**: describe the look (mid-century picture-book illustration, graphite figure over soft gouache and watercolour washes) rather than naming a book series or publisher.
 
 ## Style consistency across a video
 
