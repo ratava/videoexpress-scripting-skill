@@ -6,7 +6,7 @@ VideoExpress 3.5 image-to-video prompts are written as one paragraph of tagged s
 
 For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` trio once per segment (e.g. `[ACTION 0-4s]` … `[ACTION 4-10s]`), each with its own camera and lighting. `[NEGATIVES]` comes once at the end.
 
-**Optional first line: caption label.** Library tiles show the first words of the prompt. Start the pasted prompt with a short unique label ("Harbour Run clip four, the landing.") so every take is identifiable. Lipsync takes show VE's own caption instead.
+**Optional first line: caption label.** Library tiles show the first words of the prompt. Start the pasted prompt with a short unique label ("Harbour Run clip four, the landing.") so every take is identifiable. Lipsync HD takes show VE's own caption instead.
 
 **Custom Creative mode styles: style anchor before [REFERENCE USE].** For a style that isn't one of the ten presets, open the prompt with one sentence naming the medium and its look, ending "drawn and painted, not rendered" (or the equivalent for the medium). Without it, clips (especially with face references attached) drift toward realism. See `create-modes.md`.
 
@@ -37,9 +37,9 @@ For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` t
 - Sustained ambience (lapping water, wind, hum, whir) renders as a continuous noise floor, so avoid it unless the user wants it.
 - Pitched sounds (beeps, rising tones) can turn into music.
 - Naming music words ("no music, no score") didn't stop music appearing in testing; see SKILL.md section 6a.
-- Dialogue never goes here unless it's a mouthless character's voice. Lip-synced speech uses the Lipsync dialog.
+- Dialogue is not repeated here. A character's quoted line lives once, in [ACTION], with explicit lip movement and a voice description (SKILL.md 6b); this block refers to it ("his line above in his own on-camera voice, matching his lip movements exactly") without quoting it again, because VE counts quoted speech against the clip length. An off-camera or mouthless character's voice is the exception: write that voice and its one short line here.
 
-**[NEGATIVES]** — a single list starting "No cuts…" (or "Avoid: …"). Include: cuts, new characters, extra limbs, face or costume drift, style conversion (e.g. "no photorealistic conversion", "no transformation into clay or live action"), unwanted motion (walking, gestures, moving props), text, logos, watermark, plus project-specific guards (camera reversing, cloned crowd, darkening).
+**[NEGATIVES]** — a short tail, not the main control. State the intended behaviour positively in [IDENTITY / CONTINUITY], [SCENE] and [CAMERA] first (what stays still, what stays held, where the camera ends); then a single list starting "No cuts…" (or "Avoid: …") of the specific guards that matter for this clip. When the prompt nears the box limit of about 6,000 characters, this is the first section to trim. Include: cuts, new characters, extra limbs, face or costume drift, style conversion (e.g. "no photorealistic conversion", "no transformation into clay or live action"), unwanted motion (walking, gestures, moving props), text, logos, watermark, plus project-specific guards (camera reversing, cloned crowd, darkening).
 
 ## Hard-cut multi-shot variant
 
@@ -48,6 +48,10 @@ One generation can hold two or three shots joined by hard cuts. Declare it in [I
 ```
 [REFERENCE USE] … opening frame for this ten-second generation … [IDENTITY / CONTINUITY] <blocks>. This ten-second generation is a sequence of two shots joined by one hard cut, exactly as described below. [SCENE] <location>. [ACTION 0-4s] Shot one. From the very first frame, <action>. [CAMERA] One move only: <move>. [LIGHT AND IMAGE] <light>. <style line>. [ACTION 4-10s] Shot two. <action>, still <state> in the very last frame. [CAMERA] Hard cut to <framing>; the camera holds still. [LIGHT AND IMAGE] <light>. <style line>. [PRODUCTION SOUND] <transient sounds>. [NEGATIVES] No cuts other than the hard cut described, <guards>.
 ```
+
+## Quotation marks
+
+Inside a prompt, quotation marks are reserved for words a character speaks, each line quoted once. The engine lip-syncs and voices anything in quotes and counts it toward the dialogue-length check, so camera phrases, sound descriptions, signage and emphasis are written in plain prose. The quoted fragments in this file are for the reader; drop the quotes when pasting. Two speakers per clip at most; name the speaker right before the quote, delivery and gestures outside it.
 
 ## Digits
 
