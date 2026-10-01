@@ -58,8 +58,8 @@ The dialog's state can reset (after a page reload, or unexpectedly): prompts cle
 | Use Consistent Character | On for images and clips featuring the reference characters; **off** for shots with no characters (point of view, empty environments, inserts) |
 | Advanced Mode + Manual Video Length | On; set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
 | Video Only (No Sound) | Off when the prompt has a `[PRODUCTION SOUND]` block. It can end up ticked unexpectedly; verify every time |
-| Automatically enhance my video prompt | Never on |
-| Lipsync HD Video | On only for dialogue clips. Set the length **before** ticking it (ticking hides the length controls) and untick it for the next non-dialogue clip |
+| Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and caption label, and can refuse a clip whose dialogue it judges too long |
+| Lipsync HD Video | On only for dialogue clips using the Lipsync HD dialog (SKILL.md 6b, Method B). Off for dialogue written inside the multishot prompt, which uses the normal Manual Video Length. Set the length **before** ticking it (ticking hides the length controls) and untick it for the next clip |
 | Narration, Share to public gallery | Off unless the script calls for them. Check sharing before every Create Image and Create Video |
 
 Verify checkbox states and slider value by reading the page (a script on the visible inputs), not from a screenshot.

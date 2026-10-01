@@ -35,7 +35,7 @@ Path 1 is "Concept first" below. Path 2 is "Script first". Path 3 uses the Conce
 1. **Ask for the script** (paste, upload, or a link). A partial script is fine: an outline, a scene list, dialogue only.
 2. **Read it and extract everything it already decides:** characters, locations, props, dialogue lines, sound cues, runtime hints, tone. Flag gaps and contradictions.
 3. **Confirm the extracted decisions** in one summary card, then run only the decision rounds the script doesn't answer.
-4. **Adapt the script to VE:** break it into clips of 3–10 seconds, mark dialogue lines for Lipsync (each under 100 characters per speaker per clip), mark beats that need splitting, and flag anything on the "does badly" list with a suggested workaround.
+4. **Adapt the script to VE:** break it into clips of 3–10 seconds; for each dialogue clip choose the method (SKILL.md 6b): lines inside the multishot prompt when the clip also has action (budget about two seconds per short line plus pauses and set the manual length to fit), or Lipsync HD for pure talking heads (each line under 100 characters per speaker per clip); mark beats that need splitting, and flag anything on the "does badly" list with a suggested workaround.
 5. **Review round** on the adapted script and clip breakdown.
 6. **Build the Core Bible**, offer development tests, then the production plan.
 
@@ -68,7 +68,7 @@ Work through these in order. Each line is a card or part of one; skip anything a
 ### Sound and dialogue
 - **Production sound:** VE-generated effects per clip, no sound at all (Video Only), or sound added in the edit. If VE-generated, explain the transient-only rule and the unresolved music risk.
 - **Music:** none, a user-supplied track added in the edit, or a track the video is cut to. If cut to music, get the track, key timings and tempo first.
-- **Dialogue and lip-sync:** which clips have on-screen speaking (Lipsync HD, up to two speakers per clip, short lines), and which characters speak without a visible mouth (a voice written into production sound).
+- **Dialogue and lip-sync:** no more than two speakers in any one clip (a hard limit; split longer exchanges); which clips have on-screen speaking and by which method (lines in the multishot prompt when action shares the clip; Lipsync HD, up to two speakers, for pure talking heads), the set length of each dialogue clip, and which characters speak without a visible face (a voice written into production sound, never as [ACTION] dialogue).
 - **Narration or voice-over:** none, or VE's Narration Video, or recorded by the user. Get the narration text and pacing.
 - **Voices:** a voice description for each speaker (age, gender, pitch, accent, delivery), kept identical in every clip, plus the language.
 
