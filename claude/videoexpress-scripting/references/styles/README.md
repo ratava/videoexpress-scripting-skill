@@ -11,14 +11,44 @@ VideoExpress Creative mode offers preset styles (Create Mode) and renders custom
 | 8-Bit Pixel | Preset | retro pixel art, near-static scenes | `8-bit-pixel.md` |
 | Stop-Motion | Preset | miniature puppet | `stop-motion.md` |
 | Comic Book | Preset | noir graphic novel | `comic-book.md` |
-| Watercolor | Preset | storybook | `watercolor.md` |
+| Watercolor | Preset | storybook, watercolour and ink | `watercolor.md` |
 | Wool | Preset | needle-felt miniature | `wool.md` |
 | Paper Cut | Preset | layered diorama | `paper-cut.md` |
 | Ghibli-style | Preset | hand-drawn Japanese animation | `ghibli-style.md` |
 | Low-Poly | Preset | faceted CG, suits dynamic action | `low-poly.md` |
 | Cinematic Photoreal | Custom | default realistic look | `cinematic-photoreal.md` |
-| Pencil Sketch Stop-Motion | Custom | graphite on paper | `pencil-sketch-stop-motion.md` |
-| Pencil-over-Watercolour Picture Book | Custom | mixed media | `pencil-over-watercolour-picture-book.md` |
+| Pencil Sketch | Custom | coloured pencil over graphite | `pencil-sketch-stop-motion.md` |
+| Pencil and Watercolour Picture Book (Little Golden Book) | Custom | pencil line and wash throughout | `pencil-over-watercolour-picture-book.md` |
+| Charcoal and Chalk | Custom | dark moody figures on toned paper | `charcoal-and-chalk.md` |
+| Ink and Wash | Custom | brush painting, empty paper | `ink-and-wash.md` |
+| Linocut | Custom | two-colour relief print, folk art | `linocut.md` |
+| Gouache Picture Book | Custom | flat opaque mid-century paint | `gouache-picture-book.md` |
+| Risograph | Custom | two spot inks, halftone, zine | `risograph.md` |
+| Chalkboard | Custom | chalk diagrams on dark green | `chalkboard.md` |
+| Engraving | Custom | sepia hatching, antique plates | `engraving.md` |
+| Oil Painting | Custom | impasto, old-master lighting | `oil-painting.md` |
+| Embroidery | Custom | stitched thread on linen | `embroidery.md` |
+| Tissue-Paper Collage | Custom | torn painted paper layers | `tissue-paper-collage.md` |
+| Blueprint | Custom | white line on cyanotype, extrude not rotate | `blueprint.md` |
+| Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` |
+| Acrylic | Custom | bold saturated thick paint | `acrylic.md` |
+| Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` |
+| Mosaic | Custom (grade pending) | glass tesserae, near-static | `mosaic.md` |
+| Stained Glass | Custom (grade pending) | leaded window, light-driven motion | `stained-glass.md` |
+| Origami | Custom (grade pending) | folded paper on a tabletop | `origami.md` |
+| Nihonga | Custom (grade pending) | mineral pigment on gold leaf | `nihonga.md` |
+| Suibokuga | Custom (grade pending) | sumi-e with kasure and nijimi | `suibokuga.md` |
+| Hybrid: Pencil on Gouache | Custom hybrid | drawn character, painted set | `hybrid-pencil-on-gouache.md` |
+| Hybrid: Charcoal on Watercolour | Custom hybrid | dark figure, wash landscape | `hybrid-charcoal-on-watercolour.md` |
+| Hybrid: Clay on Painted Set | Custom hybrid | puppet before a flat backdrop | `hybrid-clay-on-painted-set.md` |
+| Hybrid: Felt on Paper | Custom hybrid | wool figure in a cut-paper diorama | `hybrid-felt-on-paper.md` |
+| Hybrid: Pixels on Paint | Custom hybrid | sprite over painted scenery | `hybrid-pixels-on-paint.md` |
+| Anime: Modern Digital TV | Custom | clean line, soft gradients, bloom | `anime-modern-digital.md` |
+| Anime: Shōjo | Custom | fine line, luminous eyes, screentone | `anime-shojo.md` |
+| Anime: 1990s Cel | Custom | bold ink, hard cel, film grain | `anime-1990s-cel.md` |
+| Anime: Shōnen Action | Custom | thick line, speed lines, one fast beat | `anime-shonen-action.md` |
+| Anime: Cyberpunk 90s Cel | Custom | muted teal, rain, dense painted city | `anime-cyberpunk-90s-cel.md` |
+| Anime: Mecha | Custom | hard-surface cel, hangar | `anime-mecha.md` |
 
 Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep each sheet short; anything shared by all styles belongs in this file, not in a sheet.
 
