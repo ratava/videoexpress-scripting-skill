@@ -52,7 +52,7 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Tone and mood:** e.g. tense, playful, epic, calm, heartfelt, eerie.
 
 ### Look
-- **Production art style:** one of the ten Create Mode presets, cinematic photoreal, or a custom Creative mode style described in the prompt (see `create-modes.md`). Offer three that suit the concept, each with a one-line note on its strengths and risks. Custom styles need a style anchor, and are pulled toward realism by face references.
+- **Production art style:** a Create Mode preset, cinematic photoreal, or a custom Creative mode style described in the prompt (index in `styles/README.md`). Offer three that suit the concept, each with a one-line note on its strengths and risks. Custom styles need a style anchor, and are pulled toward realism by face references.
 - **Colour palette and lighting mood:** e.g. muted cool with warm accents, bright and saturated, golden hour, neon night. Night and neon scenes need brightness rules.
 - **Camera language:** e.g. calm and steady, handheld energy, sweeping moves, fixed side-on staging. Suggest steady single moves for reliability.
 - **Text on screen:** titles, captions or signage. VE renders text in footage badly, so titles and captions should be added with VE's Text Animations or Automatic Captions tools rather than generated in the clip.
@@ -132,4 +132,4 @@ After the tests, update the Bible with any wording that worked, since a prompt t
 3. **Script and clip breakdown:** the scene table, then each clip with its length, fresh or chained start, dialogue (speaker and line), sound cues and role (establishing, action, dialogue, payoff).
 4. **Production plan:** start images to generate, takes per clip, the generation budget, the test results, and the order of work.
 
-The user signs off each output. Then production moves to the prompt pack (SKILL.md sections 1–9) and, if Claude operates VE, `browser-workflow.md`.
+The user signs off each output. Then production moves to the prompt pack (SKILL.md and the references it routes to) and, if Claude operates VE, `browser-workflow.md`.

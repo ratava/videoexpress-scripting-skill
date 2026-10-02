@@ -1,0 +1,38 @@
+# The bible: character, outfit and location blocks
+
+Read when writing or revising character, outfit or location blocks, start-image prompts, Consistent Character references, or non-human characters.
+
+Write these once, paste them **word for word** into every image and video prompt that features them. Never paraphrase — paraphrase is drift.
+
+**Character core block** (identity, constant across scenes): age range, build, skin, face, eye colour, expression baseline, hair (cut, colour, how it's worn — use "always"), signature accessory (e.g. a hat, glasses or jewellery) with material, shape and how it's worn. Give the character a short unique name used in every prompt.
+
+**Outfit blocks** (one per scene): every garment with colour, material, cut, neckline, length, fastenings, and exactly which body parts are bare.
+- **Describe asymmetric items per side, positively and separately.** "Her right wrist wears a slim silver watch. Her left wrist is bare." Adjacent mentions ("a watch and a bracelet on her wrists") bleed into each other.
+- Prefer **snug, flat, close-fitting** wording for small accessories; "fluffy", "thick" or a second mention of the same item invites extra fabric.
+- If the user prefers a look that emerged in a generation, rewrite the block to match that frame rather than fighting it.
+
+**Location blocks** (one per environment): describe the whole space — floor, walls or railings, structures, skyline or ceiling, light sources, atmosphere, crowd — **including what is out of frame at the start**, so camera moves reveal defined space instead of invented space. Add sky/weather direction rules here if clouds are present ("any clouds always travel directly away from the camera toward the horizon, never sideways").
+
+**Crowd rule**: crowds need their own look distinct from the lead (different clothing), "a varied mix of people with different faces, hairstyles and builds", and "only [Name] wears [signature accessory]". For scale, say "every person a real person at true human scale with natural proportions", "the nearest people are the same size as [Name]", "the crowd recedes naturally with perspective". Avoid wording that invites mixed scales: a raised platform lifting the lead "high above", "thousands", "shrinking into tiny figures".
+
+**Reference images**: supply a face/hair reference and an outfit reference (a clean frame of the current outfit) with every clip, and an environment reference image when a move will reveal environment seen earlier. State each role explicitly in [REFERENCE USE].
+
+**Consistent Character references (VE 3.5)**:
+- Reference Photo (slot 1) holds the main character; Reference Photo 2 holds a second character. Both are picked from the library (Media Library → My AI Images), so build them first as clean full-length reference images on a plain grey background.
+- **Slot 2 copies more than identity.** An in-scene frame used as a style reference in slot 2 also copies its pose and props (e.g. a weapon held in the hands when the prompt says slung). Use slot 2 only for a second character's reference sheet.
+- **References pull toward realism.** Attaching a face reference can shift a stylised clip toward a realistic render. Counter it with the style anchor at the start of the prompt and anti-realism negatives (see light-sound-dialogue.md, Light and look), not by dropping the reference.
+- **References revive features VE used to ignore.** A feature written in the character block that never rendered before (a glowing facial line, a tattoo) can suddenly appear, sometimes multiplied, once references are attached. Remove unwanted features from the block entirely and state the positive: "Her face is plain, unmarked skin with no lines, markings or glowing lights."
+- **Turn Consistent Character off for shots with no characters** (empty environments, point-of-view shots, insert shots). With it on, VE puts the reference character in the frame.
+- With Consistent Character on, VE may rewrite the image prompt before generating, even with auto-enhance unticked. Check the image prompt box after generation and report any rewrite.
+
+**Match prompts to the image that worked.** When a start-image prompt produces the look you want, reuse its exact character, outfit and location wording in the video prompts for that sequence, rather than the bible's older wording. A mismatch between the frame and the text (different hair side, garment names, a feature that isn't drawn) makes the video drift toward the text.
+
+**Props: describe exactly how the frame shows them.** If the start image shows a bag hanging from one shoulder and resting at the hip, write that, not "a backpack on her back". The model reconciles the frame and the text by moving the prop, often mid-clip.
+
+**Non-human and mechanical characters**:
+- **Humanoid designs generate far more reliably** than multi-legged or unusual body plans. Leg and limb counts are ignored, and bodies with many thin limbs lose consistency between frames. Prefer two arms and two legs with a distinctive head, silhouette and weapon.
+- **Describe complex limbs and weapons by structure, joint by joint**, in the order they attach: "a rounded shoulder plate over an armoured upper arm and a large cylindrical elbow joint; from the elbow down there is no forearm and no hand, the forearm is the weapon itself, a boxy housing leading into a cluster of barrels". Naming the part ("arm cannon", "rotary gun") alone lets the model draw a hand holding a gun.
+- **Mechanical limbs revert to hands during gestures.** When a character with a weapon-arm yells, points or raises an arm, the weapon can morph into a fist. Give gestures to the other limb ("raising its left fist while its right-arm weapon stays pointed at the ground") and add "the weapon keeps exactly the same shape, never turning into a hand or fist".
+- VE adds generic gun furniture (carry handles, grips, top rails). Negate it explicitly: "nothing mounted on top: no carry handle, no top handle, no grip".
+
+**Start images**: write each start-image prompt as a **self-contained** prompt with the full character, outfit and location blocks inlined — no "derived from reference X" split prompts. Put the subject **mid-action** if the clip must start moving (a still pose in the start frame makes the model hesitate). Always include the character's head. Derive later start images from the best frame of the character, never from a drifted frame.
