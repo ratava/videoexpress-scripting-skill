@@ -1,6 +1,9 @@
 ---
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
+metadata:
+  version: "2.2"
+  author: Brent Wesley
 ---
 
 # VideoExpress Scripting
