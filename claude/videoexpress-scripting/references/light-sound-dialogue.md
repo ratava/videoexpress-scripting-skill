@@ -1,0 +1,60 @@
+# Light, sound, dialogue and special shots
+
+Read when writing [LIGHT AND IMAGE] or [PRODUCTION SOUND], any clip with speech, or point-of-view / HUD shots.
+
+## Light and look
+
+- **Custom Creative mode styles need a style anchor at the very start of the video prompt**, before [REFERENCE USE], or clips drift toward realism: "Two-dimensional hand-drawn anime cel animation in the style of a late-1990s [genre] anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered." Add "strictly two-dimensional hand-drawn … cel art" to each [LIGHT AND IMAGE], and "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting" to the negatives. Also add "including its drawing style" to the opening-frame sentence in [REFERENCE USE].
+- A detailed, specific image prompt (every garment, prop and background element named) produces better style fidelity than a short one. When one start image nails the style, reuse its wording.
+- End every [LIGHT AND IMAGE] with the same style line (e.g. "Crisp cinematic photorealistic look, vivid saturated colour, natural skin and fabric detail, sharp focus, stable colour and exposure throughout.") or the Create Mode style line from `styles/README.md`.
+- **Lasers, neon, smoke and night scenes drift dark.** Rule: effects add light, never replace it. Keep a key light on the subject ("a soft key light keeps her face and outfit clearly lit"), make smoke "pale, luminous", give the subject a physical light source (a spotlight from above) and restate brightness in the final segment. Never chain from a darkened frame.
+- For sky/time transitions, allow the sky to change but state "the subject's lighting stays stable".
+- Sun paths and cloud directions must be stated explicitly and consistently if they matter (e.g. the sun rises on the left, sets on the right; clouds travel directly away from the camera).
+
+## Sound ([PRODUCTION SOUND])
+
+VE 3.5 generates audio with the clip. The prompt wording controls it only partly.
+- **Transient sounds only.** Name short, distinct, unpitched sounds (clicks, footsteps, slaps, thuds, single shots, impacts, crashes) and say "with complete silence before, between and after them". Sustained sounds (whir, hum, drone, rumble, wind, rain, a rising tone) render as a noise floor across the whole clip.
+- **No ambient beds.** Add "no city hum, no traffic, no ambient city sound, no background noise, no hiss, no static, no rain, no wind noise, no hum, no drone" even for outdoor or city scenes. Visible rain or wet streets don't need rain sound.
+- **Avoid pitched sounds.** Beeps, chimes, rising or descending tones read as notes and can grow into music.
+- **Fill the clip.** Long stretches with no specified sound invite the model to fill them, usually with music. Spread concrete sounds across the whole duration.
+- **Tie each sound to the action that makes it and close with what is heard in total.** "A soft clink as the cup meets the saucer; two footsteps on stone as he steps in" rather than a detached list. End the block positively: "Only his voice, the clink of the cup and the footsteps are heard" (or "a silent soundtrack apart from…"). This positive close is the house way of keeping music out; use it instead of, or ahead of, music prohibitions.
+- **Heavy weapons:** describe weight, low end, rhythm and space, not the calibre: "fast, fully automatic bursts from a heavy battle rifle, each shot a deep, booming, full-bodied report with a powerful low-end punch, echoing off the tall buildings". Never "sharp", "crisp", "pop" or "crack" for gunshots; they produce thin, small-calibre sounds. Give each weapon its own palette (fast bursts vs slow single booms, each preceded by a distinct mechanical sound).
+- **Music can appear regardless of negatives.** In testing, one climax clip (charge-up, a single decisive shot, an emotional close-up, and a flash to white) had music in every take. That held with the music words removed, with the ending changed, and from a fresh start image, while ten other clips in the same sequence were clean. Naming music words in the sound block ("no music, no score, no soundtrack") didn't help and may prime it. The cause wasn't isolated. If music persists, run a control take of a previously clean prompt to check whether VE itself has changed, and treat Video Only (No Sound) as the fallback only when the user can add sound in the edit.
+- A generated voice can be written into [PRODUCTION SOUND] for a character with no mouth ("a deep, distorted mechanical voice booming from behind its visor: '…'"). Keep it to one short line.
+
+## Dialogue and lipsync
+
+Two ways to get lip-synced speech. **Prefer the multishot-prompt method whenever the clip has anything to do besides talk.** Keep Lipsync HD for pure talking-head clips where its automatic timing is worth more than action control.
+
+**Method A — dialogue inside the multishot prompt (preferred when action and speech share a clip).** Confirmed working with Consistent Character on: a quoted line in [ACTION] renders as on-camera speech with the lips, jaw and beard moving in sync, inside a normal 3–10 second generation, alongside actions, hard cuts and camera moves. Lipsync HD Video stays **unticked**.
+- **Write the line in [ACTION] with explicit mouth movement and a voice**: `he speaks aloud, his lips, jaw and beard moving in sync with every word, in a warm relaxed French accent, a calm mid-deep slightly gravelly voice: "Bad coffee."` [PRODUCTION SOUND] then says "Marcus's line above in his own on-camera voice, matching his lip movements exactly" **without repeating the words.**
+- **Quote each line exactly once, and quote nothing else.** Everything in quotation marks is read as speech and counted by VE's dialogue-length check ("Your dialogues are too long and won't fit in the generated video"). Quoting a line in both [ACTION] and [PRODUCTION SOUND] trips it, quoted camera or sound phrases trip it, and so does too much speech for the length. When the check fires, the clip has not been generated; fix the prompt rather than retrying.
+- **Two speakers per clip, maximum.** Name the speaker immediately before the quote, keep delivery, gesture and pauses outside the quotes, and describe the other speaker listening during the turn. Each spoken line may sit on its own line in the prompt; the engine accepts both that and in-paragraph quotes.
+- **End with a hold.** After the last line, give a brief closing action or a held look so the clip doesn't end mid-word and the chain frame has the mouth closed.
+- **No automatic time calculation.** Lipsync HD sizes the clip to the audio; Method A does not. Design each prompt for a set length (3–10 s, or the 5 s default), set the Manual Video Length slider to match, and budget roughly two seconds per short line plus a beat for each pause, leaving room for the actions. Ten seconds fits a short action plus two or three short lines, or four short lines with almost no action. Too long for the content and VE pads with invented business (hallucinated gestures, extra movement); too short and the last line or action is cut.
+- **Prompt box limit is about 6,000 characters.** Trim repeated [LIGHT AND IMAGE] text and the negatives list first.
+- **Nothing in the mouth and nothing edible in the hands at the start of a dialogue clip.** A sip of coffee or food held in a hand in the clip before, or in the chain frame, renders as chewing from the first frame of the next clip and the chewing persists under the lines. Stripping every eating/chewing word from the prompt did not fix it; the frame did. Put sips and bites in their own clips after the dialogue, keep food on the plate at every chain point, and check the chain frame has the mouth closed, not mid-word.
+- **Every speaker needs a visible face.** A line given to a character whose head is out of frame (a waiter seen from the shoulders down) is dropped in every take. For a faceless speaker, either bring the face into frame for the line or write the voice into [PRODUCTION SOUND] as an off-camera voice (see the Sound section) rather than as [ACTION] dialogue.
+- **Voices bleed like adjectives.** With two speakers in a clip, or a setting that implies a language (a French café, a French line earlier), the lead's accent drifts toward the other speaker's; a one-word "American accent" was not enough. Describe each voice specifically (age, pitch, texture, accent, pace), state the contrast between speakers, and repeat the same description in every clip. If a drifted accent turns out to be wanted, adopt it into the character block so it stops drifting.
+- **Hard-cut coverage works with dialogue**: a waist-up action shot, then "Hard cut to a medium close-up" for the lines, in one generation. The last shot's framing is what the next clip chains from, so end on the framing the next clip needs.
+- Keep the caption label as the first words so the tile is identifiable (Method A tiles show the prompt, unlike Lipsync HD tiles).
+
+**Method B — Lipsync HD dialog.** Automatic timing, up to two actors, but little control over action under the lines.
+- Speech never goes in the main Video and Audio Prompt when this method is used; see `browser-workflow.md` for the dialog.
+- **Describe every speaker in the dialog's own Video Prompt**: "Actor 1 is [description], [position], [action while speaking], in a [voice description]. Actor 2 is [description], [action], answers in a [voice]." Include each actor's actions while they speak (turning to face the other, raising a weapon).
+- **Each actor's script is short** (under 100 characters) and entered in its own field (Actor 1 Script; Add Actor 2 → Actor 2 Script). A two-actor exchange in one generation works, including a helmeted or mouthless character as one of the actors.
+
+**Both methods:**
+- **Speaking shots** are medium close-ups or medium shots with the speaker's face visible. In a multi-shot generation, put the line in a shot framed for it.
+- **Reaction first, then the line.** The speaker should turn to face, or aim at, whoever they address; say so explicitly ("she turns to face the figure behind her… then answers"). Otherwise VE keeps the previous action (walking toward the camera) under the line.
+- Keep the same voice description for a character in every clip.
+
+## Point-of-view, HUD and special-vision shots
+
+- **Point-of-view shots show only what the viewer would see.** From inside a helmet, only the tip of a weapon pokes into the frame; describe exactly which part is visible and where ("in the bottom right corner, only the very tip of the weapon pokes up into the frame, pointing straight ahead"), and that nothing else of the arm is visible.
+- **Put foreground objects in a named image region** ("well to the right of centre; the centre and left of the view are clear"). Otherwise VE centres them.
+- **Tint and framing:** "the entire picture is evenly tinted deep translucent red from edge to edge, framed by the dark curved edges of the helmet interior" worked. A partial tint needs "from edge to edge".
+- **HUD overlays and numerals can work in stills** when asked for explicitly and simply ("a thin vertical bar graph on the right edge; a few small plain white numerals near the top and bottom edges; flat, thin, white, never covering the centre"). Warn that digits can flicker or morph in motion.
+- **See-through-wall effects (thermal/FLIR silhouettes) are unreliable.** The silhouette lands in front of the cover or on the open ground. Prefer keeping the hidden character out of the shot.
+- **Turn Consistent Character off** for point-of-view and empty-environment shots.

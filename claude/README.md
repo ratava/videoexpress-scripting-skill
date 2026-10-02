@@ -18,7 +18,11 @@ videoexpress-scripting/
 └── references/
     ├── project-intake.md            design-phase question system
     ├── multishot-template.md        prompt structure, templates, example
-    ├── create-modes.md              Create Mode style sheets and custom styles
+    ├── bible.md                     character, outfit and location blocks, references, start images
+    ├── camera-and-motion.md         timing, chaining, camera and motion rules
+    ├── light-sound-dialogue.md      light, production sound, dialogue and lipsync, POV shots
+    ├── prompt-rules.md              how the engine reads a prompt; failure → cause → rule table
+    ├── styles/                      one sheet per Create Mode or custom style, with an index
     └── browser-workflow.md          driving VideoExpress with Claude in Chrome
 ```
 

@@ -1,0 +1,72 @@
+# VE Creative mode styles
+
+VideoExpress Creative mode offers preset styles (Create Mode) and renders custom styles described entirely in the prompt. **Read this file, then open only the style sheet you need.** Each sheet gives the medium phrase, style vocabulary, motion cadence and style-guard negatives for one style.
+
+## Index
+
+| Style | Type | Fits | File |
+|---|---|---|---|
+| 3D Animation | Preset | stylised feature-film CG | `3d-animation.md` |
+| Claymation | Preset | sculpted clay, handmade and tactile | `claymation.md` |
+| 8-Bit Pixel | Preset | retro pixel art, near-static scenes | `8-bit-pixel.md` |
+| Stop-Motion | Preset | miniature puppet | `stop-motion.md` |
+| Comic Book | Preset | noir graphic novel | `comic-book.md` |
+| Watercolor | Preset | storybook | `watercolor.md` |
+| Wool | Preset | needle-felt miniature | `wool.md` |
+| Paper Cut | Preset | layered diorama | `paper-cut.md` |
+| Ghibli-style | Preset | hand-drawn Japanese animation | `ghibli-style.md` |
+| Low-Poly | Preset | faceted CG, suits dynamic action | `low-poly.md` |
+| Cinematic Photoreal | Custom | default realistic look | `cinematic-photoreal.md` |
+| Pencil Sketch Stop-Motion | Custom | graphite on paper | `pencil-sketch-stop-motion.md` |
+| Pencil-over-Watercolour Picture Book | Custom | mixed media | `pencil-over-watercolour-picture-book.md` |
+
+Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep each sheet short; anything shared by all styles belongs in this file, not in a sheet.
+
+## Image-prompt recipe (all styles)
+
+The official image prompts are long, precise and ordered. Follow this order:
+
+1. **Medium and format first**: the style's medium phrase + "still, widescreen 16:9" (e.g. "Cinematic high-end 3D animated feature film still, widescreen 16:9").
+2. **Subject, placement and framing**: who, where in the frame ("slightly left of center", "in the right third"), how much of them ("waist-up", "full length", "from the top of her hood to just below her knees"), pose and gaze, expression.
+3. **Face details**: shape, eyes, brows, nose, cheeks, distinguishing marks.
+4. **Hair, accessories, wardrobe**: each item with colour, material, wear and fastenings.
+5. **Environment by image region**: foreground, left, right, background, sky ("Below her on the left… Behind her on the upper right…").
+6. **Lighting**: key direction and colour, fill, rim ("soft warm light from the front left, balanced by cool twilight and subtle rim light").
+7. **Material and render vocabulary** for the style, depth of field, what is sharp and what is soft.
+8. **Mood** in a few words.
+9. **Closing guards**: "No text or watermark", plus readability ("keep the mole, cloth, flowers and rosettes clearly readable"), and style exclusions ("no smooth photographic surfaces").
+
+**Left and right**: when a body side and an image side differ, say both — "a thick braid hanging over her right shoulder on the left side of the image". This avoids mirrored accessories.
+
+**Text-like objects** (signs, marquees, screens): describe them as shapes and light "with no legible lettering".
+
+## Video-prompt pattern (all styles)
+
+Every official video prompt uses the multishot tags (see `../multishot-template.md`) and the same restraint:
+
+- **Short, single-beat clips.** The examples are three-second shots with **one small action** (a head tilt, a chin lowering, one wipe, one rowing pull, one running stride) that then settles or holds.
+- **One camera move**, usually a slow push: "One move only: slow steady push in." Subject motion and camera motion are kept separate.
+- **Explicit holds**: what stays planted or still is named ("his feet and hands remain in place", "everything else stays structurally stable").
+- **Style-specific stability** in [LIGHT AND IMAGE]: materials stay tactile, painted details don't boil, pixels don't crawl, cadence matches the medium.
+- **Quiet, specific [PRODUCTION SOUND]**: one or two sounds, "no speech or music". In production, prefer short transient sounds with silence between them over sustained ambience, which renders as background noise (see `../light-sound-dialogue.md`, Sound).
+- **Negatives guard the style** as well as anatomy: no conversion to another medium.
+
+For longer clips in any style, keep the same restraint per segment: one clear beat and one camera move per [ACTION] segment.
+
+### Custom styles (not a preset)
+
+Creative mode also renders styles described entirely in the prompt, such as cel-shaded anime or ink-and-wash. What made them hold:
+- **Image prompt:** open with the medium ("Cinematic hand-drawn [genre] anime film still, widescreen 16:9."), then describe every garment, prop and background element in detail, and close with the look ("Clean ink outlines, two-tone cel shading with hard shadow edges, [palette], richly painted detailed background, mature realistic character proportions."). A long, specific prompt held the style far better than a short one.
+- **Video prompt:** open with a style anchor sentence before [REFERENCE USE] ("Two-dimensional hand-drawn anime cel animation in the style of a late-1990s … anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered."). Say "including its drawing style" in the opening-frame sentence, and end each [LIGHT AND IMAGE] with "Strictly two-dimensional hand-drawn … cel art, clean ink outlines, … stable line art and colour throughout."
+- **Negatives:** "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting".
+- **Consistent Character pulls toward realism.** A clip generated with a face reference in slot 1 came out far more realistic until the style anchor was added. Keep the anchor in every clip once references are in use.
+- **Reusing a good image's exact prompt** (with only the needed changes) beat rewriting the look from scratch.
+- **Mixed media are a distinct risk.** When a style uses two media (a drawn character over a painted background), the model tends to unify them: the character picks up washes or the background turns into hatching. Name the medium per layer in every prompt, state the contrast as a rule ("strictly two media: … only, … only"), and negate each cross-over explicitly. The sheets marked "custom, tested in production" are worked examples.
+
+Custom styles that have held in production have their own sheets (marked "custom, tested in production" in the index); use them like the preset sheets, keeping the medium phrase, video style anchor and [LIGHT AND IMAGE] closing line identical in every prompt of a scene. Their status notes record how far each has been verified.
+
+## Style consistency across a video
+
+- Pick one style per scene and keep the medium phrase and style line identical in every prompt of that scene.
+- A style drift (e.g. stylised to photoreal) mid-chain can be accepted as a deliberate transition, but then update every later prompt to the new style rather than fighting it.
+- When switching styles between scenes, start the new scene fresh from a start image in the new style; don't chain across a style change.

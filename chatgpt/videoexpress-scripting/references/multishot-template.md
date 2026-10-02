@@ -8,7 +8,7 @@ For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` t
 
 **Optional first line: caption label.** Library tiles show the first words of the prompt. Start the pasted prompt with a short unique label ("Harbour Run clip four, the landing.") so every take is identifiable. Lipsync HD takes show VE's own caption instead.
 
-**Custom Creative mode styles: style anchor before [REFERENCE USE].** For a style that isn't one of the ten presets, open the prompt with one sentence naming the medium and its look, ending "drawn and painted, not rendered" (or the equivalent for the medium). Without it, clips (especially with face references attached) drift toward realism. See `create-modes.md`.
+**Custom Creative mode styles: style anchor before [REFERENCE USE].** For a style that isn't a preset, open the prompt with one sentence naming the medium and its look, ending "drawn and painted, not rendered" (or the equivalent for the medium). Without it, clips (especially with face references attached) drift toward realism. See `styles/README.md`.
 
 ## What each section does
 
@@ -36,7 +36,7 @@ For longer clips, repeat the `[ACTION]` → `[CAMERA]` → `[LIGHT AND IMAGE]` t
 **[PRODUCTION SOUND]** — the scene's generated audio. List short, distinct, unpitched sounds in order and fill the clip's duration: "One heavy boot thud on stone, then one short metallic click as she picks up the case, with complete silence before, between and after them." End with an exclusion tail: "Close-miked sound effects only. No ambient hum, no traffic, no ambient sound, no background noise, no hiss, no static, no rain, no wind noise, no hum, no drone, no speech, no voices."
 - Sustained ambience (lapping water, wind, hum, whir) renders as a continuous noise floor, so avoid it unless the user wants it.
 - Pitched sounds (beeps, rising tones) can turn into music.
-- Naming music words ("no music, no score") didn't stop music appearing in testing; see SKILL.md section 6a.
+- Naming music words ("no music, no score") didn't stop music appearing in testing; see `light-sound-dialogue.md`, Sound.
 - Dialogue is not repeated here. A character's quoted line lives once, in [ACTION], with explicit lip movement and a voice description (SKILL.md 6b); this block refers to it ("his line above in his own on-camera voice, matching his lip movements exactly") without quoting it again, because VE counts quoted speech against the clip length. An off-camera or mouthless character's voice is the exception: write that voice and its one short line here.
 
 **[NEGATIVES]** — a short tail, not the main control. State the intended behaviour positively in [IDENTITY / CONTINUITY], [SCENE] and [CAMERA] first (what stays still, what stays held, where the camera ends); then a single list starting "No cuts…" (or "Avoid: …") of the specific guards that matter for this clip. When the prompt nears the box limit of about 6,000 characters, this is the first section to trim. Include: cuts, new characters, extra limbs, face or costume drift, style conversion (e.g. "no photorealistic conversion", "no transformation into clay or live action"), unwanted motion (walking, gestures, moving props), text, logos, watermark, plus project-specific guards (camera reversing, cloned crowd, darkening).
