@@ -35,11 +35,11 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` | [▶](https://youtu.be/mIMmMPOeFqI) |
 | Acrylic | Custom | bold saturated thick paint | `acrylic.md` | [▶](https://youtu.be/DSxSGc_ih2M) |
 | Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
-| Mosaic | Custom (grade pending) | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
-| Stained Glass | Custom (grade pending) | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
-| Origami | Custom (grade pending) | folded paper on a tabletop | `origami.md` | [▶](https://youtu.be/OEARd_3Dcm4) |
-| Nihonga | Custom (grade pending) | mineral pigment on gold leaf | `nihonga.md` | [▶](https://youtu.be/L-0-JdbrYXw) |
-| Suibokuga | Custom (grade pending) | sumi-e with kasure and nijimi | `suibokuga.md` | [▶](https://youtu.be/RA3Lk-nwoW8) |
+| Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
+| Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
+| Origami | Custom | folded paper on a tabletop | `origami.md` | [▶](https://youtu.be/OEARd_3Dcm4) |
+| Nihonga | Custom | mineral pigment on gold leaf | `nihonga.md` | [▶](https://youtu.be/L-0-JdbrYXw) |
+| Suibokuga | Custom | sumi-e with kasure and nijimi | `suibokuga.md` | [▶](https://youtu.be/RA3Lk-nwoW8) |
 | Hybrid: Pencil on Gouache | Custom hybrid | drawn character, painted set | `hybrid-pencil-on-gouache.md` | [▶](https://youtu.be/wnD7Ux3G8B8) |
 | Hybrid: Charcoal on Watercolour | Custom hybrid | dark figure, wash landscape | `hybrid-charcoal-on-watercolour.md` | [▶](https://youtu.be/HDWhMq59pGU) |
 | Hybrid: Clay on Painted Set | Custom hybrid | puppet before a flat backdrop | `hybrid-clay-on-painted-set.md` | [▶](https://youtu.be/tSFelICuM9I) |
