@@ -4,21 +4,53 @@ VideoExpress Creative mode offers preset styles (Create Mode) and renders custom
 
 ## Index
 
-| Style | Type | Fits | File |
-|---|---|---|---|
-| 3D Animation | Preset | stylised feature-film CG | `3d-animation.md` |
-| Claymation | Preset | sculpted clay, handmade and tactile | `claymation.md` |
-| 8-Bit Pixel | Preset | retro pixel art, near-static scenes | `8-bit-pixel.md` |
-| Stop-Motion | Preset | miniature puppet | `stop-motion.md` |
-| Comic Book | Preset | noir graphic novel | `comic-book.md` |
-| Watercolor | Preset | storybook | `watercolor.md` |
-| Wool | Preset | needle-felt miniature | `wool.md` |
-| Paper Cut | Preset | layered diorama | `paper-cut.md` |
-| Ghibli-style | Preset | hand-drawn Japanese animation | `ghibli-style.md` |
-| Low-Poly | Preset | faceted CG, suits dynamic action | `low-poly.md` |
-| Cinematic Photoreal | Custom | default realistic look | `cinematic-photoreal.md` |
-| Pencil Sketch Stop-Motion | Custom | graphite on paper | `pencil-sketch-stop-motion.md` |
-| Pencil-over-Watercolour Picture Book | Custom | mixed media | `pencil-over-watercolour-picture-book.md` |
+Demo clips: every style has a ten-second test clip (title held, then one beat). Playlist: https://www.youtube.com/playlist?list=PLGPXytdy02o0 · Master reel, existing presets: https://youtu.be/FGaEioxNt3Y · Master reel, v2.2 new styles: https://youtu.be/HKx2000WEyc
+
+| Style | Type | Fits | File | Demo |
+|---|---|---|---|---|
+| 3D Animation | Preset | stylised feature-film CG | `3d-animation.md` | [▶](https://youtu.be/qQcF8onzAGw) |
+| Claymation | Preset | sculpted clay, handmade and tactile | `claymation.md` | [▶](https://youtu.be/Xj4JVJzqC3o) |
+| 8-Bit Pixel | Preset | retro pixel art, near-static scenes | `8-bit-pixel.md` | [▶](https://youtu.be/QHEKdrBPIzM) |
+| Stop-Motion | Preset | miniature puppet | `stop-motion.md` | [▶](https://youtu.be/ouCBoxXL2hI) |
+| Comic Book | Preset | noir graphic novel | `comic-book.md` | [▶](https://youtu.be/l-zHzzmK9uw) |
+| Watercolor | Preset | storybook, watercolour and ink | `watercolor.md` | [▶](https://youtu.be/6wOwP6qJa0w) |
+| Wool | Preset | needle-felt miniature | `wool.md` | [▶](https://youtu.be/YwhmdIJFs48) |
+| Paper Cut | Preset | layered diorama | `paper-cut.md` | [▶](https://youtu.be/fDcuHA-oaPQ) |
+| Ghibli-style | Preset | hand-drawn Japanese animation | `ghibli-style.md` | [▶](https://youtu.be/9T50VTI5Tec) |
+| Low-Poly | Preset | faceted CG, suits dynamic action | `low-poly.md` | [▶](https://youtu.be/aqwHuPWymaI) |
+| Cinematic Photoreal | Custom | default realistic look | `cinematic-photoreal.md` | [▶](https://youtu.be/pe98WCh_HWo) |
+| Pencil Sketch | Custom | coloured pencil over graphite | `pencil-sketch-stop-motion.md` | [▶](https://youtu.be/dareBG93Kko) |
+| Pencil and Watercolour Picture Book (Little Golden Book) | Custom | pencil line and wash throughout | `pencil-over-watercolour-picture-book.md` | [▶](https://youtu.be/NTSc4dnePb0) |
+| Charcoal and Chalk | Custom | dark moody figures on toned paper | `charcoal-and-chalk.md` | [▶](https://youtu.be/nmTOIFkUCW8) |
+| Ink and Wash | Custom | brush painting, empty paper | `ink-and-wash.md` | [▶](https://youtu.be/2fzdDCjFDf0) |
+| Linocut | Custom | two-colour relief print, folk art | `linocut.md` | [▶](https://youtu.be/6bUPZf0Denc) |
+| Gouache Picture Book | Custom | flat opaque mid-century paint | `gouache-picture-book.md` | [▶](https://youtu.be/JD_wf9ExGAw) |
+| Risograph | Custom | two spot inks, halftone, zine | `risograph.md` | [▶](https://youtu.be/LjD_YSdnyWM) |
+| Chalkboard | Custom | chalk diagrams on dark green | `chalkboard.md` | [▶](https://youtu.be/3oKW1gDU75A) |
+| Engraving | Custom | sepia hatching, antique plates | `engraving.md` | [▶](https://youtu.be/WQeuXNsqbgQ) |
+| Oil Painting | Custom | impasto, old-master lighting | `oil-painting.md` | [▶](https://youtu.be/kUhlSxg5RVo) |
+| Embroidery | Custom | stitched thread on linen | `embroidery.md` | [▶](https://youtu.be/UpSwVGyBDdU) |
+| Tissue-Paper Collage | Custom | torn painted paper layers | `tissue-paper-collage.md` | [▶](https://youtu.be/S7umI-whnt0) |
+| Blueprint | Custom | white line on cyanotype, extrude not rotate | `blueprint.md` | [▶](https://youtu.be/M70zJVSMZOY) |
+| Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` | [▶](https://youtu.be/mIMmMPOeFqI) |
+| Acrylic | Custom | bold saturated thick paint | `acrylic.md` | [▶](https://youtu.be/DSxSGc_ih2M) |
+| Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
+| Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
+| Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
+| Origami | Custom | folded paper on a tabletop | `origami.md` | [▶](https://youtu.be/OEARd_3Dcm4) |
+| Nihonga | Custom | mineral pigment on gold leaf | `nihonga.md` | [▶](https://youtu.be/L-0-JdbrYXw) |
+| Suibokuga | Custom | sumi-e with kasure and nijimi | `suibokuga.md` | [▶](https://youtu.be/RA3Lk-nwoW8) |
+| Hybrid: Pencil on Gouache | Custom hybrid | drawn character, painted set | `hybrid-pencil-on-gouache.md` | [▶](https://youtu.be/wnD7Ux3G8B8) |
+| Hybrid: Charcoal on Watercolour | Custom hybrid | dark figure, wash landscape | `hybrid-charcoal-on-watercolour.md` | [▶](https://youtu.be/HDWhMq59pGU) |
+| Hybrid: Clay on Painted Set | Custom hybrid | puppet before a flat backdrop | `hybrid-clay-on-painted-set.md` | [▶](https://youtu.be/tSFelICuM9I) |
+| Hybrid: Felt on Paper | Custom hybrid | wool figure in a cut-paper diorama | `hybrid-felt-on-paper.md` | [▶](https://youtu.be/SS6PwDzaiVk) |
+| Hybrid: Pixels on Paint | Custom hybrid | sprite over painted scenery | `hybrid-pixels-on-paint.md` | [▶](https://youtu.be/6KNy8vCf45k) |
+| Anime: Modern Digital TV | Custom | clean line, soft gradients, bloom | `anime-modern-digital.md` | [▶](https://youtu.be/5nhmZLTJdI0) |
+| Anime: Shōjo | Custom | fine line, luminous eyes, screentone | `anime-shojo.md` | [▶](https://youtu.be/bKFav3Dp5dI) |
+| Anime: 1990s Cel | Custom | bold ink, hard cel, film grain | `anime-1990s-cel.md` | [▶](https://youtu.be/-P3H4GO4mCw) |
+| Anime: Shōnen Action | Custom | thick line, speed lines, one fast beat | `anime-shonen-action.md` | [▶](https://youtu.be/9RIUV06uVfA) |
+| Anime: Cyberpunk 90s Cel | Custom | muted teal, rain, dense painted city | `anime-cyberpunk-90s-cel.md` | [▶](https://youtu.be/SaFG80NfwnA) |
+| Anime: Mecha | Custom | hard-surface cel, hangar | `anime-mecha.md` | [▶](https://youtu.be/V5gI8FeqX8Q) |
 
 Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep each sheet short; anything shared by all styles belongs in this file, not in a sheet.
 
