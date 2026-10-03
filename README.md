@@ -10,18 +10,18 @@ An example video planned, scripted and produced in VideoExpress with this skill.
 
 ## Wiki: how-to and style catalogue
 
-- **[Install in ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex)**: step-by-step, with screenshots, for adding this repo as a plugin marketplace and installing the skill from it.
+- **Install walkthroughs** with screenshots: [Claude Desktop](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop) · [ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex). Both add this repo as a plugin marketplace and install the skill from it.
 - **[How-To](https://github.com/ratava/videoexpress-scripting-skill/wiki)**: install, start methods (concept, script, existing images), intake, the prompt pack, the three operating modes (manual, automated with Claude driving VideoExpress, shared), fixing problems and finishing, with flow diagrams for each step.
 - **[Style catalogue](https://github.com/ratava/videoexpress-scripting-skill/wiki/Styles)**: all 43 Creative mode styles, each with its own page, demo clip and style sheet.
 - **See all styles:** [existing presets reel](https://youtu.be/FGaEioxNt3Y) · [v2.2 new styles reel](https://youtu.be/HKx2000WEyc) · [full playlist](https://www.youtube.com/playlist?list=PLGPXytdy02o0)
 
 ## Platforms
 
-The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide. For ChatGPT and Codex the repo is also a plugin marketplace: add it once in Settings → Plugins and install or upgrade the skill from there. See the [install walkthrough](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex).
+The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide. The repo is also a plugin marketplace for both: add `ratava/videoexpress-scripting-skill` once (Claude Desktop: Customize → Personal plugins → Add Marketplace; ChatGPT: Settings → Plugins → Add a Marketplace) and install the skill from there. Walkthroughs with screenshots: [Install in Claude Desktop](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop) · [Install in ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex).
 
 | Platform | Folder | Guide | Release package |
 |---|---|---|---|
-| Claude (web, desktop, mobile) and Claude Code | [`claude/`](claude/) | [claude/README.md](claude/README.md) | `videoexpress-scripting-claude.zip` |
+| Claude (desktop, web, mobile) | [`claude/`](claude/) | [Install in Claude Desktop](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop) (wiki, with screenshots) · [claude/README.md](claude/README.md) | Add the repo as a plugin marketplace (`ratava/videoexpress-scripting-skill`) in Claude Desktop, or `videoexpress-scripting-claude.zip` |
 | ChatGPT and OpenAI Codex | [`chatgpt/`](chatgpt/) | [Install in ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex) (wiki, with screenshots) · [chatgpt/README.md](chatgpt/README.md) | Add the repo as a plugin marketplace (`ratava/videoexpress-scripting-skill`), or `videoexpress-scripting-chatgpt.zip` |
 
 The two builds share the same method, bible rules, prompt template, style sheets and failure fixes. They differ only in wording (which assistant is being addressed), the platform notes in the browser workflow, and platform metadata (`agents/openai.yaml` in the ChatGPT build).
@@ -44,11 +44,13 @@ The two builds share the same method, bible rules, prompt template, style sheets
 ## Repo layout
 
 ```
-claude/
+claude/                              Claude plugin root
 ├── README.md                        Claude install and usage
-└── videoexpress-scripting/          the skill folder (upload or copy this)
-    ├── SKILL.md
-    └── references/
+├── .claude-plugin/plugin.json       plugin manifest
+└── skills/
+    └── videoexpress-scripting/      the skill folder (upload or copy this)
+        ├── SKILL.md
+        └── references/
 
 chatgpt/                             Codex plugin root
 ├── README.md                        ChatGPT and Codex install and usage
@@ -60,6 +62,7 @@ chatgpt/                             Codex plugin root
         ├── agents/openai.yaml       Codex app metadata
         └── references/
 
+.claude-plugin/marketplace.json      makes this repo a Claude plugin marketplace (Claude Desktop)
 .agents/plugins/marketplace.json     makes this repo a Codex plugin marketplace
 .codex/config.toml                   enables the plugin when the repo is opened as a project
 ```

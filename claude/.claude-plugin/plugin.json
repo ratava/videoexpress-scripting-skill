@@ -1,0 +1,20 @@
+{
+  "name": "videoexpress-scripting",
+  "version": "2.2.0",
+  "description": "Plan, script and produce multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, 43 Creative mode styles, chaining, dialogue, sound and browser operation.",
+  "author": {
+    "name": "Brent Wesley",
+    "url": "https://github.com/ratava"
+  },
+  "homepage": "https://github.com/ratava/videoexpress-scripting-skill",
+  "repository": "https://github.com/ratava/videoexpress-scripting-skill",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "videoexpress",
+    "video",
+    "ai-video",
+    "prompting",
+    "storyboard",
+    "multishot"
+  ]
+}
