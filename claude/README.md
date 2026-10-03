@@ -4,9 +4,11 @@ The Claude build of the [VideoExpress Scripting](../README.md) skill, packaged a
 
 ## Installing
 
-**Claude Desktop (recommended):** open **Customize** in the left sidebar, go to **Personal plugins**, click **+** → **Browse plugins** → **Add Marketplace**, enter `ratava/videoexpress-scripting-skill` and click **Sync**, then install **VideoExpress Scripting** from the list ([walkthrough with screenshots](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop)). To pick up a new version, remove the plugin and install it again from the marketplace; Desktop does not yet update marketplace plugins in place.
+Check [Requirements and Recommendations](https://github.com/ratava/videoexpress-scripting-skill/wiki/Requirements-and-Recommendations) first: plugins and Claude in Chrome need a paid Claude plan, and the skill works on Free as a zip upload.
 
-**Claude web or mobile:** download `videoexpress-scripting-claude.zip` from the [releases page](../../../releases) (or zip the `skills/videoexpress-scripting` folder yourself so the zip contains the folder itself), then upload it under **Settings → Capabilities → Skills**.
+**Claude Desktop (recommended):** open **Customize** in the left sidebar, go to **Personal plugins**, click **+** → **Browse plugins** → **Add Marketplace**, enter `ratava/videoexpress-scripting-skill` and click **Sync**, then install **VideoExpress Scripting** from the list ([walkthrough with screenshots](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop)). New versions install automatically as long as **Sync automatically** stays on in the Add Marketplace screen.
+
+**Claude web or mobile, or the Free plan:** download `videoexpress-scripting-claude.zip` from the [releases page](../../../releases) (or zip the `skills/videoexpress-scripting` folder yourself so the zip contains the folder itself), then upload it under **Customize → Skills** (turn on **Code execution and file creation** under **Settings → Capabilities** first).
 
 **Claude in Chrome:** needed only if you want Claude to operate app.videoexpress.ai for you. The skill works for planning and prompt writing without it.
 
