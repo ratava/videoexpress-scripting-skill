@@ -10,18 +10,19 @@ An example video planned, scripted and produced in VideoExpress with this skill.
 
 ## Wiki: how-to and style catalogue
 
+- **[Install in ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex)**: step-by-step, with screenshots, for adding this repo as a plugin marketplace and installing the skill from it.
 - **[How-To](https://github.com/ratava/videoexpress-scripting-skill/wiki)**: install, start methods (concept, script, existing images), intake, the prompt pack, the three operating modes (manual, automated with Claude driving VideoExpress, shared), fixing problems and finishing, with flow diagrams for each step.
 - **[Style catalogue](https://github.com/ratava/videoexpress-scripting-skill/wiki/Styles)**: all 43 Creative mode styles, each with its own page, demo clip and style sheet.
 - **See all styles:** [existing presets reel](https://youtu.be/FGaEioxNt3Y) · [v2.2 new styles reel](https://youtu.be/HKx2000WEyc) · [full playlist](https://www.youtube.com/playlist?list=PLGPXytdy02o0)
 
 ## Platforms
 
-The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide:
+The skill follows the open Agent Skills standard, so the same core method runs in Claude, ChatGPT and Codex. This repo ships one build per platform, each with its own install guide. For ChatGPT and Codex the repo is also a plugin marketplace: add it once in Settings → Plugins and install or upgrade the skill from there. See the [install walkthrough](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex).
 
 | Platform | Folder | Guide | Release package |
 |---|---|---|---|
 | Claude (web, desktop, mobile) and Claude Code | [`claude/`](claude/) | [claude/README.md](claude/README.md) | `videoexpress-scripting-claude.zip` |
-| ChatGPT and OpenAI Codex | [`chatgpt/`](chatgpt/) | [chatgpt/README.md](chatgpt/README.md) | `videoexpress-scripting-chatgpt.zip` |
+| ChatGPT and OpenAI Codex | [`chatgpt/`](chatgpt/) | [Install in ChatGPT / Codex](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex) (wiki, with screenshots) · [chatgpt/README.md](chatgpt/README.md) | Add the repo as a plugin marketplace (`ratava/videoexpress-scripting-skill`), or `videoexpress-scripting-chatgpt.zip` |
 
 The two builds share the same method, bible rules, prompt template, style sheets and failure fixes. They differ only in wording (which assistant is being addressed), the platform notes in the browser workflow, and platform metadata (`agents/openai.yaml` in the ChatGPT build).
 
@@ -49,12 +50,18 @@ claude/
     ├── SKILL.md
     └── references/
 
-chatgpt/
+chatgpt/                             Codex plugin root
 ├── README.md                        ChatGPT and Codex install and usage
-└── videoexpress-scripting/          the skill folder (upload or copy this)
-    ├── SKILL.md
-    ├── agents/openai.yaml           Codex app metadata
-    └── references/
+├── plugin.json                      plugin manifest
+├── .codex-plugin/plugin.json        compatibility manifest
+└── skills/
+    └── videoexpress-scripting/      the skill folder (upload or copy this)
+        ├── SKILL.md
+        ├── agents/openai.yaml       Codex app metadata
+        └── references/
+
+.agents/plugins/marketplace.json     makes this repo a Codex plugin marketplace
+.codex/config.toml                   enables the plugin when the repo is opened as a project
 ```
 
 Each `references/` folder holds the same files. `SKILL.md` is a short router: the two driving facts, the workflow, the rules that apply to every prompt, and a table of which reference to read for each step. The references are read on demand: `project-intake.md` (design-phase question system), `bible.md` (character, outfit and location blocks, references, start images), `multishot-template.md` (prompt structure and worked example), `camera-and-motion.md` (timing, chaining, camera and motion), `light-sound-dialogue.md` (light, sound, dialogue and lipsync, POV shots), `prompt-rules.md` (how the engine reads a prompt, and the failure → cause → rule table), `browser-workflow.md` (driving VideoExpress in the browser) and `styles/` (an index with demo links plus one sheet per Create Mode preset or custom style; add a style by copying `_TEMPLATE.md` and adding an index row). The [wiki](https://github.com/ratava/videoexpress-scripting-skill/wiki) mirrors the style sheets as browsable pages.
