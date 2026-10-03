@@ -1,0 +1,20 @@
+{
+  "name": "videoexpress-scripting",
+  "interface": {
+    "displayName": "VideoExpress Scripting"
+  },
+  "plugins": [
+    {
+      "name": "videoexpress-scripting",
+      "source": {
+        "source": "local",
+        "path": "./chatgpt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

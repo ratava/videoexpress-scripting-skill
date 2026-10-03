@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "videoexpress-scripting",
+  "version": "2.2.0",
+  "description": "Plan, script and produce multi-clip videos in VideoExpress 3.5 and later: project intake, Core Bible, multishot prompts, Creative mode styles, chaining, dialogue, sound and browser operation.",
+  "author": {
+    "name": "Brent Wesley",
+    "url": "https://github.com/ratava"
+  },
+  "homepage": "https://github.com/ratava/videoexpress-scripting-skill",
+  "repository": "https://github.com/ratava/videoexpress-scripting-skill",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "videoexpress",
+    "video",
+    "ai-video",
+    "prompting",
+    "storyboard",
+    "multishot"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "VideoExpress Scripting",
+        "shortDescription": "Plan, script and run multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, chaining, dialogue and sound.",
+        "longDescription": "Turns a song, story or narration into a clip-by-clip VideoExpress prompt pack: guided project intake, a locked Core Bible for characters, outfits and locations, the VE multishot prompt format, 43 tested Creative mode style sheets, clip chaining, lip-synced dialogue, production sound, a failure-to-fix table for drifting characters, flipped cameras, dark scenes, text in footage and unwanted music, and a workflow for driving app.videoexpress.ai in a browser.",
+        "developerName": "Brent Wesley",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://github.com/ratava/videoexpress-scripting-skill",
+        "defaultPrompt": [
+          "I've got an idea for a VideoExpress video. Help me plan it.",
+          "Here's my script. Turn it into a VideoExpress production.",
+          "My chained VideoExpress clips keep reversing camera direction. How do I fix it?"
+        ],
+        "brandColor": "#6D28D9"
+      }
+    }
+  }
+}
