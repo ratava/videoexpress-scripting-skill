@@ -1,29 +1,32 @@
 # VideoExpress Scripting — Claude build
 
-The Claude build of the [VideoExpress Scripting](../README.md) skill. It is written for Claude's environment: Claude in Chrome for the browser workflow, tappable question cards at each checkpoint, and a per-reply action budget that shapes the render cycle.
+The Claude build of the [VideoExpress Scripting](../README.md) skill, packaged as a **Claude plugin**. This folder is the plugin root: `.claude-plugin/plugin.json` is the manifest and `skills/videoexpress-scripting/` is the skill. The repo's `.claude-plugin/marketplace.json` lists it, so the repo doubles as a plugin marketplace you can add in Claude Desktop. It is written for Claude's environment: Claude in Chrome for the browser workflow, tappable question cards at each checkpoint, and a per-reply action budget that shapes the render cycle.
 
 ## Installing
 
-**Claude (web, desktop or mobile):** download `videoexpress-scripting-claude.zip` from the [releases page](../../../releases) (or zip the `videoexpress-scripting` folder yourself so the zip contains the folder itself), then upload it under **Settings → Capabilities → Skills**.
+**Claude Desktop (recommended):** open **Customize** in the left sidebar, go to **Personal plugins**, click **+** → **Browse plugins** → **Add Marketplace**, enter `ratava/videoexpress-scripting-skill` and click **Sync**, then install **VideoExpress Scripting** from the list ([walkthrough with screenshots](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Claude-Desktop)). To pick up a new version, remove the plugin and install it again from the marketplace; Desktop does not yet update marketplace plugins in place.
 
-**Claude Code:** copy the `videoexpress-scripting` folder into `~/.claude/skills/` (or your project's `.claude/skills/`).
+**Claude web or mobile:** download `videoexpress-scripting-claude.zip` from the [releases page](../../../releases) (or zip the `skills/videoexpress-scripting` folder yourself so the zip contains the folder itself), then upload it under **Settings → Capabilities → Skills**.
 
 **Claude in Chrome:** needed only if you want Claude to operate app.videoexpress.ai for you. The skill works for planning and prompt writing without it.
 
 ## Contents
 
 ```
-videoexpress-scripting/
-├── SKILL.md                         core method and rules
-└── references/
-    ├── project-intake.md            design-phase question system
-    ├── multishot-template.md        prompt structure, templates, example
-    ├── bible.md                     character, outfit and location blocks, references, start images
-    ├── camera-and-motion.md         timing, chaining, camera and motion rules
-    ├── light-sound-dialogue.md      light, production sound, dialogue and lipsync, POV shots
-    ├── prompt-rules.md              how the engine reads a prompt; failure → cause → rule table
-    ├── styles/                      one sheet per Create Mode or custom style, with an index
-    └── browser-workflow.md          driving VideoExpress with Claude in Chrome
+claude/                              plugin root
+├── .claude-plugin/plugin.json       plugin manifest
+└── skills/
+    └── videoexpress-scripting/      the skill
+        ├── SKILL.md                 core method and rules
+        └── references/
+            ├── project-intake.md            design-phase question system
+            ├── multishot-template.md        prompt structure, templates, example
+            ├── bible.md                     character, outfit and location blocks, references, start images
+            ├── camera-and-motion.md         timing, chaining, camera and motion rules
+            ├── light-sound-dialogue.md      light, production sound, dialogue and lipsync, POV shots
+            ├── prompt-rules.md              how the engine reads a prompt; failure → cause → rule table
+            ├── styles/                      one sheet per Create Mode or custom style, with an index
+            └── browser-workflow.md          driving VideoExpress with Claude in Chrome
 ```
 
 ## Using it

@@ -1,0 +1,36 @@
+{
+  "name": "videoexpress-scripting",
+  "description": "VideoExpress Scripting plugin for Claude: plan, script and produce multi-clip AI videos in VideoExpress 3.5 and later.",
+  "owner": {
+    "name": "Brent Wesley",
+    "url": "https://github.com/ratava"
+  },
+  "metadata": {
+    "description": "Community plugin marketplace for the VideoExpress Scripting skill. Not affiliated with VideoExpress or PaulPonna.com.",
+    "version": "2.2.0"
+  },
+  "plugins": [
+    {
+      "name": "videoexpress-scripting",
+      "source": "./claude",
+      "description": "Plan, script and produce multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, 43 Creative mode styles, chaining, dialogue, sound and browser operation.",
+      "version": "2.2.0",
+      "author": {
+        "name": "Brent Wesley",
+        "url": "https://github.com/ratava"
+      },
+      "homepage": "https://github.com/ratava/videoexpress-scripting-skill",
+      "repository": "https://github.com/ratava/videoexpress-scripting-skill",
+      "license": "CC-BY-NC-4.0",
+      "keywords": [
+        "videoexpress",
+        "video",
+        "ai-video",
+        "prompting",
+        "storyboard",
+        "multishot"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
