@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "videoexpress-scripting",
-  "version": "2.3.0",
+  "version": "2.2.1",
   "description": "Plan, script and produce multi-clip videos in VideoExpress 3.5 and later: project intake, Core Bible, multishot prompts, Creative mode styles, chaining, dialogue, sound and browser operation.",
   "author": {
     "name": "Brent Wesley",
