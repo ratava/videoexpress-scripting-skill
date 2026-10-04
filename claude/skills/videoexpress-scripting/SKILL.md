@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.2"
+  version: "2.3"
   author: Brent Wesley
 ---
 
@@ -57,17 +57,18 @@ The pack is a living document. Expect many revision rounds as the user generates
 
 These are the ones that cause the most damage when forgotten. The references hold the detail and the rest.
 
+- **When following a prompt pack, every prompt starts with its clip reference in square brackets,** exactly as the pack declares it for that image or clip: `[Clip 12]` for a video prompt, `[Image 12A]` for a start image, `[Clip 12 TEST 1]` for a test variant. It comes first, before any style anchor or [REFERENCE USE], so every library tile and take can be matched to the pack. Details in `multishot-template.md`.
 - **Bible blocks are pasted word for word.** Paraphrase is drift. When a start image nails the look, the video prompts reuse that image prompt's exact wording, not the bible's older wording.
 - **Match the frame, not the plan.** Look at the chained opening frame or accepted start image before writing: describe props, framing and the geometry of obstacles exactly as the frame shows them.
 - **Quotation marks mean speech.** Quote each spoken line once, in [ACTION], and quote nothing else. Two speakers per clip, maximum.
 - **Positive anchors first, negatives as a short tail.** Say what stays still as clearly as what moves; lead every segment with the subject's motion, "no pause and no delay".
 - **Camera: locked unless asked, every move named identically in every clip, every move has a destination, never return to space that has left the frame.** Never write a move relative to another clip.
 - **End at full-body framing if the next clip chains.** Inspect and trim the cut frame before chaining; fix the parent, don't prompt harder on the child.
-- **Digits only in [ACTION 0-5s] labels; no counted events; no lettering promised.** Describe screens and signs as abstract shapes and light.
+- **Digits only in [ACTION 0-5s] labels and the [Clip 12] reference; no counted events; no lettering promised.** Describe screens and signs as abstract shapes and light.
 - **Effects add light, never replace it.** Keep a key light on the subject; restate brightness in the final segment; never chain from a darkened frame.
 - **Transient sounds with silence between them; no ambient beds; close [PRODUCTION SOUND] with what is heard in total.**
-- **Stylised looks need the style anchor at the very start of the video prompt** (before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives. References pull toward realism; counter with wording, not by dropping the reference.
-- **Keep "Automatically enhance my video prompt" off.** It rewrites to short prose and drops the bible, labels and caption. The prompt box holds about 6,000 characters; trim repeated style text and negatives first.
+- **Stylised looks need the style anchor at the very start of the video prompt** (straight after the clip reference, before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives. References pull toward realism; counter with wording, not by dropping the reference.
+- **Keep "Automatically enhance my video prompt" off.** It rewrites to short prose and drops the bible, time labels and clip reference. The prompt box holds about 6,000 characters; trim repeated style text and negatives first.
 - **Turn Consistent Character off** for shots with no characters (empty environments, point-of-view, inserts).
 
 ## The prompt pack document
@@ -75,10 +76,10 @@ These are the ones that cause the most damage when forgotten. The references hol
 1. **Overview**: scene table (scene, clips, time range, outfit, VE length); prompt format note; references to supply with each clip; paste rule (only text inside code blocks is pasted; headings carry metadata).
 2. **Global rules**: the rules above and from the references that apply to this project.
 3. **Bible**: character core block, outfit blocks, location blocks, style line.
-4. **Per scene**: start images (self-contained prompts), then per clip — header line (clip · time range · VE length · FRESH from image X or CHAIN from clip N · role tag) and the full multishot prompt in a code block.
+4. **Per scene**: start images (each with a declared reference such as Image 12A, and a self-contained prompt that starts `[Image 12A]`), then per clip — header line (clip reference such as Clip 12 · time range · VE length · FRESH from image X or CHAIN from clip N · role tag) and the full multishot prompt, starting `[Clip 12]`, in a code block.
 5. **Edit, timing and QC**: trims, retimes, transitions, the per-take QC checklist (in `prompt-rules.md`), open items.
 
-For alternates, add a new tab or section rather than overwriting working clips, and include any adjacent clips that must change to hand off correctly. Keep clip numbering stable once generation starts; if clips are cut, keep the gaps and note them.
+For alternates, add a new tab or section rather than overwriting working clips, and include any adjacent clips that must change to hand off correctly. Keep clip and image references stable once generation starts, since they are what identify the takes; if clips are cut, keep the gaps and note them. Alternates get their own reference (Clip 12B), never a reused one.
 
 ## Working style during production
 
@@ -88,7 +89,7 @@ For alternates, add a new tab or section rather than overwriting working clips, 
 - When the user states a preference ("keep it", "I prefer this look"), treat it as a new rule and apply it everywhere, including rewriting the bible block to match the frame.
 - Protect payoff shots: guard their preconditions in every earlier prompt.
 - **When the user asks to see a prompt before a run, show the full paste-ready prompt,** then ask to run it. Don't run first.
-- **Isolate stubborn failures.** When a problem survives two prompt rounds, stop rewording. Hold a base prompt fixed and run one take per variant, each changing one variable, with a unique caption label per variant ("clip N TEST 1, ending"), plus a control take of a previously clean prompt. Record which variables mattered.
+- **Isolate stubborn failures.** When a problem survives two prompt rounds, stop rewording. Hold a base prompt fixed and run one take per variant, each changing one variable, with a unique reference per variant (`[Clip 12 TEST 1]`, `[Clip 12 TEST 2]`), plus a control take of a previously clean prompt. Record which variables mattered.
 - **Know when to stop.** If a sequence has drifted far from the concept, say so and offer to restart the sequence or the project rather than patching clip by clip.
 
 ## Operating VideoExpress in the browser

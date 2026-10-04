@@ -58,7 +58,7 @@ Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep ea
 
 The official image prompts are long, precise and ordered. Follow this order:
 
-1. **Medium and format first**: the style's medium phrase + "still, widescreen 16:9" (e.g. "Cinematic high-end 3D animated feature film still, widescreen 16:9").
+1. **Medium and format first** (after the `[Image 12A]` pack reference): the style's medium phrase + "still, widescreen 16:9" (e.g. "Cinematic high-end 3D animated feature film still, widescreen 16:9").
 2. **Subject, placement and framing**: who, where in the frame ("slightly left of center", "in the right third"), how much of them ("waist-up", "full length", "from the top of her hood to just below her knees"), pose and gaze, expression.
 3. **Face details**: shape, eyes, brows, nose, cheeks, distinguishing marks.
 4. **Hair, accessories, wardrobe**: each item with colour, material, wear and fastenings.

@@ -38,7 +38,7 @@ Two ways to get lip-synced speech. **Prefer the multishot-prompt method whenever
 - **Every speaker needs a visible face.** A line given to a character whose head is out of frame (a waiter seen from the shoulders down) is dropped in every take. For a faceless speaker, either bring the face into frame for the line or write the voice into [PRODUCTION SOUND] as an off-camera voice (see the Sound section) rather than as [ACTION] dialogue.
 - **Voices bleed like adjectives.** With two speakers in a clip, or a setting that implies a language (a French café, a French line earlier), the lead's accent drifts toward the other speaker's; a one-word "American accent" was not enough. Describe each voice specifically (age, pitch, texture, accent, pace), state the contrast between speakers, and repeat the same description in every clip. If a drifted accent turns out to be wanted, adopt it into the character block so it stops drifting.
 - **Hard-cut coverage works with dialogue**: a waist-up action shot, then "Hard cut to a medium close-up" for the lines, in one generation. The last shot's framing is what the next clip chains from, so end on the framing the next clip needs.
-- Keep the caption label as the first words so the tile is identifiable (Method A tiles show the prompt, unlike Lipsync HD tiles).
+- Keep the clip reference (`[Clip 12]`) as the first words so the tile is identifiable (Method A tiles show the prompt, unlike Lipsync HD tiles).
 
 **Method B — Lipsync HD dialog.** Automatic timing, up to two actors, but little control over action under the lines.
 - Speech never goes in the main Video and Audio Prompt when this method is used; see `browser-workflow.md` for the dialog.

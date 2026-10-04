@@ -58,7 +58,7 @@ The dialog's state can reset (after a page reload, or unexpectedly): prompts cle
 | Use Consistent Character | On for images and clips featuring the reference characters; **off** for shots with no characters (point of view, empty environments, inserts) |
 | Advanced Mode + Manual Video Length | On; set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
 | Video Only (No Sound) | Off when the prompt has a `[PRODUCTION SOUND]` block. It can end up ticked unexpectedly; verify every time |
-| Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and caption label, and can refuse a clip whose dialogue it judges too long |
+| Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and clip reference, and can refuse a clip whose dialogue it judges too long |
 | Lipsync HD Video | On only for dialogue clips using the Lipsync HD dialog (SKILL.md 6b, Method B). Off for dialogue written inside the multishot prompt, which uses the normal Manual Video Length. Set the length **before** ticking it (ticking hides the length controls) and untick it for the next clip |
 | Narration, Share to public gallery | Off unless the script calls for them. Check sharing before every Create Image and Create Video |
 
@@ -76,7 +76,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 
 1. Select the textarea's content and replace it. Typing is reliable. Setting the value programmatically also works, but then **nudge it with a real keystroke** (click in the box, press Ctrl+End, type a space, then Backspace) so the page registers the change.
 2. **Verify the content, not just the length.** Check a phrase unique to this clip is present and one unique to the previous clip is gone.
-3. **Start the video prompt with a caption label** such as `Harbour Run clip four, the landing.` (a short project name plus a unique clip or test label). Library tiles show the first words of the prompt, so this makes each tile identifiable. Lipsync takes show VE's own caption instead, so identify those by position.
+3. **Check the prompt starts with its pack reference** in square brackets, exactly as the pack declares it (`[Clip 12]`, `[Image 12A]`, `[Clip 12 TEST 1]`), with nothing before it. Library tiles show the first words of the prompt, so this is how each tile is matched to the pack, and how takes are reported to the user ("Clip 12, take 3"). Lipsync takes show VE's own caption instead, so identify those by position.
 
 ## Start images
 
@@ -150,4 +150,4 @@ After the **first** clip is added to the timeline, ask whether to harden prompts
 
 ## Per-clip cycle, at a glance
 
-Load and inspect the opening frame (by name) → set Consistent Character and the reference slots → enter and verify the prompt with its caption label → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: "Have the generations finished?" (with the refresh note) → card: which take → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.
+Load and inspect the opening frame (by name) → set Consistent Character and the reference slots → enter and verify the prompt, starting with its [Clip N] reference → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: "Have the generations finished?" (with the refresh note) → card: which take → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.
