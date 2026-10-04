@@ -56,7 +56,6 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 | Lead's accent drifts toward another speaker or the setting's language | Voice adjectives bleed; setting implies a language | Specific voice description per speaker (age, pitch, texture, accent, pace), contrast stated, repeated every clip. |
 | Speaker keeps walking or looks away while talking | No reaction beat | "She turns to face [the other character], then answers." |
 | Can't tell which tile or take belongs to which clip | Prompt doesn't open with its pack reference | Start every prompt with the pack's bracketed reference (`[Clip 12]`, `[Image 12A]`, `[Clip 12 TEST 1]`), nothing before it; unique per clip, image and variant. |
-| The clip reference renders as text in a start image | Image models have no tag structure, so the bracket can read as a caption | Keep "no text, no letters, no numbers" at the end of the image prompt; if it still appears, re-roll, and keep the reference in the pack header and file name for that image. |
 | Hidden character appears in front of cover | See-through effects | Keep hidden characters out of the shot. |
 
 **Per-take QC checklist** (include in every pack): character hair, face and signature accessory; outfit matches the scene block, per side; environment matches the location block, including newly revealed areas; brightness holds to the last frame; no digits, letters or symbols; camera direction as prompted; motion reads as real time; crowd scale and faces varied; cut frame is clean for the next chain.
