@@ -4,7 +4,7 @@ The ChatGPT/Codex build of the [VideoExpress Scripting](../README.md) skill, pac
 
 ## Installing
 
-**As a plugin from the marketplace (recommended).** In ChatGPT, open Settings → Plugins → Add → Add a Marketplace, enter `ratava/videoexpress-scripting-skill`, then install VideoExpress Scripting from the Personal tab ([walkthrough with screenshots](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT-Codex)). From the Codex CLI:
+**As a plugin from the marketplace (recommended).** In ChatGPT, open Settings → Plugins → Add → Add a Marketplace, enter `ratava/videoexpress-scripting-skill`, then install VideoExpress Scripting from the Personal tab ([walkthrough with screenshots](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-ChatGPT)). From the Codex CLI:
 
 ```
 codex plugin marketplace add ratava/videoexpress-scripting-skill
