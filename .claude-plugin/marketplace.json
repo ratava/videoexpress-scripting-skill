@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "Community plugin marketplace for the VideoExpress Scripting skill. Not affiliated with VideoExpress or PaulPonna.com.",
-    "version": "2.2.1"
+    "version": "2.3.0"
   },
   "plugins": [
     {
       "name": "videoexpress-scripting",
       "source": "./claude",
       "description": "Plan, script and produce multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, 43 Creative mode styles, chaining, dialogue, sound and browser operation.",
-      "version": "2.2.1",
+      "version": "2.3.0",
       "author": {
         "name": "Brent Wesley",
         "url": "https://github.com/ratava"
