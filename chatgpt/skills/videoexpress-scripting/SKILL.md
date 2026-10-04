@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks the assistant to operate VideoExpress in a browser, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music. Plans, scripts and produces multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with a browser-capable agent.
 metadata:
-  version: "2.2"
+  version: "2.2-dev-retro"
   author: Brent Wesley
 ---
 
@@ -29,6 +29,7 @@ Read only what the current step needs. Everything in `references/` is self-conta
 | Writing [LIGHT AND IMAGE] or [PRODUCTION SOUND], any clip with speech, or point-of-view / HUD shots | `references/light-sound-dialogue.md` |
 | Writing or debugging any prompt; the user reports a failure | `references/prompt-rules.md` — how the engine reads a prompt, and the failure → cause → rule table |
 | Asked to drive app.videoexpress.ai with a browser-capable agent | `references/browser-workflow.md` — read first, follow step by step |
+| Logging take results, running a retro, filing findings, or promoting a finding into the skill | `references/retro.md` |
 
 For a single prompt request mid-project, the usual set is `multishot-template.md` + `prompt-rules.md` + whichever of `bible.md`, `camera-and-motion.md`, `light-sound-dialogue.md` and a style sheet the clip touches. For a reported failure, start with the table in `prompt-rules.md`.
 
@@ -39,7 +40,8 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 2. **Bible** — locked character blocks, outfit blocks and location blocks, written once and pasted verbatim everywhere (`bible.md`).
 3. **Timing** — a clip grid at the tool's clip length, with key hits verified against the real audio by the user (`camera-and-motion.md`).
 4. **Prompt pack** — start-image prompts and multishot video prompts for every clip (`multishot-template.md` plus the relevant references).
-5. **Generation support** — diagnose reported failures by mechanism, fix them globally, sweep every affected clip (`prompt-rules.md`).
+5. **Generation support** — diagnose reported failures by mechanism, fix them globally, sweep every affected clip (`prompt-rules.md`). Log every take in the pack's take log (`retro.md`).
+6. **Retro** — at the end of a project or sequence, turn the take log into graded findings and ledger entries (`retro.md`). Rules in this skill change only by a separate, user-approved promotion.
 
 The pack is a living document. Expect many revision rounds as the user generates clips.
 
@@ -77,12 +79,13 @@ These are the ones that cause the most damage when forgotten. The references hol
 2. **Global rules**: the rules above and from the references that apply to this project.
 3. **Bible**: character core block, outfit blocks, location blocks, style line.
 4. **Per scene**: start images (each with a declared reference such as Image 12A, and a self-contained prompt that starts `[Image 12A]`), then per clip — header line (clip reference such as Clip 12 · time range · VE length · FRESH from image X or CHAIN from clip N · role tag) and the full multishot prompt, starting `[Clip 12]`, in a code block.
-5. **Edit, timing and QC**: trims, retimes, transitions, the per-take QC checklist (in `prompt-rules.md`), open items.
+5. **Edit, timing and QC**: trims, retimes, transitions, the per-take QC checklist (in `prompt-rules.md`), the take log (format in `retro.md`), open items.
 
 For alternates, add a new tab or section rather than overwriting working clips, and include any adjacent clips that must change to hand off correctly. Keep clip and image references stable once generation starts, since they are what identify the takes; if clips are cut, keep the gaps and note them. Alternates get their own reference (Clip 12B), never a reused one.
 
 ## Working style during production
 
+- Add a take-log line for every take the user reports, including clean ones and what changed from the previous take; never hold up production to fill it in.
 - Users report failures one at a time, often with a frame. Diagnose the **mechanism** (table in `prompt-rules.md`), fix it globally, and sweep every not-yet-generated clip with the same risk.
 - Read the frame the user sends: note what actually rendered and write the next prompt to match what exists.
 - When the user edits the pack directly, re-read before writing and never overwrite their changes without saying so.

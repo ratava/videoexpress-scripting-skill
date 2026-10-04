@@ -1,11 +1,11 @@
 {
-  "name": "videoexpress-scripting",
+  "name": "videoexpress-scripting-dev",
   "interface": {
-    "displayName": "VideoExpress Scripting"
+    "displayName": "VideoExpress Scripting (dev)"
   },
   "plugins": [
     {
-      "name": "videoexpress-scripting",
+      "name": "videoexpress-scripting-dev",
       "source": {
         "source": "local",
         "path": "./chatgpt"
