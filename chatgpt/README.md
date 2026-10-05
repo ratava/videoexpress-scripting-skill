@@ -10,7 +10,7 @@ The ChatGPT/Codex build of the [VideoExpress Scripting](../README.md) skill, pac
 codex plugin marketplace add ratava/videoexpress-scripting-skill
 ```
 
-In Codex CLI, open the plugin directory, pick the **VideoExpress Scripting** marketplace and install the plugin. In the ChatGPT desktop app (Work mode), open the Plugins Directory and choose the same marketplace source. Pin a release with `codex plugin marketplace add ratava/videoexpress-scripting-skill --ref v2.2.1`, and pull updates later with `codex plugin marketplace upgrade videoexpress-scripting`. Codex caches the installed copy under `~/.codex/plugins/cache/videoexpress-scripting/videoexpress-scripting/`, so it keeps working when the repo isn't open.
+In Codex CLI, open the plugin directory, pick the **VideoExpress Scripting** marketplace and install the plugin. In the ChatGPT desktop app (Work mode), open the Plugins Directory and choose the same marketplace source. Pin a release with `codex plugin marketplace add ratava/videoexpress-scripting-skill --ref v2.3.0`, and pull updates later with `codex plugin marketplace upgrade videoexpress-scripting`. Codex caches the installed copy under `~/.codex/plugins/cache/videoexpress-scripting/videoexpress-scripting/`, so it keeps working when the repo isn't open.
 
 If you clone this repo and open it as a trusted project, the repo-scoped marketplace is discovered automatically and `.codex/config.toml` enables the plugin for that project.
 
