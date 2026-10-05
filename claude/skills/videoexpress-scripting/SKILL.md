@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.2"
+  version: "2.3"
   author: Brent Wesley
 ---
 
@@ -66,7 +66,7 @@ These are the ones that cause the most damage when forgotten. The references hol
 - **End at full-body framing if the next clip chains.** Inspect and trim the cut frame before chaining; fix the parent, don't prompt harder on the child.
 - **Digits only in [ACTION 0-5s] labels and the [Clip 12] reference; no counted events; no lettering promised.** Describe screens and signs as abstract shapes and light.
 - **Effects add light, never replace it.** Keep a key light on the subject; restate brightness in the final segment; never chain from a darkened frame.
-- **Transient sounds with silence between them; no ambient beds; close [PRODUCTION SOUND] with what is heard in total.**
+- **One [PRODUCTION SOUND] block per segment, with the segment's time label;** a single block after the last segment binds to that segment only and leaves the rest to VE, often as music. **Transient sounds with silence between them; no ambient beds; silent segments say so; close each block with what is heard in that segment.**
 - **Stylised looks need the style anchor at the very start of the video prompt** (straight after the clip reference, before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives. References pull toward realism; counter with wording, not by dropping the reference.
 - **Keep "Automatically enhance my video prompt" off.** It rewrites to short prose and drops the bible, time labels and clip reference. The prompt box holds about 6,000 characters; trim repeated style text and negatives first.
 - **Turn Consistent Character off** for shots with no characters (empty environments, point-of-view, inserts).

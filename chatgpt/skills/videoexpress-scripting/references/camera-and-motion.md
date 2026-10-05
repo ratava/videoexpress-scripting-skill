@@ -31,7 +31,7 @@ Chaining = starting a clip from the previous clip's cut frame. It gives continui
 
 A single VE 3.5 generation can contain two or three shots joined by hard cuts. Use it where coverage helps: a wide action shot, then a close-up for a line of dialogue, or a detail insert on a prop.
 - Declare it in [IDENTITY / CONTINUITY]: "This ten-second generation is a sequence of two shots joined by one hard cut, exactly as described below."
-- Each shot is its own [ACTION] → [CAMERA] → [LIGHT AND IMAGE] trio, and each [CAMERA] after the first starts "Hard cut to…". Label the segments "Shot one.", "Shot two."
+- Each shot is its own [ACTION] → [CAMERA] → [LIGHT AND IMAGE] → [PRODUCTION SOUND] group, and each [CAMERA] after the first starts "Hard cut to…". Label the segments "Shot one.", "Shot two."
 - Negatives say "no cuts other than the hard cut described" instead of "no cuts".
 - **The last shot sets up the next clip.** A chained clip inherits the final shot's framing.
 - Keep continuous single shots for moves that must flow (a dive, a long camera move, a chain handoff).

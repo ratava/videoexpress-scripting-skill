@@ -83,7 +83,7 @@ Every official video prompt uses the multishot tags (see `../multishot-template.
 - **Quiet, specific [PRODUCTION SOUND]**: one or two sounds, "no speech or music". In production, prefer short transient sounds with silence between them over sustained ambience, which renders as background noise (see `../light-sound-dialogue.md`, Sound).
 - **Negatives guard the style** as well as anatomy: no conversion to another medium.
 
-For longer clips in any style, keep the same restraint per segment: one clear beat and one camera move per [ACTION] segment.
+For longer clips in any style, keep the same restraint per segment: one clear beat, one camera move and one [PRODUCTION SOUND] block per [ACTION] segment.
 
 ### Custom styles (not a preset)
 
