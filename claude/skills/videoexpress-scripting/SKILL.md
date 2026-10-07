@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.3"
+  version: "2.4"
   author: Brent Wesley
 ---
 
@@ -61,12 +61,13 @@ These are the ones that cause the most damage when forgotten. The references hol
 - **Bible blocks are pasted word for word.** Paraphrase is drift. When a start image nails the look, the video prompts reuse that image prompt's exact wording, not the bible's older wording.
 - **Match the frame, not the plan.** Look at the chained opening frame or accepted start image before writing: describe props, framing and the geometry of obstacles exactly as the frame shows them.
 - **Quotation marks mean speech.** Quote each spoken line once, in [ACTION], and quote nothing else. Two speakers per clip, maximum.
-- **Positive anchors first, negatives as a short tail.** Say what stays still as clearly as what moves; lead every segment with the subject's motion, "no pause and no delay".
+- **Positives everywhere except [NEGATIVES].** VE reads every other section as things to include, even with "no", "not" or "never" in front, so state what should exist and what stays still, and put every exclusion in [NEGATIVES], each written with "No" ("No music, no hum"). Lead every segment with the subject's motion.
 - **Camera: locked unless asked, every move named identically in every clip, every move has a destination, never return to space that has left the frame.** Never write a move relative to another clip.
+- **A detail holds only at the size VE last drew it.** A push-in that enlarges a face or prop, or a prop that leaves the frame and comes back, makes VE redraw it from text. Start each clip from a start image at its closest framing; a closer shot is a new clip.
 - **End at full-body framing if the next clip chains.** Inspect and trim the cut frame before chaining; fix the parent, don't prompt harder on the child.
 - **Digits only in [ACTION 0-5s] labels and the [Clip 12] reference; no counted events; no lettering promised.** Describe screens and signs as abstract shapes and light.
 - **Effects add light, never replace it.** Keep a key light on the subject; restate brightness in the final segment; never chain from a darkened frame.
-- **One [PRODUCTION SOUND] block per segment, with the segment's time label;** a single block after the last segment binds to that segment only and leaves the rest to VE, often as music. **Transient sounds with silence between them; no ambient beds; silent segments say so; close each block with what is heard in that segment.**
+- **One [PRODUCTION SOUND] block per segment, with the segment's time label;** a single block after the last segment binds to that segment only and leaves the rest to VE, often as music. **Transient sounds tied to actions; never ask for silence (it renders as rumble and crackle); fit the clip length to the action and speech; close each block with what is heard in that segment.**
 - **Stylised looks need the style anchor at the very start of the video prompt** (straight after the clip reference, before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives. References pull toward realism; counter with wording, not by dropping the reference.
 - **Keep "Automatically enhance my video prompt" off.** It rewrites to short prose and drops the bible, time labels and clip reference. The prompt box holds about 6,000 characters; trim repeated style text and negatives first.
 - **Turn Consistent Character off** for shots with no characters (empty environments, point-of-view, inserts).
@@ -96,4 +97,4 @@ For alternates, add a new tab or section rather than overwriting working clips, 
 
 When the user wants Claude to drive app.videoexpress.ai itself rather than just write the pack, read `references/browser-workflow.md` first and follow it step by step. The user approves every start image, take and prompt change; Claude pastes prompts exactly as written, never skips a checkpoint, and leaves drift judgements to the user unless a problem is obvious. Prompt hardening from a generated frame is offered after the first clip is on the timeline, and again after the second if deferred.
 
-Claude only acts while replying and each reply has an action budget, so never wait inside a reply for renders. Submit the takes, confirm they exist, report their positions, and ask the user whether they've finished. Never announce an action ("generating now") without performing it in the same reply.
+Claude only acts while replying and each reply has an action budget, so never wait inside a reply for renders. Submit the takes, confirm they exist, report their positions, and ask straight away which take to keep, saying what it should look like; don't ask whether the renders have finished. Never announce an action ("generating now") without performing it in the same reply.
