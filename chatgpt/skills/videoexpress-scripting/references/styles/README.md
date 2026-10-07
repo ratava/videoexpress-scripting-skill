@@ -50,6 +50,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Anime: 1990s Cel | Custom | bold ink, hard cel, film grain | `anime-1990s-cel.md` | [▶](https://youtu.be/-P3H4GO4mCw) |
 | Anime: Shōnen Action | Custom | thick line, speed lines, one fast beat | `anime-shonen-action.md` | [▶](https://youtu.be/9RIUV06uVfA) |
 | Anime: Cyberpunk 90s Cel | Custom | muted teal, rain, dense painted city | `anime-cyberpunk-90s-cel.md` | [▶](https://youtu.be/SaFG80NfwnA) |
+| Anime: Shōnen Cyberpunk | Custom | shōnen line and action, cybernetic characters, one hot accent | `anime-shonen-cyberpunk.md` | demo pending |
 | Anime: Mecha | Custom | hard-surface cel, hangar | `anime-mecha.md` | [▶](https://youtu.be/V5gI8FeqX8Q) |
 
 Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep each sheet short; anything shared by all styles belongs in this file, not in a sheet.
@@ -80,7 +81,7 @@ Every official video prompt uses the multishot tags (see `../multishot-template.
 - **One camera move**, usually a slow push: "One move only: slow steady push in." Subject motion and camera motion are kept separate.
 - **Explicit holds**: what stays planted or still is named ("his feet and hands remain in place", "everything else stays structurally stable").
 - **Style-specific stability** in [LIGHT AND IMAGE]: materials stay tactile, painted details don't boil, pixels don't crawl, cadence matches the medium.
-- **Quiet, specific [PRODUCTION SOUND]**: one or two sounds, "no speech or music". In production, prefer short transient sounds with silence between them over sustained ambience, which renders as background noise (see `../light-sound-dialogue.md`, Sound).
+- **Quiet, specific [PRODUCTION SOUND]**: one or two sounds, each tied to the action that makes it, with speech and music excluded in [NEGATIVES]. In production, prefer short transient sounds over sustained ambience, which renders as background noise, and never ask for silence (see `../light-sound-dialogue.md`, Sound).
 - **Negatives guard the style** as well as anatomy: no conversion to another medium.
 
 For longer clips in any style, keep the same restraint per segment: one clear beat, one camera move and one [PRODUCTION SOUND] block per [ACTION] segment.

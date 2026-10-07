@@ -7,6 +7,7 @@ Assume the script is approved (or approved enough for a test). The user owns eve
 ## Ground rules
 
 - **Stop at every checkpoint.** Never accept an image or take, chain from a frame, or change a prompt without the user's pick. After any image generation, ask which image to use **immediately**, in the same reply.
+- **Every review question says what the result should look like.** Before asking the user to pick or accept an image or take, describe what a correct one shows, taken from its prompt: framing and subject position, each action beat in order, the camera move, the ending frame, key props, and for clips the sound and any spoken line. Nobody can review a take properly without knowing what it was meant to be.
 - **Every choice is a question card.** Go-ahead questions are yes/no. Cards hold four options at most. If a choice has more (e.g. five takes), use three direct options plus a combined "2/1 (I'll type) / none" option, then ask in plain text if needed.
 - **Drift checks are the user's job.** Claude sees single frames, not motion. Flag obvious drift only. Don't edit prompts unasked.
 - **Paste prompts exactly.** Only code-block text from the script. Never paraphrase.
@@ -22,26 +23,26 @@ The cycle per clip:
 
 1. Set up and submit the takes.
 2. Confirm the tiles exist in the library (a rendering tile shows a percentage).
-3. Report each take's grid position, then ask with a card: **"Have the generations finished?"** Yes / No. Include the refresh note: *click the purple back arrow at the bottom of the Media Library panel, then open My AI Videos again.*
-4. On "yes", ask which take to keep.
+3. Straight away, report each take's grid position and ask with a card which take to keep (see Review checkpoint). Don't ask whether the renders have finished; the user watches and reviews them anyway. Include the refresh note: *the grid stops updating partway through a render, so once a tile reaches 50%, click the purple back arrow at the bottom of the Media Library panel and open My AI Videos again; the take has often already finished.*
 
 Be efficient with actions: batch clicks and checks, read page state with one script instead of screenshots where possible, and avoid navigating back and forth in the library.
 
 ## Session setup
 
-1. **Ask:** one browser tab or two? Two is the norm.
-2. Open `https://app.videoexpress.ai` in each tab. An authorised browser logs straight in. Close any **Latest News and Updates** sidebar with its **Close** button.
-3. **Name the tabs:**
+1. **Always work in two tabs; don't ask the user.** Open `https://app.videoexpress.ai` in two tabs. An authorised browser logs straight in. Close any **Latest News and Updates** sidebar with its **Close** button.
+2. **Name the tabs:**
    - **Creation tab:** the generator dialog only.
    - **Review tab:** the saved project, the library and the timeline.
-4. In the Review tab, create or open the project (**Open** → pick it → **Open**). Save it with a name early (**Save** → project name → **Save**).
-5. In the Creation tab: **Create with AI → Create Video From Prompt** (the arrow on that card). Leave the dialog open all session.
+3. In the Review tab, start a new project (**New**) or open one (**Open** → pick it → **Open**). VE won't save an empty project (Save only shows "Your project is empty"), so a new project gets its name on the first save, straight after the first **Add to Timeline** (**Save** → project name → **Save**).
+4. In the Creation tab: **Create with AI → Create Video From Prompt** (the arrow on that card). Leave the dialog open all session.
 
 ## The Create Video From Prompt dialog
 
+**Top:** orientation toggle, **Landscape 16:9** / **Vertical 9:16**.
+
 **Image side:** Image Prompt box · Image Type · Use Creative mode · Automatically enhance my image prompt · Use Consistent Character (reveals **Reference Photo** and optional **Reference Photo 2**) · Use from Library.
 
-**Video side:** Video and Audio Prompt box · Lipsync HD Video · Narration Video · Share this in the public gallery · Advanced Mode (reveals Automatically enhance my video prompt · Video Only (No Sound) · Manual Video Length slider, 3–10 s).
+**Video side:** Video and Audio Prompt box · Lipsync HD Video · Narration Video · Share this in the public gallery · Advanced Mode (reveals Automatically enhance my video prompt · Video Only (No Sound) · **Manual Video Length, sec** checkbox and its slider, 3–10 s).
 
 **Buttons:** Enhance Prompt · Create Image · Consistent Character · Create Video (active once an image is selected) · Close.
 
@@ -53,10 +54,11 @@ The dialog's state can reset (after a page reload, or unexpectedly): prompts cle
 
 | Setting | Rule |
 |---|---|
+| Landscape 16:9 / Vertical 9:16 | Match the pack's aspect ratio; check it before the first Create Image |
 | Use Creative mode | Always on for image creation |
 | Automatically enhance my image prompt | Always off. It re-ticks itself after generations; untick before every Create Image |
-| Use Consistent Character | On for images and clips featuring the reference characters; **off** for shots with no characters (point of view, empty environments, inserts) |
-| Advanced Mode + Manual Video Length | On; set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
+| Use Consistent Character | On for images and clips featuring the reference characters; **off** for shots with no characters (point of view, empty environments, inserts). Unticking it leaves the reference slots filled, so clear both slots with their trash icons as well |
+| Advanced Mode + Manual Video Length | Tick Advanced Mode, then tick **Manual Video Length, sec**: it is unticked by default and the slider is ignored until it is ticked. Set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
 | Video Only (No Sound) | Off when the prompt has a `[PRODUCTION SOUND]` block. It can end up ticked unexpectedly; verify every time |
 | Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and clip reference, and can refuse a clip whose dialogue it judges too long |
 | Lipsync HD Video | On only for dialogue clips using the Lipsync HD dialog (SKILL.md 6b, Method B). Off for dialogue written inside the multishot prompt, which uses the normal Manual Video Length. Set the length **before** ticking it (ticking hides the length controls) and untick it for the next clip |
@@ -67,9 +69,9 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 ## Consistent Character reference slots
 
 - Tick **Use Consistent Character**. Clicking **Reference Photo** or **Reference Photo 2** opens the library picker (**Select Image**), not a system file picker.
-- In the picker: open **My AI Images**. It loads 20 items at a time; scroll to the bottom and click **More** for older ones. Search doesn't match prompt text, and titles are truncated, so find references by their thumbnail or by a short saved name.
+- In the picker: open **My AI Images**. It loads 20 items at a time; scroll to the bottom and click **More** for older ones. Search doesn't match prompt text, and titles are truncated. Images saved from the generator are titled with the start of their prompt and can't be renamed, so find references by their thumbnail and their `[Image R1]` title prefix.
 - Slot 1 is the main character; slot 2 is a second character. Screenshot to confirm each slot shows the right thumbnail. Both buttons share one CSS class, so picking by class alone can fill the wrong slot.
-- Remove a reference with the trash icon on its thumbnail.
+- Remove a reference with the trash icon on its thumbnail. The icon itself ignores clicks, so when clicking by script, click the element around it.
 - If the picker shows **Empty.**, close it and reopen it from the Reference Photo button.
 
 ## Entering a prompt
@@ -81,10 +83,10 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 ## Start images
 
 1. Paste the start-image prompt, confirm the settings (Creative mode on, enhancement off, Consistent Character as required) and click **Create Image**.
-2. VideoExpress makes **two candidates per pass**. The carousel keeps every pass from the session, so check the pass count (the dots under the carousel) and describe **only the newest pass**, unless the user refers to another.
-3. **Checkpoint, straight away:** ask which candidate, left or right, or regenerate (same or altered prompt). Describe honestly where each misses the prompt, and ask when you can't tell.
+2. VideoExpress makes **one candidate per pass with Consistent Character off, and two with it on**. The carousel keeps every pass from the session, so check the pass count (the dots under the carousel) and describe **only the newest pass**, unless the user refers to another.
+3. **Checkpoint, straight away:** say what the image should show, from its prompt, describe honestly where each candidate misses it, and ask: left or right (or use it, when there is one candidate), or regenerate (same or altered prompt). Ask when you can't tell.
 4. **Selection is per pass.** Each pass has its own tick, so several ticks can show across the carousel. The active pass's tick is the one used. Click the chosen candidate so its tick moves.
-5. Save accepted start images and references with the hover **save** icon (they land in My AI Images).
+5. Save accepted start images and references with the hover **save** icon (they land in My AI Images). VE saves them under the start of their prompt and they can't be renamed, so find them later by their `[Image 12A]` prefix. Only Save Last Frame lets you choose a name.
 6. With Consistent Character on, VE may rewrite the image prompt. Read the box after generation and tell the user if it changed.
 
 ## Generating a clip
@@ -92,19 +94,20 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 1. **Takes:** the usual default is **five simultaneous takes of the same clip**, with the user picking the best. Confirm with the user at the start.
 2. Enter the prompt and verify it. Verify the settings and both reference slots.
 3. Click **Create Video** once per take, **about eight seconds apart**, checking between clicks that the button is enabled and the prompt is unchanged.
-4. **Record positions as you submit.** The library shows newest first, two per row. With five takes: take 5 is row 1 left, take 4 row 1 right, take 3 row 2 left, take 2 row 2 right, take 1 row 3 left. Report this map when asking whether they've finished.
-5. Confirm the new tiles are in the library, each showing a percentage. Two-actor Lipsync takes can take about half a minute to appear, because the audio is built first.
+4. **Record positions as you submit.** The library shows newest first, two per row. With five takes: take 5 is row 1 left, take 4 row 1 right, take 3 row 2 left, take 2 row 2 right, take 1 row 3 left. Report this map when asking which take to keep.
+5. Confirm the new tiles are in the library, each showing a percentage. The "Your video will appear in your Media Library" message doesn't always show, so the tile is the only confirmation: if the message is missing, check the tile before the next click. Two-actor Lipsync takes can take about half a minute to appear, because the audio is built first.
 
 ## Watching progress (Review tab)
 
 - **Media Library → My AI Videos**, sorted Newest.
 - **The grid goes stale.** Refresh by clicking the purple back arrow (bottom left of the panel), then reopening **My AI Videos**. If the panel won't reopen, toggle Media Library in the right sidebar.
+- **Refresh once a tile reaches 50%.** The grid stops updating partway through a render, so a tile can keep showing a percentage (50% or more) after the take has finished. From the first reading of 50% or more, refresh before every check; don't wait for it to reach 100%.
 - The Creation tab's "generation … completed" notification is unreliable.
 - Claude's view of the library can lag behind the user's. If the user says tiles exist, believe them.
 
 ## Review checkpoint
 
-Ask which take to keep, naming positions. Always add the note: **check for environment and prompt drift before selecting.** Point out what to watch for in that clip (the action beat, the ending framing, sound problems), then leave the call to the user.
+Ask which take to keep as soon as the takes are submitted, naming positions. Don't ask first whether they've finished: the user watches the renders and reviews them anyway. Say what the take should look like, from its prompt: the opening frame, each action beat in order, the camera move, the ending framing (and whether the next clip chains from it), and the sound or spoken line. Add the note: **check for environment and prompt drift before selecting**, include the refresh note, then leave the call to the user.
 
 Right-click menu on a video tile: Play · Download · Add to Timeline · Details · Redesign · Fix Video · Voice Changer · Save Audio · **Save Last Frame** · Organize · Delete · Create work copy · Share. Close any open Play media window before right-clicking.
 
@@ -113,7 +116,7 @@ Right-click menu on a video tile: Play · Download · Add to Timeline · Details
 1. **Scroll the library to the top first.** A right-click lower down can scroll the list and hit the wrong tile.
 2. Right-click the take → **Save Last Frame**. **Check the title prefilled in the dialog** (the start of that take's prompt) to confirm it's the right tile. Replace it with a unique name that includes a project or version prefix (`v3 Clip 4`), because earlier projects' frames may already use `Clip 4`. Click **Save**.
 3. Right-click the same take → **Add to Timeline**. Check the timeline clip count went up by one.
-4. **Save the project** after each add or two. The timeline only survives a reload if it was saved.
+4. **Save the project** after each add or two; a new project gets its name on the first save. The timeline only survives a reload if it was saved.
 
 ## Setting up a chained clip (Creation tab)
 
@@ -150,4 +153,4 @@ After the **first** clip is added to the timeline, ask whether to harden prompts
 
 ## Per-clip cycle, at a glance
 
-Load and inspect the opening frame (by name) → set Consistent Character and the reference slots → enter and verify the prompt, starting with its [Clip N] reference → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: "Have the generations finished?" (with the refresh note) → card: which take → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.
+Load and inspect the opening frame (by name) → set Consistent Character and the reference slots → enter and verify the prompt, starting with its [Clip N] reference → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: which take, with positions, what it should look like and the refresh note → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.

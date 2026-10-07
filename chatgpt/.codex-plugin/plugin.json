@@ -1,6 +1,6 @@
 {
   "name": "videoexpress-scripting",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Plan, script and produce multi-clip videos in VideoExpress 3.5 and later: project intake, Core Bible, multishot prompts, Creative mode styles, chaining, dialogue, sound and browser operation.",
   "author": {
     "name": "Brent Wesley",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "VideoExpress Scripting",
     "shortDescription": "Plan, script and run multi-clip VideoExpress 3.5 videos: intake, Core Bible, multishot prompts, chaining, dialogue and sound.",
-    "longDescription": "Turns a song, story or narration into a clip-by-clip VideoExpress prompt pack: guided project intake, a locked Core Bible for characters, outfits and locations, the VE multishot prompt format, 43 tested Creative mode style sheets, clip chaining, lip-synced dialogue, production sound, a failure-to-fix table for drifting characters, flipped cameras, dark scenes, text in footage and unwanted music, and a workflow for driving app.videoexpress.ai in a browser.",
+    "longDescription": "Turns a song, story or narration into a clip-by-clip VideoExpress prompt pack: guided project intake, a locked Core Bible for characters, outfits and locations, the VE multishot prompt format, 44 tested Creative mode style sheets, clip chaining, lip-synced dialogue, production sound, a failure-to-fix table for drifting characters, flipped cameras, dark scenes, text in footage and unwanted music, and a workflow for driving app.videoexpress.ai in a browser.",
     "developerName": "Brent Wesley",
     "category": "Productivity",
     "capabilities": [
