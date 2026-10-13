@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.5"
+  version: "2.5.1"
   author: Brent Wesley
 ---
 
@@ -34,7 +34,7 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 
 ## Workflow
 
-0. **Intake** — first the what's-new questions (below), then run `references/project-intake.md`: starting point (concept or script), decision checklist with suggestions, feasibility check, any development tests, sign-off on the brief and Core Bible.
+0. **Intake** — run `references/project-intake.md` (after the what's-new questions below, if this is the skill's first use in the conversation): starting point (concept or script), decision checklist with suggestions, feasibility check, any development tests, sign-off on the brief and Core Bible.
 1. **Concept** — scenes, motifs, characters, world, and a visual arc mapped to the source's structure (below).
 2. **Bible** — locked character blocks, outfit blocks and location blocks, written once and pasted verbatim everywhere (`bible.md`).
 3. **Timing** — a clip grid at the tool's clip length, with key hits verified against the real audio by the user (`camera-and-motion.md`).
@@ -43,14 +43,14 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 
 The pack is a living document. Expect many revision rounds as the user generates clips.
 
-## Starting a new project: what's new
+## First use in a conversation: what's new
 
-At the start of a new project only (never for a one-off prompt request, a reported failure or mid-project), before the first intake question, ask these as yes/no questions, one at a time (use the question widget where one is available):
+The first time this skill is used in a conversation, whatever the user's first message is (a new project, a single prompt, a question about the skill, a reported problem), ask these before anything else, as yes/no questions, one at a time (use the question widget where one is available):
 
-1. "VideoExpress Scripting has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its latest version in a few short bullets.
-2. For each **Headline** item in the latest version of `references/changelog.md`, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt#claude-desktop (Claude Desktop; the same page covers other platforms).
+1. "VideoExpress Scripting has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its current release notes (the file's opening line says which sections) in a few short bullets.
+2. For each **Headline** item in those current release notes, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt#claude-desktop (Claude Desktop; the same page covers other platforms).
 
-Then carry on with intake. Ask each question once per project; don't repeat it later in the conversation.
+Then answer the user's first message, or start intake for a new project. Ask the questions once per conversation, never again later in it.
 
 ## Concept design
 

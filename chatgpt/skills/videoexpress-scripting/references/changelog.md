@@ -1,6 +1,11 @@
 # What's new
 
-Read at the start of a new project, when the user says yes to a summary of what's new (SKILL.md, Starting a new project). Summarise the latest version in a few short bullets, in plain words; don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.1 and 2.5): summarise them together in a few short bullets, in plain words, and offer every Headline item in them. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+
+## 2.5.1
+
+- **What's new is asked on first use.** These questions now come the first time the skill is used in a conversation, whatever the first message is, instead of only at the start of a new project.
+- **Changelog wording.** The Consistent Character entry below now says plainly that VideoExpress hasn't changed: the skill's guidance was corrected.
 
 ## 2.5
 

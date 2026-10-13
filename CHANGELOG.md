@@ -2,7 +2,13 @@
 
 Release notes for the skills in this repo. Full notes for each release are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
-Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new at the start of a new project.
+Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
+
+## VideoExpress Scripting 2.5.1 (2026-10-13)
+
+- **What's new is asked on first use.** The scripting skill now asks whether you'd like a summary of what's new (and offers headline additions) the first time it's used in a conversation, whatever the first message is, instead of only at the start of a new project. The summary covers 2.5 and 2.5.1 together.
+- **Changelog wording.** The Consistent Character entry says plainly that VideoExpress hasn't changed: the skill's guidance was corrected.
+- Also on `main` since 2.5.0, without a version change: VideoExpress Prompt's SKILL.md no longer says a clip sees reference images.
 
 ## VideoExpress Scripting 2.5.0 and VideoExpress Prompt 1.0.0 (2026-10-13)
 
@@ -10,7 +16,7 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 
 - **VideoExpress Prompt 1.0.0**, a companion skill: a step-by-step wizard for one image or clip prompt, or an image and its clip, using the same rules and styles. Installed from the same marketplace ([install guide](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt)).
 - **Grok support.** Both skills install in Grok (free trial and paid plans only) by asking Grok to install them from their GitHub folder links, with regular update checks; the local Grok Build CLI can use `npx skills add`. Grok uses the ChatGPT builds ([install guide](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Grok)).
-- **What's new on update.** At the start of a new project the scripting skill asks whether you'd like a summary of what's new, and offers headline additions such as VideoExpress Prompt with a link to install them.
+- **What's new on update.** The first time the scripting skill is used in a conversation it asks whether you'd like a summary of what's new, and offers headline additions such as VideoExpress Prompt with a link to install them.
 - **New style: Graffiti** (aerosol spray-paint toon, caricatures, street mural).
 - **Sitting and walking to a mark.** VE ignores collision and which way furniture faces: seats are chosen with no front (a crate, stool, low wall or bollard) with clear space around them, and a mark a character walks to sits clearly nearer the camera, with a short (1-2 s) walk.
 - **A gesture under a Lipsync HD line.** The Lipsync dialog's Video Prompt steers one directed gesture described in frame terms: which arm by frame side, how high, which third of the frame, a hold, and a return to the opening pose.
