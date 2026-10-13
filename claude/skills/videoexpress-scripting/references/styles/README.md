@@ -34,6 +34,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Blueprint | Custom | white line on cyanotype, extrude not rotate | `blueprint.md` | [▶](https://youtu.be/M70zJVSMZOY) |
 | Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` | [▶](https://youtu.be/mIMmMPOeFqI) |
 | Acrylic | Custom | bold saturated thick paint | `acrylic.md` | [▶](https://youtu.be/DSxSGc_ih2M) |
+| Graffiti | Custom | aerosol spray-paint toon, caricatures, street mural | `graffiti.md` | demo pending |
 | Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
 | Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
 | Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
@@ -92,7 +93,6 @@ Creative mode also renders styles described entirely in the prompt, such as cel-
 - **Image prompt:** open with the medium ("Cinematic hand-drawn [genre] anime film still, widescreen 16:9."), then describe every garment, prop and background element in detail, and close with the look ("Clean ink outlines, two-tone cel shading with hard shadow edges, [palette], richly painted detailed background, mature realistic character proportions."). A long, specific prompt held the style far better than a short one. A character's few defining features are the exception: long prompts lose them, so build detailed characters in stages (see `../bible.md`, Detailed character reference sheets).
 - **Video prompt:** open with a style anchor sentence before [REFERENCE USE] ("Two-dimensional hand-drawn anime cel animation in the style of a late-1990s … anime feature film: flat cel colours, bold clean black ink outlines, two-tone cel shading with hard shadow edges, richly hand-painted backgrounds, drawn and painted, not rendered."). Say "including its drawing style" in the opening-frame sentence, and end each [LIGHT AND IMAGE] with "Strictly two-dimensional hand-drawn … cel art, clean ink outlines, … stable line art and colour throughout."
 - **Negatives:** "no 3D rendering, no photorealism, no realistic skin or fabric textures, no live-action look, no realistic lighting".
-- **Consistent Character pulls toward realism.** A clip generated with a face reference in slot 1 came out far more realistic until the style anchor was added. Keep the anchor in every clip once references are in use.
 - **Reusing a good image's exact prompt** (with only the needed changes) beat rewriting the look from scratch.
 - **Mixed media are a distinct risk.** When a style uses two media (a drawn character over a painted background), the model tends to unify them: the character picks up washes or the background turns into hatching. Name the medium per layer in every prompt, state the contrast as a rule ("strictly two media: … only, … only"), and negate each cross-over explicitly. The sheets marked "custom, tested in production" are worked examples.
 

@@ -52,7 +52,7 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Tone and mood:** e.g. tense, playful, epic, calm, heartfelt, eerie.
 
 ### Look
-- **Production art style:** a Create Mode preset, cinematic photoreal, or a custom Creative mode style described in the prompt (index in `styles/README.md`). Offer three that suit the concept, each with a one-line note on its strengths and risks. Custom styles need a style anchor, and are pulled toward realism by face references.
+- **Production art style:** a Create Mode preset, cinematic photoreal, or a custom Creative mode style described in the prompt (index in `styles/README.md`). Offer three that suit the concept, each with a one-line note on its strengths and risks. Custom styles need a style anchor, or clips drift toward realism.
 - **Colour palette and lighting mood:** e.g. muted cool with warm accents, bright and saturated, golden hour, neon night. Night and neon scenes need brightness rules.
 - **Camera language:** e.g. calm and steady, handheld energy, sweeping moves, fixed side-on staging. Suggest steady single moves for reliability.
 - **Text on screen:** titles, captions or signage. VE renders text in footage badly, so titles and captions should be added with VE's Text Animations or Automatic Captions tools rather than generated in the clip.
@@ -82,7 +82,7 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Takes per clip:** one to five (five is the usual default). More takes cost more but give more choice.
 - **Who operates VideoExpress:** Claude drives the browser, the user does, or both. If Claude drives, follow `browser-workflow.md`.
 - **Chaining strategy:** mostly chained clips (smoother continuity, and drift builds up) or mostly fresh starts from designed start images (more control, more images to make). Suggest a mix: fresh starts at each scene and at difficult beats.
-- **Edit and finishing:** who edits, whether trims, transitions and audio happen in VE's timeline or elsewhere, VE Filters, and the export format.
+- **Edit and finishing:** transitions and audio in VE's timeline, VE Filters, and the export format.
 - **Review cadence:** approve every image and take, or approve in batches.
 - **Sharing:** keep "Share this in the public gallery" off unless the user wants it.
 

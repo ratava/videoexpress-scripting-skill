@@ -57,7 +57,7 @@ The dialog's state can reset (after a page reload, or unexpectedly): prompts cle
 | Landscape 16:9 / Vertical 9:16 | Match the pack's aspect ratio; check it before the first Create Image |
 | Use Creative mode | Always on for image creation |
 | Automatically enhance my image prompt | Always off. It re-ticks itself after generations; untick before every Create Image |
-| Use Consistent Character | On for images and clips featuring the reference characters; **off** for shots with no characters (point of view, empty environments, inserts). Unticking it leaves the reference slots filled, so clear both slots with their trash icons as well |
+| Use Consistent Character | Affects **Create Image only**; Create Video ignores it and its slots, so its state doesn't matter when making clips. On for start images featuring the reference characters; **off** for images with no characters (point of view, empty environments, inserts). Unticking it leaves the reference slots filled, so clear both slots with their trash icons as well |
 | Advanced Mode + Manual Video Length | Tick Advanced Mode, then tick **Manual Video Length, sec**: it is unticked by default and the slider is ignored until it is ticked. Set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
 | Video Only (No Sound) | Off when the prompt has a `[PRODUCTION SOUND]` block. It can end up ticked unexpectedly; verify every time |
 | Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and clip reference, and can refuse a clip whose dialogue it judges too long |
@@ -92,7 +92,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 ## Generating a clip
 
 1. **Takes:** the usual default is **five simultaneous takes of the same clip**, with the user picking the best. Confirm with the user at the start.
-2. Enter the prompt and verify it. Verify the settings and both reference slots.
+2. Enter the prompt and verify it. Verify the settings.
 3. Click **Create Video** once per take, **about eight seconds apart**, checking between clicks that the button is enabled and the prompt is unchanged.
 4. **Record positions as you submit.** The library shows newest first, two per row. With five takes: take 5 is row 1 left, take 4 row 1 right, take 3 row 2 left, take 2 row 2 right, take 1 row 3 left. Report this map when asking which take to keep.
 5. Confirm the new tiles are in the library, each showing a percentage. The "Your video will appear in your Media Library" message doesn't always show, so the tile is the only confirmation: if the message is missing, check the tile before the next click. Two-actor Lipsync takes can take about half a minute to appear, because the audio is built first.
@@ -122,7 +122,7 @@ Right-click menu on a video tile: Play · Download · Add to Timeline · Details
 
 1. **Use from Library** → **My AI Images** → pick the frame **by name**, then **Choose**.
 2. **Look at the loaded frame before writing the prompt.** If it's the wrong framing or pose for the next clip, tell the user and offer a fresh start image instead.
-3. Confirm Consistent Character and both reference slots are as needed, enter the prompt, verify it, verify the settings, and generate.
+3. Enter the prompt, verify it, verify the settings, and generate.
 
 ## Lipsync dialogue clips
 
@@ -153,4 +153,4 @@ After the **first** clip is added to the timeline, ask whether to harden prompts
 
 ## Per-clip cycle, at a glance
 
-Load and inspect the opening frame (by name) → set Consistent Character and the reference slots → enter and verify the prompt, starting with its [Clip N] reference → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: which take, with positions, what it should look like and the refresh note → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.
+Load and inspect the opening frame (by name) → enter and verify the prompt, starting with its [Clip N] reference → verify settings (length, Video Only, Lipsync, sharing) → submit the takes about eight seconds apart, recording positions → confirm the tiles exist → card: which take, with positions, what it should look like and the refresh note → scroll the library to the top, then Save Last Frame (check the title, use a unique name) → Add to Timeline → save the project → card: next step.

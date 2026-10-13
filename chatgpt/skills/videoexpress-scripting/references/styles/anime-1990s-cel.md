@@ -9,6 +9,6 @@
 - **Motion**: wiping hands, pushing hair back, a tool tapped on a palm, a tired smile; one very slow push. Set in daylight or dusk to keep it distinct from the cyberpunk sheet.
 - **Stability line**: "Strictly late-1990s hand-drawn cel animation: bold black outlines, flat colour with hard two-tone cel shadows, no gradients on the character, fine film grain and slight gate weave throughout, the painted background still, stable line art and colour, consistent character drawing."
 - **Guards**: no 3D rendering, no photorealism, no soft gradient shading on the character, no modern ultra-clean digital line, no live-action look.
-- **Known failures**: none in the test take (mechanic in an aircraft hangar). This is the style the skill first proved on the cel-shaded anime project; Consistent Character pulls it toward realism, so keep the anchor in every clip once references are in use.
+- **Known failures**: none in the test take (mechanic in an aircraft hangar). This is the style the skill first proved on the cel-shaded anime project; keep the anchor in every clip.
 
 Shared image recipe, video pattern and consistency rules: `README.md` in this folder.

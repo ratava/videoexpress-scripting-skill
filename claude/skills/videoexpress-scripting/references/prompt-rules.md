@@ -23,7 +23,7 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 
 | Failure observed | Cause | Rule |
 |---|---|---|
-| Digits or letters rendered in footage | Numerals and text-like nouns in the prompt | Digits only in [ACTION 0-5s] labels and the bracketed clip reference; everything else in words. Describe screens, signs and holograms as "abstract shapes and flowing light, with no letters or numbers". End image prompts with "no text, no letters, no numbers, no watermark". |
+| Digits or letters rendered in footage | Signage, screens or other text-bearing objects described with their text | Describe screens, signs and holograms as "abstract shapes and flowing light, with no letters or numbers". End image prompts with "no text, no letters, no numbers, no watermark". |
 | Several objects where one was meant | Counting events ("pulses five times") | Never count events; describe a rate on one named source. Only count real plural objects. |
 | Water instead of fog | Water vocabulary | Fog is dry, luminous smoke; ban pool, ripple, wave, surface, flood, tide. |
 | Features bleeding between characters or crowd cloning the lead | Shared adjectives, one look for everyone | Unique name per character, distinct crowd outfits, "only [Name] wears…", "no crowd member sharing [Name]'s face, hair or outfit, no identical or cloned faces". |
@@ -35,8 +35,8 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 | Scene darkens | Laser/smoke default look | Effects add light, key light, spotlight, luminous smoke, restated brightness. |
 | Crowd at wrong scale or fake-looking | Scale-mixing wording | True human scale wording, no raised platforms, natural perspective. |
 | Similes rendered literally | The model renders nouns | Audit every noun; replace figurative nouns with literal descriptions. |
-| Too-close ending ruins the next chain | Close framing | Pull back to full body by the last frame, or start the next clip fresh from a new start image. |
-| Stylised clip turns realistic | Face references pull toward realism; weak style wording | Style anchor at the start of the prompt, cel-art style line in every segment, anti-realism negatives. |
+| Too-close ending ruins the next chain | The clip was planned at a different framing from the next | Flag the risk when planning; options are matched framing, a re-roll, or a new start image, and the user chooses. |
+| Stylised clip turns realistic | No style anchor, or weak style wording | Style anchor at the start of the prompt, cel-art style line in every segment, anti-realism negatives. |
 | Unwanted facial markings appear | A feature in the block that references now render | Remove the feature entirely; "plain, unmarked skin with no lines, markings or glowing lights". |
 | Prop moves or duplicates mid-clip | Text says one carry position, frame shows another | Describe the prop exactly as the frame shows it. |
 | Weapon or prop changes shape after a push-in or a swing | It left the frame and was redrawn from the text | Keep it fully in frame through the action: camera locked, prop visible in its pose from the first frame, the move ending inside the frame. |
@@ -44,15 +44,17 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 | Hybrid prop becomes its stronger half (a handgun with a blade bolted on) | A hybrid name or a strong noun ("pistol") in the prompt | Describe the parts and layout as geometry, drop the strong noun; if it keeps reverting, simplify the design (bible.md). |
 | Defining features missing from a detailed character image | Image prompt too long, features buried mid-prompt | Short prompt with the features first; build the sheet in stages: head shot, then full body with it in slot 1, then a composite (bible.md). |
 | Metal or a cybernetic part spreads onto a nearby body part | Worth checking: that body part named in the same sentence as the metal part | Move or remove the body-part noun, and describe the bare area positively in its own sentence. A suggestion, not a rule. |
-| Pose or prop copied from a reference | In-scene image in Reference Photo 2 | Slot 2 only for a second character's reference sheet. |
+| Pose or prop copied from a reference | The prompt doesn't state the pose, so the reference's pose and props carry over | State the pose and how each prop is held in the prompt; it overrides the reference. Slot 2 only for a second character's reference sheet. |
 | Weapon-arm turns into a hand or fist | Named part without structure; gesture on that arm | Joint-by-joint structure, "no hand, no grip, no handle", gestures on the other limb. |
 | Action happens in place or in the wrong direction | Direction written relative to facing, not frame geometry | Describe where the obstacle is in the frame and where the subject ends up; "the spot where she stood is left empty". |
+| Character sits through a table, or sideways on a chair facing the wrong way | VE models no collision and no furniture direction; a chair is drawn facing its table whatever the prompt says | A seat with no front (crate on its end, stool, low wall, bollard) with clear space around it and nothing beside it on the path (camera-and-motion.md). |
+| Character walks past the seat or mark | The mark is level with or behind them in the start image | Start image with the mark clearly nearer the camera than the character, ground visible between, and a 1–2 s walk. |
 | Reaction arrives late (subject stands still under fire) | Trigger and reaction in one beat | Separate timed segments: anticipation, reaction, consequence; negatives on premature events. |
 | Shooter fires at nothing; characters swap sides | Over-the-shoulder push-in; no fixed layout | Fixed left/right layout, side-on wide, no over-the-shoulder view. |
 | Background hiss or hum across the clip | Sustained sounds (whir, hum, drone), or "no hum"-style exclusions written inside [PRODUCTION SOUND] | Transient sounds tied to actions; ambient exclusions in [NEGATIVES] only, written "No hum, no hiss…". |
 | Low rumble and crackle under a pause or a quiet stretch | A segment or clip that asks for silence, or empty time with nothing to generate | Never ask for silence: pauses under a second, a soft action sound in quiet stretches, manual length fitted to the action and speech. |
 | A sound, motion or object you excluded appears | The exclusion was written outside [NEGATIVES], or as a bare list inside it | Positives only outside [NEGATIVES]; each exclusion in [NEGATIVES] written with "No". |
-| Music or stray sound in early segments; only the last segment sounds as written | One [PRODUCTION SOUND] after the last segment binds to that segment only | One [PRODUCTION SOUND t-ts] block per segment, silent segments stated explicitly. |
+| Music or stray sound in early segments; only the last segment sounds as written | One [PRODUCTION SOUND] after the last segment binds to that segment only | One [PRODUCTION SOUND t-ts] block per segment, each naming a sound tied to that segment's action. |
 | Gunfire sounds thin | "Sharp", "crisp", "crack" | Deep, booming, full-bodied, low-end punch, echo. |
 | Speech with closed mouths | Line written without mouth movement, or speaker's face not in frame | Write "lips, jaw and beard moving in sync with every word" with the quoted line in [ACTION] (Lipsync HD unticked), and frame the speaker's face. |
 | "Your dialogues are too long" error, or last line cut off | Lines quoted twice (action and sound), or too much speech for the clip length | Quote each line once, in [ACTION]; budget about two seconds per short line plus pauses; set the manual length to fit. |
@@ -67,4 +69,4 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 | Can't tell which tile or take belongs to which clip | Prompt doesn't open with its pack reference | Start every prompt with the pack's bracketed reference (`[Clip 12]`, `[Image 12A]`, `[Clip 12 TEST 1]`), nothing before it; unique per clip, image and variant. |
 | Hidden character appears in front of cover | See-through effects | Keep hidden characters out of the shot. |
 
-**Per-take QC checklist** (include in every pack): character hair, face and signature accessory; outfit matches the scene block, per side; environment matches the location block, including newly revealed areas; brightness holds to the last frame; no digits, letters or symbols; camera direction as prompted; motion reads as real time; crowd scale and faces varied; cut frame is clean for the next chain.
+**Per-take QC checklist** (include in every pack): character hair, face and signature accessory; outfit matches the scene block, per side; environment matches the location block, including newly revealed areas; brightness holds to the last frame; no digits, letters or symbols; camera direction as prompted; motion reads as real time; crowd scale and faces varied; last frame is clean for the next chain.

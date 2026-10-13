@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "videoexpress-prompt",
+  "version": "1.0.0",
+  "description": "A step-by-step wizard for one VideoExpress 3.5 prompt: a start image, a clip, or an image-and-clip pair, or an improved version of a prompt you already have. Same prompt rules and styles as VideoExpress Scripting.",
+  "author": {
+    "name": "Brent Wesley",
+    "url": "https://github.com/ratava"
+  },
+  "homepage": "https://github.com/ratava/videoexpress-scripting-skill/blob/main/CHANGELOG.md",
+  "repository": "https://github.com/ratava/videoexpress-scripting-skill",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "videoexpress",
+    "video",
+    "ai-video",
+    "prompting",
+    "image-prompt",
+    "multishot"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "VideoExpress Prompt",
+        "shortDescription": "A step-by-step wizard for one VideoExpress 3.5 image or clip prompt, or an image-and-clip pair.",
+        "longDescription": "Asks about one aspect of the shot at a time (look and style with links to the style catalogue, what happens, dialogue, sound, camera, light and image, negatives) and writes a paste-ready VideoExpress start-image prompt, clip prompt, or matched pair, with the dialog settings to use. Can start from an image or prompt you already have and improve it. Shares its prompt rules, multishot format, Creative mode style sheets and failure fixes with VideoExpress Scripting.",
+        "developerName": "Brent Wesley",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://github.com/ratava/videoexpress-scripting-skill",
+        "defaultPrompt": [
+          "Help me write a VideoExpress prompt for one clip.",
+          "Here's my VideoExpress prompt. Can you improve it?",
+          "I need a start image and a clip for VideoExpress."
+        ],
+        "brandColor": "#6D28D9"
+      }
+    }
+  }
+}

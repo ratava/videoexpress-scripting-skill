@@ -1,0 +1,14 @@
+# Anime: Cyberpunk, mid-1990s cel film look (muted teal, rain, dense painted city)
+
+**Type**: custom, tested in production (pass)
+
+- **Medium phrase**: "A hand-drawn Japanese cel animation film still in the style of a mid-1990s theatrical cyberpunk anime, widescreen 16:9: clean black ink outlines, flat cel colours with hard two-tone cel shadows on the character, mature realistic proportions and a calm unexaggerated face, a very dense richly hand-painted background with visible brush texture and photographic detail, a muted palette of deep teal, grey-green, slate blue and wet grey with amber and pale green light accents, fine film grain and a slight softness as if photographed from cels. Melancholic and still." Video anchor: "Two-dimensional hand-drawn cel animation in the style of a mid-1990s theatrical cyberpunk anime: clean black ink outlines, flat cel colours with hard two-tone cel shadows, mature realistic proportions, a dense richly hand-painted city background, a muted teal, grey-green and amber palette, fine film grain, slow melancholic stillness, drawn and painted, not rendered."
+- **Character design**: composed unreadable faces, realistic proportions, long coats with collars up, wet bobbed hair, a barely visible cable-like detail at the nape; hands in pockets.
+- **Materials / rendering**: tired stacked concrete, air-conditioning units, pipes and tangled cables, flooded gutters and canals reflecting light, shuttered stalls, blank signboards, translucent pale green and amber holograms showing abstract shapes with no legible lettering, steam, fine straight rain. Describe the look, never the film.
+- **Light**: cool pale green and amber from holograms and signs, cold grey-blue fill, hard cel shadow edges, film grain. No magenta or hot-pink neon.
+- **Motion**: rain, flickering holograms, steam, a slow head lift, a drone drifting across behind, eyes following it; one very slow push. Hold brightness; this is a dark scene and the skill's darkening rule applies.
+- **Stability line**: "Strictly mid-1990s hand-drawn cel animation: clean black outlines, flat colour with hard two-tone cel shadows, no gradients on the character, a dense painterly background held still, muted teal and amber palette, no hot-pink neon, stable brightness and colour throughout, film grain throughout, consistent character drawing."
+- **Guards**: no 3D rendering, no photorealism, no bright magenta or hot-pink neon, no glossy chrome, no soft gradient shading on the character, no live-action look, no scene darkening, no legible lettering on signs or holograms.
+- **Known failures**: none in the test take (woman in an olive coat on a rain street). The palette guard is what separates this from generic neon cyberpunk.
+
+Shared image recipe, video pattern and consistency rules: `README.md` in this folder.
