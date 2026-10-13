@@ -33,7 +33,7 @@ The two builds share the same method, bible rules, prompt template, style sheets
 
 ## What's new
 
-See [CHANGELOG.md](CHANGELOG.md). At the start of a new project the skill also offers a short summary of what's new in the installed version.
+See [CHANGELOG.md](CHANGELOG.md). The first time the skill is used in a conversation, it also offers a short summary of what's new in the installed version.
 
 ## What it covers
 
