@@ -10,7 +10,7 @@ The ChatGPT/Codex build of the [VideoExpress Scripting](../README.md) skill, pac
 codex plugin marketplace add ratava/videoexpress-scripting-skill
 ```
 
-In Codex CLI, open the plugin directory, pick the **VideoExpress Scripting** marketplace and install the plugin. In the ChatGPT desktop app (Work mode), open the Plugins Directory and choose the same marketplace source. Pin a release with `codex plugin marketplace add ratava/videoexpress-scripting-skill --ref v2.3.0`, and pull updates later with `codex plugin marketplace upgrade videoexpress-scripting`. Codex caches the installed copy under `~/.codex/plugins/cache/videoexpress-scripting/videoexpress-scripting/`, so it keeps working when the repo isn't open.
+In Codex CLI, open the plugin directory, pick the **VideoExpress Scripting** marketplace and install the plugin. In the ChatGPT desktop app (Work mode), open the Plugins Directory and choose the same marketplace source. Pin a release with `codex plugin marketplace add ratava/videoexpress-scripting-skill --ref v2.5.0`, and pull updates later with `codex plugin marketplace upgrade videoexpress-scripting`. Codex caches the installed copy under `~/.codex/plugins/cache/videoexpress-scripting/videoexpress-scripting/`, so it keeps working when the repo isn't open.
 
 If you clone this repo and open it as a trusted project, the repo-scoped marketplace is discovered automatically and `.codex/config.toml` enables the plugin for that project.
 
@@ -18,7 +18,22 @@ If you clone this repo and open it as a trusted project, the repo-scoped marketp
 
 **ChatGPT without plugins or skills.** Download `videoexpress-scripting-chatgpt.zip` from the [releases page](../../../releases) (or zip the `skills/videoexpress-scripting` folder yourself) and upload it through ChatGPT's skills settings, or paste `SKILL.md` into a Project's instructions as a fallback. Native skills are rolling out by plan; Enterprise and Edu workspaces have them off by default until an admin enables them.
 
-**Browser operation:** the browser workflow assumes an assistant that can control a browser (ChatGPT agent mode, the Codex app or Codex Chrome extension). The skill works for planning and prompt writing without it.
+**Grok (xAI).** This build is also the one for Grok. Grok skills are available on the free trial and paid plans only. Ask Grok to install it from GitHub, giving it this folder, not the repo root (the root also holds the Claude build with the same name):
+
+```
+Install this skill into my skill library from GitHub. The link is one skill folder (SKILL.md plus its references folder); install only this folder:
+https://github.com/ratava/videoexpress-scripting-skill/tree/main/chatgpt/skills/videoexpress-scripting
+```
+
+Answer yes when Grok asks whether to check for updates regularly. Step-by-step: [Install in Grok](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Grok).
+
+For the local Grok Build CLI instead, use the open-source [skills CLI](https://github.com/vercel-labs/skills) (needs Node.js); skills installed this way are seen only by Grok Build on that computer:
+
+```
+npx skills add https://github.com/ratava/videoexpress-scripting-skill/tree/main/chatgpt/skills/videoexpress-scripting -a grok -g
+```
+
+**Browser operation:** the browser workflow assumes an assistant that can control a browser (ChatGPT agent mode, the Codex app or Codex Chrome extension, or Grok with browser control). The skill works for planning and prompt writing without it.
 
 ## Contents
 

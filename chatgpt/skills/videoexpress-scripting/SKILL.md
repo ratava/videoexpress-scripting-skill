@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks the assistant to operate VideoExpress in a browser, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music. Plans, scripts and produces multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with a browser-capable agent.
 metadata:
-  version: "2.4"
+  version: "2.5"
   author: Brent Wesley
 ---
 
@@ -13,7 +13,7 @@ Produce a production-ready **prompt pack**: a living document that maps a full p
 Two facts drive almost everything in this skill:
 
 1. **The model renders nouns, not intentions.** Every noun, count, simile and stray token is a candidate to appear on screen.
-2. **Each generation only knows what it is given.** A chained clip sees one still image (the previous clip's last frame) plus the prompt and any reference images. It has no memory of the previous clip's motion, of anything that was out of frame, or of earlier prompts. Anything not visible in the opening frame or described in the prompt will be invented.
+2. **Each generation only knows what it is given.** A chained clip sees one still image (the previous clip's last frame) plus the prompt. It has no memory of the previous clip's motion, of anything that was out of frame, or of earlier prompts. Anything not visible in the opening frame or described in the prompt will be invented.
 
 ## Where to read next
 
@@ -34,7 +34,7 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 
 ## Workflow
 
-0. **Intake** — run `references/project-intake.md`: starting point (concept or script), decision checklist with suggestions, feasibility check, any development tests, sign-off on the brief and Core Bible.
+0. **Intake** — first the what's-new questions (below), then run `references/project-intake.md`: starting point (concept or script), decision checklist with suggestions, feasibility check, any development tests, sign-off on the brief and Core Bible.
 1. **Concept** — scenes, motifs, characters, world, and a visual arc mapped to the source's structure (below).
 2. **Bible** — locked character blocks, outfit blocks and location blocks, written once and pasted verbatim everywhere (`bible.md`).
 3. **Timing** — a clip grid at the tool's clip length, with key hits verified against the real audio by the user (`camera-and-motion.md`).
@@ -42,6 +42,15 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 5. **Generation support** — diagnose reported failures by mechanism, fix them globally, sweep every affected clip (`prompt-rules.md`).
 
 The pack is a living document. Expect many revision rounds as the user generates clips.
+
+## Starting a new project: what's new
+
+At the start of a new project only (never for a one-off prompt request, a reported failure or mid-project), before the first intake question, ask these as yes/no questions, one at a time, with numbered options where the platform has no question widget:
+
+1. "VideoExpress Scripting has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its latest version in a few short bullets.
+2. For each **Headline** item in the latest version of `references/changelog.md`, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt (the page has a section for each platform, including ChatGPT and Grok).
+
+Then carry on with intake. Ask each question once per project; don't repeat it later in the conversation.
 
 ## Concept design
 
@@ -64,13 +73,13 @@ These are the ones that cause the most damage when forgotten. The references hol
 - **Positives everywhere except [NEGATIVES].** VE reads every other section as things to include, even with "no", "not" or "never" in front, so state what should exist and what stays still, and put every exclusion in [NEGATIVES], each written with "No" ("No music, no hum"). Lead every segment with the subject's motion.
 - **Camera: locked unless asked, every move named identically in every clip, every move has a destination, never return to space that has left the frame.** Never write a move relative to another clip.
 - **A detail holds only at the size VE last drew it.** A push-in that enlarges a face or prop, or a prop that leaves the frame and comes back, makes VE redraw it from text. Start each clip from a start image at its closest framing; a closer shot is a new clip.
-- **End at full-body framing if the next clip chains.** Inspect and trim the cut frame before chaining; fix the parent, don't prompt harder on the child.
-- **Digits only in [ACTION 0-5s] labels and the [Clip 12] reference; no counted events; no lettering promised.** Describe screens and signs as abstract shapes and light.
+- **Chaining: flag detail risk, don't dictate.** A chained clip opens on the take's last frame, and a detail holds only at the size VE last drew it. When a planned chain risks detail drift (a closer framing than the last frame, a pull-away and return, a detailed face or prop small in the last frame), say so once per project or pack section (an episode, say) in that section's Global rules, with the options: keep the framing matched, re-roll the parent, or start from a new start image. How to chain is the user's choice.
+- **No counted events; no lettering promised.** Describe screens, signs and other text-bearing objects as abstract shapes and light.
 - **Effects add light, never replace it.** Keep a key light on the subject; restate brightness in the final segment; never chain from a darkened frame.
 - **One [PRODUCTION SOUND] block per segment, with the segment's time label;** a single block after the last segment binds to that segment only and leaves the rest to VE, often as music. **Transient sounds tied to actions; never ask for silence (it renders as rumble and crackle); fit the clip length to the action and speech; close each block with what is heard in that segment.**
-- **Stylised looks need the style anchor at the very start of the video prompt** (straight after the clip reference, before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives. References pull toward realism; counter with wording, not by dropping the reference.
+- **Stylised looks need the style anchor at the very start of the video prompt** (straight after the clip reference, before [REFERENCE USE]) and in every [LIGHT AND IMAGE], plus anti-realism negatives.
 - **Keep "Automatically enhance my video prompt" off.** It rewrites to short prose and drops the bible, time labels and clip reference. The prompt box holds about 6,000 characters; trim repeated style text and negatives first.
-- **Turn Consistent Character off** for shots with no characters (empty environments, point-of-view, inserts).
+- **Turn Consistent Character off** when making start images with no characters (empty environments, point-of-view, inserts). It affects Create Image only; Create Video ignores it.
 
 ## The prompt pack document
 
@@ -78,7 +87,7 @@ These are the ones that cause the most damage when forgotten. The references hol
 2. **Global rules**: the rules above and from the references that apply to this project.
 3. **Bible**: character core block, outfit blocks, location blocks, style line.
 4. **Per scene**: start images (each with a declared reference such as Image 12A, and a self-contained prompt that starts `[Image 12A]`), then per clip — header line (clip reference such as Clip 12 · time range · VE length · FRESH from image X or CHAIN from clip N · role tag) and the full multishot prompt, starting `[Clip 12]`, in a code block.
-5. **Edit, timing and QC**: trims, retimes, transitions, the per-take QC checklist (in `prompt-rules.md`), open items.
+5. **Edit, timing and QC**: transitions, the per-take QC checklist (in `prompt-rules.md`), open items.
 
 For alternates, add a new tab or section rather than overwriting working clips, and include any adjacent clips that must change to hand off correctly. Keep clip and image references stable once generation starts, since they are what identify the takes; if clips are cut, keep the gaps and note them. Alternates get their own reference (Clip 12B), never a reused one.
 

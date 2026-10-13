@@ -1,5 +1,8 @@
-# Enables the VideoExpress Scripting plugin from this repo's own marketplace
+# Enables the VideoExpress Scripting and VideoExpress Prompt plugins from this repo's own marketplace
 # (.agents/plugins/marketplace.json) when the repo is opened as a trusted
 # project in Codex or the ChatGPT desktop app.
 [plugins."videoexpress-scripting@videoexpress-scripting"]
+enabled = true
+
+[plugins."videoexpress-prompt@videoexpress-scripting"]
 enabled = true
