@@ -21,7 +21,7 @@ Read at the start of a new project, when the user says yes to a summary of what'
 
 ### Changed
 
-- **Consistent Character affects Create Image only.** A video prompt's [REFERENCE USE] now names only the start image, and the browser workflow no longer sets Consistent Character for clips.
+- **Corrected: Consistent Character in clips.** The skill no longer sets Consistent Character for clips or names reference images in video prompts; [REFERENCE USE] names only the start image. VideoExpress hasn't changed: Consistent Character has only ever affected Create Image.
 - **References and pose.** A reference can carry its pose and props into an image; a pose stated in the prompt overrides it.
 - **Numbers.** Ages, lengths and counts can be written as digits; only signs, screens and other text-bearing objects need describing as abstract shapes and light.
 - **Chaining inside VE.** Clips chain from VE's Save Last Frame, with no trimming or retiming outside VE. Plan the framing so a clip ends where the next begins, and the skill flags any detail risk for you to decide.
