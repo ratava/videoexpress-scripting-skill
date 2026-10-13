@@ -19,7 +19,7 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 
 ### Changed
 
-- **Consistent Character affects Create Image only.** A video prompt's [REFERENCE USE] names only the start image; the browser workflow no longer sets Consistent Character or its slots for clips.
+- **Corrected: Consistent Character in clips.** The skill no longer sets Consistent Character or its slots for clips, and a video prompt's [REFERENCE USE] names only the start image. VideoExpress hasn't changed: Consistent Character has only ever affected Create Image, and earlier versions of the skill wrongly treated it as affecting clips.
 - **References and pose.** A reference in either slot can carry its pose and props; a pose stated in the prompt overrides it.
 - **Numbers.** The blanket "digits only in labels" rule is replaced: ages, lengths and counts can be digits (tested, no numerals appeared), and only signs, screens and other text-bearing objects are described as abstract shapes and light.
 - **Chaining inside VE.** Clips chain from VE's Save Last Frame, with no trimming or retiming outside VE. Plan the framing so a clip ends where the next begins; the skill flags detail risk and you decide.
