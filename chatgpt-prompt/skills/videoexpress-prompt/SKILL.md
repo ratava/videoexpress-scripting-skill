@@ -13,7 +13,7 @@ A wizard for **one shot**: a start-image prompt, a video-clip prompt, or an imag
 Two facts drive every prompt:
 
 1. **The model renders nouns, not intentions.** Every noun, count, simile and stray token is a candidate to appear on screen.
-2. **Each generation only knows what it is given.** A clip sees one still image plus the prompt and any reference images. Anything not visible in the opening frame or described in the prompt will be invented.
+2. **Each generation only knows what it is given.** A clip sees one still image plus the prompt. Anything not visible in the opening frame or described in the prompt will be invented.
 
 ## Read before writing
 
