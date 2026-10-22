@@ -2,7 +2,7 @@
 name: videoexpress-prompt
 description: A question-by-question wizard that writes one paste-ready VideoExpress (VE) 3.5+ prompt, or a matched pair - a start image, a video clip, or an image plus its clip - or improves an image or clip prompt the user already has. Walks through look and style (with links to the Creative mode style catalogue), what happens, dialogue, sound, camera, light and image, and negatives, applying the same prompt rules, multishot format, styles, Consistent Character advice and lip-sync methods as the VideoExpress Scripting skill. Use when the user wants a single VideoExpress image or clip prompt, a one-off shot, or help fixing one prompt. For a multi-clip video, a script, a prompt pack, chaining across clips or operating VideoExpress in the browser, use videoexpress-scripting instead.
 metadata:
-  version: "1.0"
+  version: "1.1"
   author: Brent Wesley
 ---
 
@@ -33,6 +33,18 @@ The references were written for multi-clip projects. For one shot, read them thi
 - **Never ask what's already answered.** Pull answers from the user's message, image or existing prompt first. Show what was taken from it and ask only for confirmation or changes.
 - **Keep a running summary.** After each step, show a short "so far" list so the user can correct anything.
 - **Let the user skip ahead.** "You choose" or "just write it" fills the remaining steps with the suggested defaults, and says what they were.
+
+## First use in a conversation: what's new
+
+The first time this skill is used in a conversation, whatever the user's first message is, ask this before anything else, as a yes/no question (use the question widget where one is available):
+
+**Once per version where memory allows.** First check any persistent memory you can read (Claude's memory, a project memory file) for a note that this version's what's-new question was already shown. If there is one, skip it. If not, ask it; then, if memory is on, save the one-line note "VideoExpress Prompt [version]: what's-new shown." and tell the user once: "I'll remember you've seen this, so I won't ask again for this version." Without memory, or when no note is found, ask as below: asking again is the safe fallback.
+
+"VideoExpress Prompt has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its current release notes (the file's opening line says which sections) in a few short bullets.
+
+Then answer the user's first message. If the skill was started with no message of its own (only its name or slash command), go straight to the Step 0 card, "Do you have something to start from?", as a question card, not a prose menu. When the first message already says what is wanted (an idea, an image, a prompt to improve, a failed take), act on it without asking what the user wants. Ask the what's-new question once per conversation, never again later in it.
+
+**Name the conversation after the shot.** Once the shot has a subject (from the user's idea, image or prompt), rename the conversation to "[subject] · VideoExpress Prompt" if you have a tool that renames it (such as Claude Desktop's session title). Otherwise leave the name as it is.
 
 ## Step 0: what have you got?
 

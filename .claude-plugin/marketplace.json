@@ -36,7 +36,7 @@
       "name": "videoexpress-prompt",
       "source": "./claude-prompt",
       "description": "A step-by-step wizard for one VideoExpress 3.5 prompt: a start image, a clip, or an image-and-clip pair, or an improved version of a prompt you already have. Same prompt rules and styles as VideoExpress Scripting.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Brent Wesley",
         "url": "https://github.com/ratava"
