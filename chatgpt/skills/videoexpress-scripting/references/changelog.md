@@ -1,6 +1,6 @@
 # What's new
 
-Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.5, 2.5.1 and 2.5): summarise them together in a few short bullets, in plain words, leading with the Headline items, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.5, 2.5.1 and 2.5): show them as a bulleted list: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet), in plain words, Headline items first. Never fold the notes into a sentence or a parenthesis, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
 ## 2.5.5
 
