@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.5.5"
+  version: "2.5.6"
   author: Brent Wesley
 ---
 
@@ -40,6 +40,8 @@ For a single prompt request mid-project, the usual set is `multishot-template.md
 3. **Timing** — a clip grid at the tool's clip length, with key hits verified against the real audio by the user (`camera-and-motion.md`).
 4. **Prompt pack** — start-image prompts and multishot video prompts for every clip (`multishot-template.md` plus the relevant references).
 5. **Generation support** — diagnose reported failures by mechanism, fix them globally, sweep every affected clip (`prompt-rules.md`).
+
+When the script is signed off, start production in the same reply: if Claude operates VE, ask whether to open the VideoExpress tabs in Chrome now, and give the first paste-ready prompt with its settings whoever operates (`references/project-intake.md`, Starting production).
 
 The pack is a living document. Expect many revision rounds as the user generates clips.
 

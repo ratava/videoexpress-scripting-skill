@@ -38,6 +38,8 @@ Be efficient with actions: batch clicks and checks, read page state with one scr
 
 ## Session setup
 
+Run it when the user says yes to opening the tabs after script sign-off (`project-intake.md`, Starting production), or whenever the user asks.
+
 1. **Always work in two tabs; don't ask the user.** Open `https://app.videoexpress.ai` in two tabs. An authorised browser logs straight in. Close any **Latest News and Updates** sidebar with its **Close** button.
 2. **Name the tabs:**
    - **Creation tab:** the generator dialog only.

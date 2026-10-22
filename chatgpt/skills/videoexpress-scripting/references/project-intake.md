@@ -133,3 +133,8 @@ After the tests, update the Bible with any wording that worked, since a prompt t
 4. **Production plan:** start images to generate, takes per clip, the generation budget, the test results, and the order of work.
 
 The user signs off each output. Then production moves to the prompt pack (SKILL.md and the references it routes to) and, if the assistant operates VE, `browser-workflow.md`.
+
+**Starting production.** As soon as the script is signed off, in the same reply:
+
+- **If the assistant operates VE (or both),** ask as a yes/no question (numbered options where the platform has no question widget): "Open the two VideoExpress tabs in the browser now?" On yes, run Session setup in `browser-workflow.md` (Creation and Review tabs, the project, the Create Video From Prompt dialog). On no, say how to start later: ask the assistant to open VideoExpress at any point.
+- **Give the first prompt, whoever operates:** the first paste-ready prompt in pack order (usually the first Consistent Character reference, otherwise `[Image 1A]`), in full, with its settings (aspect ratio, Use Creative mode, Automatically enhance my image prompt off, Consistent Character on or off). Write it now if the pack isn't written yet. For a manual operator it's the prompt to paste; when the assistant operates, it's the one pasted first.
