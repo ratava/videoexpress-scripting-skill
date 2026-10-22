@@ -54,6 +54,8 @@ The first time this skill is used in a conversation, whatever the user's first m
 
 Then answer the user's first message, or start intake for a new project. If the skill was started with no message of its own (only its name or slash command), treat it as a new project: go straight to the "How do you want to start?" card (`references/project-intake.md`, Step 1), as a question card, not a prose menu. When the first message already says what is wanted (an idea, a script, a single prompt, a failed take), act on it without asking what the user wants. Ask the what's-new questions once per conversation, never again later in it.
 
+**Name the conversation after the project.** Once a new project has a working title (from the user's idea or the brief), rename the conversation to "[title] · VideoExpress" if you have a tool that renames it (such as Claude Desktop's session title). Otherwise leave the name as it is.
+
 ## Concept design
 
 - Design **2–4 recurring motifs** that carry the video (an accent colour, a gesture, a light effect, a returning prop). Motifs give continuity AI generation can't provide on its own.

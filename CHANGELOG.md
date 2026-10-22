@@ -9,6 +9,7 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 ### New
 
 - **Clip review: video and sound checks.** Asked to review takes, or handed take picks, the assistant checks each finished take inside VideoExpress without downloading it: a page script fetches the take from the library and draws twelve frames from start to end plus a spectrogram of its soundtrack on one sheet, with per-second level and high-band share. It reports the opening and ending frames, action beats, camera moves and drift, and the sound: no audio track, level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It doesn't identify words, check lip-sync or see motion between the sampled frames. Part of the browser workflow; offered as a headline item in what's new.
+- **Conversations named after the project.** Once a new project has a working title, the skill renames the conversation "[title] · VideoExpress" where it has a tool for that (Claude Desktop's session title, Grok); ChatGPT can't rename chats, so the name is left as it is there.
 
 ### Fixed
 
