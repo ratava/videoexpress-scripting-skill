@@ -47,6 +47,8 @@ The pack is a living document. Expect many revision rounds as the user generates
 
 The first time this skill is used in a conversation, whatever the user's first message is (a new project, a single prompt, a question about the skill, a reported problem), ask these before anything else, as yes/no questions, one at a time (use the question widget where one is available):
 
+**Once per version where memory allows.** First check any persistent memory you can read (Claude's memory, a project memory file) for a note that this version's what's-new questions were already shown. If there is one, skip both questions. If not, ask them; then, if memory is on, save the one-line note "VideoExpress Scripting [version]: what's-new shown." and tell the user once: "I'll remember you've seen this, so I won't ask again for this version." Without memory, or when no note is found, ask as below: asking again is the safe fallback.
+
 1. "VideoExpress Scripting has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its current release notes (the file's opening line says which sections) in a few short bullets.
 2. For each **Headline** item in those current release notes that has a question, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt#claude-desktop (Claude Desktop; the same page covers other platforms).
 

@@ -14,6 +14,7 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 
 - **Bare invocation.** Started with only its name or slash command, the skill goes straight to the "How do you want to start?" card instead of a prose menu; a first message that already says what's wanted is acted on without asking.
 - **Private takes.** Takes with an empty `mediaPath` are fetched through `/library/download/<id>`, so Clip review no longer stops with "take not found or still rendering".
+- **What's new once per version.** Before asking, the skill checks memory it can read for a note that this version's what's-new questions were shown, and skips them if so; after asking it saves that note when memory is on. Without memory it asks on first use in each conversation, as before.
 - What's new only asks a Headline item's question when it has one.
 
 ## VideoExpress Scripting 2.5.1 (2026-10-13)

@@ -11,6 +11,7 @@ Read on the skill's first use in a conversation, when the user says yes to a sum
 ### Fixed
 
 - **Starting with just the skill's name** (or its slash command) now goes straight to the "How do you want to start?" card instead of a list of options in text. A first message that already says what you want is acted on without asking.
+- **What's new once per version.** Where memory is on, these questions are asked once per version, not in every conversation; without memory they're still asked on first use in each conversation.
 - **Private takes** with no public file link are fetched through the library's download address, so Clip review works on them too.
 
 ## 2.5.1
