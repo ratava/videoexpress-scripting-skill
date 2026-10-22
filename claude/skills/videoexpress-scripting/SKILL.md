@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.5.1"
+  version: "2.5.5"
   author: Brent Wesley
 ---
 
@@ -48,9 +48,9 @@ The pack is a living document. Expect many revision rounds as the user generates
 The first time this skill is used in a conversation, whatever the user's first message is (a new project, a single prompt, a question about the skill, a reported problem), ask these before anything else, as yes/no questions, one at a time (use the question widget where one is available):
 
 1. "VideoExpress Scripting has been updated to version [version]. Would you like a quick summary of what's new?" Take the version from this file's `metadata.version`, without any `-dev` suffix. On yes, read `references/changelog.md` and summarise its current release notes (the file's opening line says which sections) in a few short bullets.
-2. For each **Headline** item in those current release notes, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt#claude-desktop (Claude Desktop; the same page covers other platforms).
+2. For each **Headline** item in those current release notes that has a question, unless its "Skip if" condition holds: ask its question. On yes, give the install link and say it opens the install steps: for VideoExpress Prompt, https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-VideoExpress-Prompt#claude-desktop (Claude Desktop; the same page covers other platforms).
 
-Then answer the user's first message, or start intake for a new project. Ask the questions once per conversation, never again later in it.
+Then answer the user's first message, or start intake for a new project. If the skill was started with no message of its own (only its name or slash command), treat it as a new project: go straight to the "How do you want to start?" card (`references/project-intake.md`, Step 1), as a question card, not a prose menu. When the first message already says what is wanted (an idea, a script, a single prompt, a failed take), act on it without asking what the user wants. Ask the what's-new questions once per conversation, never again later in it.
 
 ## Concept design
 

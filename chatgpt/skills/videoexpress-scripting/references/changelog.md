@@ -1,6 +1,17 @@
 # What's new
 
-Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.1 and 2.5): summarise them together in a few short bullets, in plain words, and offer every Headline item in them. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.5, 2.5.1 and 2.5): summarise them together in a few short bullets, in plain words, leading with the Headline items, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+
+## 2.5.5
+
+### Headline
+
+- **Clip review: video and sound checks.** When you ask for a review of your takes, or hand take picks over, each finished take is checked in VideoExpress without downloading it: twelve frames from start to end and a spectrogram of its soundtrack on one sheet. The review reports the opening and ending frames, each action beat and camera move, drift in characters, outfits, props and location, and the sound: no audio track, overall level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It can't tell which words are spoken or check lip-sync, and it doesn't see motion between the sampled frames. Needs the browser workflow.
+
+### Fixed
+
+- **Starting with just the skill's name** (or its slash command) now goes straight to the "How do you want to start?" card instead of a list of options in text. A first message that already says what you want is acted on without asking.
+- **Private takes** with no public file link are fetched through the library's download address, so Clip review works on them too.
 
 ## 2.5.1
 
