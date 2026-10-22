@@ -9,7 +9,7 @@ Assume the script is approved (or approved enough for a test). The user owns eve
 - **Stop at every checkpoint.** Never accept an image or take, chain from a frame, or change a prompt without the user's pick. After any image generation, ask which image to use **immediately**, in the same reply.
 - **Every review question says what the result should look like.** Before asking the user to pick or accept an image or take, describe what a correct one shows, taken from its prompt: framing and subject position, each action beat in order, the camera move, the ending frame, key props, and for clips the sound and any spoken line. Nobody can review a take properly without knowing what it was meant to be.
 - **Every choice is a question card.** Go-ahead questions are yes/no. Cards hold four options at most. If a choice has more (e.g. five takes), use three direct options plus a combined "2/1 (I'll type) / none" option, then ask in plain text if needed.
-- **Drift checks are the user's job.** Claude sees single frames, not motion. Flag obvious drift only. Don't edit prompts unasked.
+- **Drift checks are the user's job.** Claude sees sampled frames, not motion, unless asked to run a Clip review (below). Flag obvious drift only. Don't edit prompts unasked.
 - **Paste prompts exactly.** Only code-block text from the script. Never paraphrase.
 - **Never announce an action without doing it** in the same reply ("Generating image B now" must be followed by the actual clicks).
 - **The user may be working in the same tabs.** If a dialog, prompt or selection has changed since Claude last touched it, don't undo it. Report what's there and ask.
@@ -109,7 +109,73 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 
 Ask which take to keep as soon as the takes are submitted, naming positions. Don't ask first whether they've finished: the user watches the renders and reviews them anyway. Say what the take should look like, from its prompt: the opening frame, each action beat in order, the camera move, the ending framing (and whether the next clip chains from it), and the sound or spoken line. Add the note: **check for environment and prompt drift before selecting**, include the refresh note, then leave the call to the user.
 
+If the user asks Claude to review the takes, or has handed take picks to Claude, run a Clip review on each finished take first and include its findings.
+
 Right-click menu on a video tile: Play · Download · Add to Timeline · Details · Redesign · Fix Video · Voice Changer · Save Audio · **Save Last Frame** · Organize · Delete · Create work copy · Share. Close any open Play media window before right-clicking.
+
+## Clip review (frames and sound)
+
+Reviews a finished take in the Review tab without downloading it or playing it: twelve frames from start to end and a spectrogram of its soundtrack, drawn on one sheet over the page. Run it when the user asks, or when the user has handed take picks to Claude. Everything runs as JavaScript in the VE page; no other tool is involved.
+
+1. **Finished takes only.** A take still rendering has no file yet; refresh the library first (see Watching progress).
+2. Run the script below with the take's pack reference (`REF`) and its grid position among that clip's takes (`POS`, newest first: 1 is row 1 left, 2 row 1 right, and so on). It fetches the take's file from the library API, so it doesn't depend on the grid being current. Private takes have no public file link (`mediaPath` is empty); the script then fetches the same file through the library's download address in the page.
+3. Screenshot the sheet. Zoom into a frame when a detail matters (a prop, a hand, a face). Remove the sheet when done: `document.getElementById('clip-review').remove()`.
+4. Report against the prompt, beat by beat:
+   - **Frames:** the opening frame, each action beat at its planned time, the camera move and its direction, the ending frame and whether the next clip can chain from it, and drift in characters, outfits, props and location.
+   - **Sound:** whether there is a track at all (a take with no audio shows **NO AUDIO TRACK**), overall level, steady hiss or hum (a constant band across the whole clip, often 4–8 kHz), a music bed (level horizontal lines held through the clip), and whether planned sounds and speech land at their times (speech shows as stacked, shifting bands; a single call or horn as one stack of parallel lines).
+5. **Limits; say them when reporting.** The spectrogram shows when sound happens and what kind it is, not which words are spoken or exactly what made a sound; name a source only as a likely guess (a stack at about 250 Hz in a paddock scene is probably a cow). Lip-sync accuracy is not checked. Motion between the sampled frames is not seen.
+6. Findings are input to the user's pick, not the pick, unless the user has handed picks to Claude. A failed check gets a description of what's wrong; offer a revised full prompt only if the user wants one.
+
+```js
+const REF = '[Clip 21C]', POS = 1; // pack reference; grid position among its takes, newest first
+const cats = (await fetch('/library/get_categories/4').then(r => r.json())).data;
+const cat = cats.find(c => c.name === 'my_ai_videos').id;
+const list = (await fetch(`/api/library/get_media/4?categoryId=${cat}&page=1&start=0&limit=100&query=&orderBy=datetime&orderDir=desc&filter=`).then(r => r.json())).results;
+const m = list.filter(x => x.type === 'video' && x.name.startsWith(REF))[POS - 1];
+if (!m) throw new Error('take not found');
+if (m.status && m.status !== 'completed') throw new Error('take still rendering');
+const src = m.mediaPath || `/library/download/${m.id}`; // private takes have no mediaPath
+const buf = await fetch(src, m.mediaPath ? { mode: 'cors' } : {}).then(r => { if (!r.ok) throw new Error(`take file not available (${r.status})`); return r.arrayBuffer(); });
+const v = document.createElement('video'); v.muted = true; v.crossOrigin = 'anonymous';
+v.src = URL.createObjectURL(new Blob([buf], { type: 'video/mp4' }));
+await new Promise((ok, no) => { v.onloadeddata = ok; v.onerror = no; });
+const D = v.duration, cw = 640, chh = 360, SH = 420, c = document.createElement('canvas');
+c.width = cw * 3; c.height = chh * 4 + SH + 30; const g = c.getContext('2d');
+g.fillStyle = '#000'; g.fillRect(0, 0, c.width, c.height); g.font = 'bold 28px sans-serif';
+const times = [...Array(11)].map((_, i) => i * (D - 0.05) / 11).concat(D - 0.05);
+for (let i = 0; i < 12; i++) {
+  v.currentTime = times[i]; await new Promise(ok => v.onseeked = ok);
+  const x = (i % 3) * cw, y = Math.floor(i / 3) * chh; g.drawImage(v, x, y, cw, chh);
+  g.fillStyle = 'rgba(0,0,0,.6)'; g.fillRect(x, y, 110, 40); g.fillStyle = '#ff0'; g.fillText(times[i].toFixed(1) + 's', x + 6, y + 30);
+}
+let audio = 'no audio track', stats = [];
+try {
+  const ab = await new OfflineAudioContext(1, 1, 48000).decodeAudioData(buf.slice(0));
+  const sr = ab.sampleRate, L = ab.getChannelData(0), R = ab.numberOfChannels > 1 ? ab.getChannelData(1) : L;
+  const d = new Float32Array(L.length); for (let i = 0; i < d.length; i++) d[i] = (L[i] + R[i]) / 2;
+  const N = 2048, hop = 512, F = Math.floor((d.length - N) / hop), spec = [];
+  const fft = (re, im) => { const n = re.length; for (let i = 1, j = 0; i < n; i++) { let b = n >> 1; for (; j & b; b >>= 1) j ^= b; j ^= b; if (i < j) { [re[i], re[j]] = [re[j], re[i]]; [im[i], im[j]] = [im[j], im[i]]; } } for (let len = 2; len <= n; len <<= 1) { const a = -2 * Math.PI / len; for (let i = 0; i < n; i += len) for (let k = 0; k < len / 2; k++) { const co = Math.cos(a * k), si = Math.sin(a * k), p = i + k + len / 2, xr = re[p] * co - im[p] * si, xi = re[p] * si + im[p] * co; re[p] = re[i + k] - xr; im[p] = im[i + k] - xi; re[i + k] += xr; im[i + k] += xi; } } };
+  for (let f = 0; f < F; f++) { const re = new Float32Array(N), im = new Float32Array(N); for (let i = 0; i < N; i++) re[i] = d[f * hop + i] * (0.5 - 0.5 * Math.cos(2 * Math.PI * i / N)); fft(re, im); const mg = new Float32Array(N / 2); for (let k = 0; k < N / 2; k++) mg[k] = Math.hypot(re[k], im[k]) / (N / 4); spec.push(mg); }
+  for (let s = 0; s < Math.floor(ab.duration); s++) {
+    let e = 0, hi = 0; for (let f = Math.floor(s * sr / hop); f < Math.min(F, (s + 1) * sr / hop); f++) for (let k = 2; k < N / 2; k++) { const p = spec[f][k] ** 2; e += p; if (k * sr / N > 6000) hi += p; }
+    let r = 0; for (let i = s * sr; i < (s + 1) * sr; i++) r += d[i] * d[i];
+    stats.push(`${s}s ${(10 * Math.log10(r / sr + 1e-12)).toFixed(0)} dBFS, >6 kHz ${(100 * hi / e).toFixed(0)}%`);
+  }
+  audio = `${ab.duration.toFixed(2)} s, ${ab.numberOfChannels} ch`;
+  const top = chh * 4, W = c.width - 60, lo = 40, fmax = 20000, lr = Math.log(fmax / lo), img = g.createImageData(W, SH);
+  for (let x = 0; x < W; x++) { const mg = spec[Math.floor(x * F / W)]; for (let y = 0; y < SH; y++) { const bin = Math.min(N / 2 - 1, Math.round(lo * Math.exp(lr * (1 - y / SH)) / sr * N)); const t = Math.max(0, Math.min(1, (20 * Math.log10(mg[bin] + 1e-9) + 100) / 90)); const p = (y * W + x) * 4; img.data[p] = 255 * Math.min(1, t * 1.6); img.data[p + 1] = 255 * Math.max(0, t * 1.6 - 0.6); img.data[p + 2] = 255 * Math.max(0, t < 0.4 ? t * 1.5 : (1 - t) * 0.6); img.data[p + 3] = 255; } }
+  g.putImageData(img, 60, top); g.fillStyle = '#fff'; g.font = '22px sans-serif';
+  [100, 500, 1000, 2000, 4000, 8000, 16000].forEach(f => g.fillText(f >= 1000 ? f / 1000 + 'k' : f, 4, top + SH * (1 - Math.log(f / lo) / lr) + 8));
+  for (let s = 0; s <= Math.floor(ab.duration); s++) g.fillText(s + 's', 60 + s * W / ab.duration, top + SH + 24);
+} catch (e) { g.fillStyle = '#fff'; g.font = '40px sans-serif'; g.fillText('NO AUDIO TRACK', 700, chh * 4 + 200); }
+document.getElementById('clip-review')?.remove();
+const ov = document.createElement('div'); ov.id = 'clip-review';
+ov.style.cssText = 'position:fixed;inset:0;z-index:999999;background:#000;display:flex;align-items:center;justify-content:center';
+c.style.cssText = 'max-width:100%;max-height:100%'; ov.appendChild(c); document.body.appendChild(ov);
+({ take: m.name.slice(0, 60), id: m.id, length: D.toFixed(2) + ' s', size: v.videoWidth + 'x' + v.videoHeight, audio, stats });
+```
+
+The returned summary gives the take's length and size (check the clip ran its planned length and orientation) and per-second level and high-frequency share: a share that stays high and level through silent stretches is hiss.
 
 ## After a take is accepted
 
