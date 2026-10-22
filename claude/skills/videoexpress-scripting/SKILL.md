@@ -54,6 +54,8 @@ The first time this skill is used in a conversation, whatever the user's first m
 
 Then answer the user's first message, or start intake for a new project. If the skill was started with no message of its own (only its name or slash command), treat it as a new project: go straight to the "How do you want to start?" card (`references/project-intake.md`, Step 1), as a question card, not a prose menu. When the first message already says what is wanted (an idea, a script, a single prompt, a failed take), act on it without asking what the user wants. Ask the what's-new questions once per conversation, never again later in it.
 
+**Chat or Code.** At the start, after the what's-new questions, check whether you can reach the user's computer by listing or reading a local folder. If you can, you're in Code; say nothing. If you can't (no local file access, only a sandbox), you're in Chat: tell the user once, before anything else, "You're in Chat, so I can't open or save files on your computer. Upload any scripts or images here, and download the pack when it's ready. For a full project, the Code tab in Claude Desktop works with your files."
+
 **Name the conversation after the project.** Once a new project has a working title (from the user's idea or the brief), rename the conversation to "[title] · VideoExpress" if you have a tool that renames it (such as Claude Desktop's session title). Otherwise leave the name as it is.
 
 ## Concept design

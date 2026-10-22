@@ -11,6 +11,7 @@ Read on the skill's first use in a conversation, when the user says yes to a sum
 ### New
 
 - **Conversations named after the project.** Once a new project has a working title, the conversation is renamed "[title] · VideoExpress" where the app allows it (such as Claude Desktop or Grok); elsewhere the name is left as it is.
+- **Chat or Code (Claude).** At the start, the skill checks whether it can reach files on your computer. In Claude's Chat it says so once, and points to the Code tab in Claude Desktop for a full project.
 
 ### Fixed
 
