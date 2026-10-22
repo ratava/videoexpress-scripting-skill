@@ -9,11 +9,13 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 ### New
 
 - **Clip review: video and sound checks.** Asked to review takes, or handed take picks, the assistant checks each finished take inside VideoExpress without downloading it: a page script fetches the take from the library and draws twelve frames from start to end plus a spectrogram of its soundtrack on one sheet, with per-second level and high-band share. It reports the opening and ending frames, action beats, camera moves and drift, and the sound: no audio track, level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It doesn't identify words, check lip-sync or see motion between the sampled frames. Part of the browser workflow; offered as a headline item in what's new.
+- **Conversations named after the project.** Once a new project has a working title, the skill renames the conversation "[title] · VideoExpress" where it has a tool for that (Claude Desktop's session title, Grok); ChatGPT can't rename chats, so the name is left as it is there.
 
 ### Fixed
 
 - **Bare invocation.** Started with only its name or slash command, the skill goes straight to the "How do you want to start?" card instead of a prose menu; a first message that already says what's wanted is acted on without asking.
 - **Private takes.** Takes with an empty `mediaPath` are fetched through `/library/download/<id>`, so Clip review no longer stops with "take not found or still rendering".
+- **What's new once per version.** Before asking, the skill checks memory it can read for a note that this version's what's-new questions were shown, and skips them if so; after asking it saves that note when memory is on. Without memory it asks on first use in each conversation, as before.
 - What's new only asks a Headline item's question when it has one.
 
 ## VideoExpress Scripting 2.5.1 (2026-10-13)

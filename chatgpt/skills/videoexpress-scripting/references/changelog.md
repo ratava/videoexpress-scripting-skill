@@ -8,9 +8,14 @@ Read on the skill's first use in a conversation, when the user says yes to a sum
 
 - **Clip review: video and sound checks.** When you ask for a review of your takes, or hand take picks over, each finished take is checked in VideoExpress without downloading it: twelve frames from start to end and a spectrogram of its soundtrack on one sheet. The review reports the opening and ending frames, each action beat and camera move, drift in characters, outfits, props and location, and the sound: no audio track, overall level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It can't tell which words are spoken or check lip-sync, and it doesn't see motion between the sampled frames. Needs the browser workflow.
 
+### New
+
+- **Conversations named after the project.** Once a new project has a working title, the conversation is renamed "[title] · VideoExpress" where the app allows it (such as Claude Desktop or Grok); elsewhere the name is left as it is.
+
 ### Fixed
 
 - **Starting with just the skill's name** (or its slash command) now goes straight to the "How do you want to start?" card instead of a list of options in text. A first message that already says what you want is acted on without asking.
+- **What's new once per version.** Where memory is on, these questions are asked once per version, not in every conversation; without memory they're still asked on first use in each conversation.
 - **Private takes** with no public file link are fetched through the library's download address, so Clip review works on them too.
 
 ## 2.5.1
