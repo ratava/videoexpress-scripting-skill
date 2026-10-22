@@ -10,12 +10,14 @@ Each skill also carries its latest notes in `references/changelog.md`, and offer
 
 - **What's new.** The first time the prompt skill is used in a conversation it asks whether you'd like a summary of what's new, from its own `references/changelog.md`. Where memory is on, it asks once per version.
 - **Conversations named after the shot.** Once the shot has a subject, the skill renames the conversation "[subject] · VideoExpress Prompt" where it has a tool for that (Claude Desktop's session title, Grok); ChatGPT can't rename chats.
+- **Chat or Code (Claude build).** After the what's-new question, the skill checks for local file access; in Chat it tells you once that it can't open or save files on your computer, to upload images and copy prompts from the chat, and that the Code tab in Claude Desktop works with your files.
 - **Bare invocation.** Started with only its name or slash command, the skill goes straight to the "Do you have something to start from?" card instead of a prose menu; a first message that already says what's wanted is acted on without asking.
 
 ### VideoExpress Scripting 2.5.5: new
 
 - **Clip review: video and sound checks.** Asked to review takes, or handed take picks, the assistant checks each finished take inside VideoExpress without downloading it: a page script fetches the take from the library and draws twelve frames from start to end plus a spectrogram of its soundtrack on one sheet, with per-second level and high-band share. It reports the opening and ending frames, action beats, camera moves and drift, and the sound: no audio track, level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It doesn't identify words, check lip-sync or see motion between the sampled frames. Part of the browser workflow; offered as a headline item in what's new.
 - **Conversations named after the project.** Once a new project has a working title, the skill renames the conversation "[title] · VideoExpress" where it has a tool for that (Claude Desktop's session title, Grok); ChatGPT can't rename chats, so the name is left as it is there.
+- **Chat or Code (Claude build).** After the what's-new questions, the skill checks for local file access; in Chat it tells you once that it can't open or save files on your computer, to upload scripts or images and download the pack, and that the Code tab in Claude Desktop works with your files for a full project.
 
 ### VideoExpress Scripting 2.5.5: fixed
 

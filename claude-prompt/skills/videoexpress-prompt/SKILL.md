@@ -44,6 +44,8 @@ The first time this skill is used in a conversation, whatever the user's first m
 
 Then answer the user's first message. If the skill was started with no message of its own (only its name or slash command), go straight to the Step 0 card, "Do you have something to start from?", as a question card, not a prose menu. When the first message already says what is wanted (an idea, an image, a prompt to improve, a failed take), act on it without asking what the user wants. Ask the what's-new question once per conversation, never again later in it.
 
+**Chat or Code.** At the start, after the what's-new question, check whether you can reach the user's computer by listing or reading a local folder. If you can, you're in Code; say nothing. If you can't (no local file access, only a sandbox), you're in Chat: tell the user once, before anything else, "You're in Chat, so I can't open or save files on your computer. Upload any images here, and copy the prompts from the chat when they're ready. To work with files on your computer, use the Code tab in Claude Desktop."
+
 **Name the conversation after the shot.** Once the shot has a subject (from the user's idea, image or prompt), rename the conversation to "[subject] · VideoExpress Prompt" if you have a tool that renames it (such as Claude Desktop's session title). Otherwise leave the name as it is.
 
 ## Step 0: what have you got?
