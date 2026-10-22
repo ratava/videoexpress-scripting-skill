@@ -4,6 +4,11 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.5.6 (2026-10-23)
+
+- **Straight into production.** As soon as the script is signed off, the skill gives the first paste-ready prompt in pack order (usually the first Consistent Character reference, otherwise Image 1A) in full with its settings, whoever operates VideoExpress. If the assistant operates it, the skill also asks whether to open the two VideoExpress tabs in the browser now, and runs Session setup on yes.
+- **What's new as a list.** The what's-new summary is shown as a bulleted list, a heading per version and a bullet per item, never folded into a sentence. The same change is in VideoExpress Prompt's SKILL.md and changelog, without a version change (still 1.1.0).
+
 ## VideoExpress Scripting 2.5.5 and VideoExpress Prompt 1.1.0 (2026-10-23)
 
 ### VideoExpress Prompt 1.1.0
