@@ -35,6 +35,14 @@ npx skills add https://github.com/ratava/videoexpress-scripting-skill/tree/main/
 
 **Browser operation:** the browser workflow assumes an assistant that can control a browser (ChatGPT agent mode, the Codex app or Codex Chrome extension, or Grok with browser control). The skill works for planning and prompt writing without it.
 
+**Gemini (Google).** This build is also the one for Gemini. In the Gemini app (gemini.google.com or the Mac app), download `videoexpress-scripting-chatgpt.zip` from the [releases page](../../../releases) and **unzip it**: Gemini needs `SKILL.md` at the top of what you upload, so upload the `videoexpress-scripting` folder itself under Customize → Skills → Create → Upload, not the zip. Gemini skills need an 18+ account with Keep Activity on, and the app doesn't update them from GitHub, so re-upload after a new release. In Gemini CLI:
+
+```
+gemini skills install https://github.com/ratava/videoexpress-scripting-skill.git --path chatgpt/skills/videoexpress-scripting
+```
+
+Step-by-step: [Install in Gemini](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Gemini).
+
 ## Contents
 
 ```
