@@ -9,6 +9,7 @@
 - **Motion**: the cadence and how much action per beat; which camera moves suit it.
 - **Stability line**: the sentence that closes every [LIGHT AND IMAGE] (what must not boil, crawl, smooth or convert).
 - **Guards**: negatives specific to this style, plus the anti-realism set if it is stylised.
+- **Artistly match** (optional): the closest Artistly AI Art Illustrator style, for users who own Artistly, and any Artistly style that looks right but fails.
 - **Known failures**: what drifted in real takes and what fixed it (optional, add as learned).
 
 Shared image recipe, video pattern and consistency rules: `README.md` in this folder.

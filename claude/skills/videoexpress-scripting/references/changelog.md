@@ -1,60 +1,18 @@
 # What's new
 
-Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.5.6, 2.5.5, 2.5.1 and 2.5): show them as a bulleted list: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet), in plain words, Headline items first. Never fold the notes into a sentence or a parenthesis, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.6.0): show them as a bulleted list: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet), in plain words, Headline items first. Never fold the notes into a sentence or a parenthesis, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
-## 2.5.6
-
-### New
-
-- **Straight into production.** As soon as the script is signed off, the skill gives you the first paste-ready prompt with its settings, and, if the assistant is driving VideoExpress, asks whether to open the two VideoExpress tabs in the browser now.
-
-### Fixed
-
-- **What's new as a list.** This summary is shown as a bulleted list per version, not folded into a sentence.
-
-## 2.5.5
+## 2.6.0
 
 ### Headline
 
-- **Clip review: video and sound checks.** When you ask for a review of your takes, or hand take picks over, each finished take is checked in VideoExpress without downloading it: twelve frames from start to end and a spectrogram of its soundtrack on one sheet. The review reports the opening and ending frames, each action beat and camera move, drift in characters, outfits, props and location, and the sound: no audio track, overall level, steady hiss or hum, a music bed, and whether planned sounds and speech land on time. It can't tell which words are spoken or check lip-sync, and it doesn't see motion between the sampled frames. Needs the browser workflow.
+- **Consistent voices with Voice Changer.** When a character speaks in more than one clip, the skill can keep their voice the same with VideoExpress's Voice Changer. Each character gets a voice sample: audio saved from one of their clips, a clean recording you upload or record with VE's Voice Recorder (no music), or speech from CloneVoice.ai, VideoExpress's companion voice product (sold separately; text to speech or an imported CloneVoice file, from the Import Media / Text to Speech panel), or VE's own text to speech with a chosen language and voice. The skill asks about it at intake, offers to save the sample when a speaker's first dialogue clip is accepted, and offers a voice pass once the timeline is trimmed. Clips with two speakers have their audio separated and cut at the pause between the speakers, so only one voice is changed. Voice Changer changes the voice, not the performance: the words, pacing and mostly the accent stay, and a longer sample helps the accent carry over.
+- **Narrated story videos.** For stickman videos, fables and children's stories told by a narrator: one short narrated line per clip, voiced by VideoExpress's Narration Video (VE's own text to speech, your recording, or CloneVoice.ai if you have it), each scene drawn from a character master and an empty-location reference so the character and the set stay the same, then the clips joined in story order with Auto Align. Based on VideoExpress's own stickman workflow.
+- **Festive styles and scenes for Christmas.** Four new Christmas styles: Christmas Diorama (a glossy ceramic miniature village on a fireplace mantel), Snow Globe (a tiny scene inside a glass globe, snow swirling), Gingerbread (a world baked from gingerbread, piped icing and sweets) and Holiday Stop-Motion (a 1960s TV-special look with felt-and-wood puppets). Plus two festive add-ons for any style: Festive Winter (snow, frost, icicles, fairy lights) and Festive Summer (sunshine, tinsel, Christmas bush, Santa hats at the barbecue, no snow) for the half of the world that has Christmas in summer. Tested across 2D, 3D, craft, painted and print styles, with tips for limited-palette and character styles.
 
 ### New
 
-- **Conversations named after the project.** Once a new project has a working title, the conversation is renamed "[title] · VideoExpress" where the app allows it (such as Claude Desktop or Grok); elsewhere the name is left as it is.
-- **Chat or Code (Claude).** At the start, the skill checks whether it can reach files on your computer. In Claude's Chat it says so once, and points to the Code tab in Claude Desktop for a full project.
-
-### Fixed
-
-- **Starting with just the skill's name** (or its slash command) now goes straight to the "How do you want to start?" card instead of a list of options in text. A first message that already says what you want is acted on without asking.
-- **What's new once per version.** Where memory is on, these questions are asked once per version, not in every conversation; without memory they're still asked on first use in each conversation.
-- **Private takes** with no public file link are fetched through the library's download address, so Clip review works on them too.
-
-## 2.5.1
-
-- **What's new is asked on first use.** These questions now come the first time the skill is used in a conversation, whatever the first message is, instead of only at the start of a new project.
-- **Changelog wording.** The Consistent Character entry below now says plainly that VideoExpress hasn't changed: the skill's guidance was corrected.
-
-## 2.5
-
-### Headline
-
-- **New companion skill: VideoExpress Prompt.** A step-by-step wizard for one image or clip prompt, or an image and its clip, using the same rules and styles as this skill. Use it for a single shot; use VideoExpress Scripting for a whole multi-clip video.
-  - Ask: "There's a new companion skill, VideoExpress Prompt: a step-by-step wizard for a single image or clip prompt. Would you like to install it?"
-  - Skip if: the `videoexpress-prompt` skill is already among your available skills.
-
-### New
-
-- **Grok support.** The skill installs in Grok (free trial and paid plans only) by asking Grok to install it from its GitHub folder link.
-- **New style: Graffiti** (aerosol spray-paint toon, caricatures, street mural).
-- **Sitting and walking to a mark.** VE ignores collision and which way furniture faces, so seats are now chosen with no front (a crate, stool, low wall or bollard), and a mark a character walks to sits clearly nearer the camera, with a short walk.
-- **A gesture under a Lipsync HD line.** The Lipsync dialog's Video Prompt can steer one directed gesture, described in frame terms (which arm by frame side, how high, which third of the frame, hold, return).
-- **Tagged start-image prompts.** Start images can use section tags ([SUBJECT], [FRAMING AND POSITION], [BACKGROUND], [LIGHT AND STYLE], [NEGATIVES]) as well as prose.
-- **Misread words.** When VE mispronounces a word, respell it inside the quotes ("Skrip-ting") with a plain-English note outside them.
-
-### Changed
-
-- **Corrected: Consistent Character in clips.** The skill no longer sets Consistent Character for clips or names reference images in video prompts; [REFERENCE USE] names only the start image. VideoExpress hasn't changed: Consistent Character has only ever affected Create Image.
-- **References and pose.** A reference can carry its pose and props into an image; a pose stated in the prompt overrides it.
-- **Numbers.** Ages, lengths and counts can be written as digits; only signs, screens and other text-bearing objects need describing as abstract shapes and light.
-- **Chaining inside VE.** Clips chain from VE's Save Last Frame, with no trimming or retiming outside VE. Plan the framing so a clip ends where the next begins, and the skill flags any detail risk for you to decide.
-- **Removed:** the claim that face references turn clips realistic, which was never tested. The style anchor rule is unchanged.
+- **Artistly and CloneVoice.ai, if you have them.** On first use the skill asks once whether you have VideoExpress's companion products, offers to check in your browser that their API keys are added to VideoExpress, and remembers the answer for next time. With Artistly it can make stronger start images; with CloneVoice, voices. Everything still works with VideoExpress alone.
+- **Screen captures for training videos.** VideoExpress's Screen Recorder (Import Media / Text to Speech) records a browser tab, an app window or a whole screen, with tab or system audio and your microphone, straight into the media library folder you choose. The skill asks about it for explainer and training videos and walks you through the sharing options; you pick what to share in Chrome's own dialog.
+- **Timeline filters as suggestions.** When a video calls for it, the skill can suggest VideoExpress's timeline filters and apply them on your yes: Camera Pan, Zoom In, Titles, Audio Wave, Change Speed, audio fades, Opacity, plus Resize And Move and Green Screen.
+- **18 new styles:** Greyscale Airbrush, Steampunk, Flat Vector Explainer, Marker Doodle, Modern 2D Cartoon, Chibi, Crayon Drawing, Impressionist, Colour Comic, Game Cinematic, Fantasy Painting, Travel Poster, Tilt-Shift Miniature, Voxel, Folk Art, Vintage Horror, Stickman, Miniature Pan. Each has its own sheet in the styles index.

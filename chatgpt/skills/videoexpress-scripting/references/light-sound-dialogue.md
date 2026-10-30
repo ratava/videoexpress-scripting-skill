@@ -55,6 +55,37 @@ Two ways to get lip-synced speech. **Prefer the multishot-prompt method whenever
 - **Reaction first, then the line.** The speaker should turn to face, or aim at, whoever they address; say so explicitly ("she turns to face the figure behind her… then answers"). Otherwise VE keeps the previous action (walking toward the camera) under the line.
 - Keep the same voice description for a character in every clip.
 
+## Consistent voices across clips (Voice Changer)
+
+Each dialogue clip generates its own voice from the description, so a character can sound different from clip to clip even with an identical voice description. VE's **Voice Changer** fixes this after generation: it re-voices a clip's speech using a **voice sample**. The sample sets who it sounds like; the source keeps the words, pronunciation, accent, emotion, pacing and delivery, so lip-sync is unaffected.
+
+**When to offer it:**
+- At intake, when two or more clips have the same speaking character (one question, `project-intake.md`).
+- When a recurring speaker's first dialogue clip is accepted: offer to save its audio as that character's voice sample.
+- At assembly, once the timeline is trimmed: offer a voice pass, listing each character's dialogue clips.
+- Whenever the user says a voice changes between clips or sounds wrong.
+
+Projects without dialogue never need it.
+
+**The voice sample** is one speaker, talking clearly, with no music and no other voices. 10–15 seconds is the usual guide; shorter can work, and longer helps the accent carry over. Four sources:
+1. **A clip already generated:** right-click it (timeline or library) → Save Audio. It lands in My AI Audio; name it after the character (`Barnaby voice`). Use a clip where that character speaks alone.
+2. **An uploaded recording:** the user's own voice, an AI voice, or any voice they have the rights to use, as clean speech with no music. To use their own voice, the user can record it straight into VE with **Voice Recorder** (Import Media / Text to Speech panel) instead of uploading a file. **Audio Cutter** (right sidebar) cuts a long recording into shorter parts.
+3. **CloneVoice.ai**, VideoExpress's companion voice product, sold separately. The user buys it and adds its API key in VE's settings. Then the **Import Media / Text to Speech** panel (right sidebar) offers **CloneVoice.ai (Text to Speech Integration)**, which generates speech with CloneVoice's voice engine (better than VE's own), and **Import from CloneVoice.ai**, which imports audio already made in CloneVoice. Either result can be the sample. Say it's a separate product, with its own cost, when mentioning it.
+4. **VE's own text to speech** (**Text to Speech**, first in the same panel): pick a language and a voice, type a few sentences, and generate. It's an older voice engine, which is fine here: the audio only sets the voice for Voice Changer and never plays in the video, where the generated clip's own performance is kept.
+
+**Three routes, by clip:**
+- **One speaker, from the media library:** right-click the clip → Voice Changer. It converts the whole file, so it's for single-voice clips only.
+- **One speaker, on the timeline:** right-click the item → Voice Changer. Only the trimmed span is converted and the result replaces the item in its slot, so trim first.
+- **Two speakers in one clip:** separate the clip's audio from its video, cut the audio at the pause between the speakers, and voice-change only the piece that needs it. This needs an audible pause between the lines; plan two-speaker clips with a beat between turns if a voice pass is likely.
+
+The click paths are in `browser-workflow.md` (Voice Changer).
+
+**Limits:**
+- **It changes the voice, not the performance.** A wrong accent mostly stays: with a 6-second sample a man's line took the sample's voice but not its accent. Give a longer sample when the accent matters, and keep writing the accent into the voice description.
+- **No fixed sample length limit is known** (an earlier 30-second cap was removed). If VE shows a length warning or error, report its exact wording to the user.
+- A converted piece can come back slightly longer or shorter than the source (it may drop trailing silence); check the timing of what follows it.
+- The original stays in the library, so a change can be undone by putting the original back.
+
 ## Point-of-view, HUD and special-vision shots
 
 - **Point-of-view shots show only what the viewer would see.** From inside a helmet, only the tip of a weapon pokes into the frame; describe exactly which part is visible and where ("in the bottom right corner, only the very tip of the weapon pokes up into the frame, pointing straight ahead"), and that nothing else of the arm is visible.

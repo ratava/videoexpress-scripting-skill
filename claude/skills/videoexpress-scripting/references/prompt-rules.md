@@ -64,6 +64,7 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 | Invented gestures or business under the lines | Clip length set longer than the speech and actions need | Shorten the manual length or add a real action to fill it. |
 | Chewing from the first frame of a dialogue clip | Sip or food-in-hand in the previous clip or chain frame | Nothing in the mouth and nothing edible in either hand at any chain point; sips and bites go in their own clips after the dialogue. |
 | A speaker's line never plays | Speaker's head out of frame | Bring the face into frame for the line, or write it as an off-camera voice in [PRODUCTION SOUND]. |
+| A character's voice sounds different from clip to clip | Each clip generates its own voice from the description | Voice Changer pass with one voice sample per character (`light-sound-dialogue.md`, Consistent voices across clips). |
 | Lead's accent drifts toward another speaker or the setting's language | Voice adjectives bleed; setting implies a language | Specific voice description per speaker (age, pitch, texture, accent, pace), contrast stated, repeated every clip. |
 | Speaker keeps walking or looks away while talking | No reaction beat | "She turns to face [the other character], then answers." |
 | Can't tell which tile or take belongs to which clip | Prompt doesn't open with its pack reference | Start every prompt with the pack's bracketed reference (`[Clip 12]`, `[Image 12A]`, `[Clip 12 TEST 1]`), nothing before it; unique per clip, image and variant. |

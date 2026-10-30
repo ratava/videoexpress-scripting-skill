@@ -44,7 +44,7 @@ Path 1 is "Concept first" below. Path 2 is "Script first". Path 3 uses the Conce
 Work through these in order. Each line is a card or part of one; skip anything already settled.
 
 ### Delivery
-- **Intended use:** social post, YouTube or web video, advert or promo, music video, story or short film, explainer or training, pitch or test piece.
+- **Intended use:** social post, YouTube or web video, advert or promo, music video, story or short film, explainer or training, pitch or test piece. For an explainer or training video that shows software, a website or a desktop, ask whether it needs screen captures: VE's Screen Recorder records them straight into the library (`browser-workflow.md`, Screen Recorder). For a narrated story (stickman videos, fables, children's stories told by a narrator), offer the narrated-story format: one narrated line per clip and a fresh start image per scene (`narrated-story.md`).
 - **Platform and delivery spec:** e.g. TikTok, Reels or Shorts (portrait, usually under 60 s), YouTube (landscape, any length), website or presentation. Suggest the aspect ratio and length that suit it.
 - **Aspect ratio:** Landscape 16:9 or Portrait 9:16. It's set per generation in VE and must stay the same for every image and clip.
 - **Target length:** e.g. under 30 s, 30–60 s, one to two minutes, longer. Convert it to a clip count (a ten-second clip is the usual unit) and state it.
@@ -69,8 +69,9 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Production sound:** VE-generated effects per clip, no sound at all (Video Only), or sound added in the edit. If VE-generated, explain the transient-only rule and the unresolved music risk.
 - **Music:** none, a user-supplied track added in the edit, or a track the video is cut to. If cut to music, get the track, key timings and tempo first.
 - **Dialogue and lip-sync:** no more than two speakers in any one clip (a hard limit; split longer exchanges); which clips have on-screen speaking and by which method (lines in the multishot prompt when action shares the clip; Lipsync HD, up to two speakers, for pure talking heads), the set length of each dialogue clip, and which characters speak without a visible face (a voice written into production sound, never as [ACTION] dialogue).
-- **Narration or voice-over:** none, or VE's Narration Video, or recorded by the user. Get the narration text and pacing.
+- **Narration or voice-over:** none, or VE's Narration Video (one line per clip, voiced by VE's Text to Speech, the user's own recording or CloneVoice.ai; `narrated-story.md`), or recorded by the user. Get the narration text and pacing.
 - **Voices:** a voice description for each speaker (age, gender, pitch, accent, delivery), kept identical in every clip, plus the language.
+- **Consistent voices:** when a character speaks in two or more clips, ask whether to keep their voice the same across clips with VE's Voice Changer, and where each character's voice sample comes from: audio saved from their first accepted dialogue clip (the default), a clean recording the user uploads or records in VE's Voice Recorder (their own voice, an AI voice, or one they have the rights to; no music), or CloneVoice.ai, VideoExpress's companion voice product (sold separately; its API key goes in VE's settings), through text to speech or an imported CloneVoice file, or VE's own text to speech (pick a language and voice; an older engine, but it only sets the voice). On yes, plan a beat between speakers in two-speaker clips and a voice pass at assembly (`light-sound-dialogue.md`, Consistent voices across clips).
 
 ### Script
 - **Who develops the script:** the assistant writes it from the concept; the assistant and the user write it together scene by scene; the user writes it and the assistant adapts it; or the user provides it complete.
@@ -78,8 +79,8 @@ Work through these in order. Each line is a card or part of one; skip anything a
 - **Transitions:** hard cuts, match cuts, or fades and white dips done in the edit.
 
 ### Production logistics
-- **Generation budget:** how many credits or generations the user is prepared to spend. With five takes per clip, a twelve-clip video is about sixty generations plus start images and tests.
-- **Takes per clip:** one to five (five is the usual default). More takes cost more but give more choice.
+- **Generation budget:** how many generations the user is prepared to make and review (renders take minutes each). With five takes per clip, a twelve-clip video is about sixty generations plus start images and tests.
+- **Takes per clip:** one to five (five is the usual default). More takes take longer to render and review but give more choice.
 - **Who operates VideoExpress:** the assistant drives the browser, the user does, or both. If the assistant drives, follow `browser-workflow.md`.
 - **Chaining strategy:** mostly chained clips (smoother continuity, and drift builds up) or mostly fresh starts from designed start images (more control, more images to make). Suggest a mix: fresh starts at each scene and at difficult beats.
 - **Edit and finishing:** transitions and audio in VE's timeline, VE Filters, and the export format.
@@ -128,7 +129,7 @@ After the tests, update the Bible with any wording that worked, since a prompt t
 ## Outputs
 
 1. **Project brief:** the decisions list, grouped as in the checklist, with the reasons for any non-default choice.
-2. **Core Bible:** style anchor and style line; character core blocks and outfit blocks; reference image plan (which image goes in which slot); location blocks; prop and effect descriptions; voice descriptions; sound palette (per weapon, per environment); the fixed screen layout for multi-character scenes; and the global rules that apply.
+2. **Core Bible:** style anchor and style line; character core blocks and outfit blocks; reference image plan (which image goes in which slot); location blocks; prop and effect descriptions; voice descriptions (and each character's voice sample, when using Voice Changer); sound palette (per weapon, per environment); the fixed screen layout for multi-character scenes; and the global rules that apply.
 3. **Script and clip breakdown:** the scene table, then each clip with its length, fresh or chained start, dialogue (speaker and line), sound cues and role (establishing, action, dialogue, payoff).
 4. **Production plan:** start images to generate, takes per clip, the generation budget, the test results, and the order of work.
 

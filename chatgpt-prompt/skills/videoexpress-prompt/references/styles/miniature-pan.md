@@ -1,0 +1,18 @@
+# Miniature Pan (tilt-shift miniature with a slow Ken Burns pan and push)
+
+**Type**: custom, tested in production (pass)
+
+A hybrid of `tilt-shift-miniature.md` and a Ken Burns move: the toy-model look and its busy time-lapse life, seen through one slow, continuous camera drift and push, as if panning across a photograph of a model town.
+
+- **Medium phrase**: "Tilt-shift miniature photograph, a real scene seen from high above at about a 40-degree angle that looks like a tiny scale model, a narrow horizontal band of sharp focus across the middle of the frame with strong lens blur at the top and bottom, bright saturated toy-like colours, hard afternoon sun with crisp small shadows, widescreen 16:9." Video anchor: "Tilt-shift miniature time-lapse with a slow Ken Burns camera move: a real scene from a high angle that looks like a tiny toy model, a narrow horizontal band of sharp focus with strong lens blur above and below, bright saturated toy-like colours and hard sunlight, tiny cars, trains and people moving in quick, slightly jerky steps."
+- **Character design**: as `tilt-shift-miniature.md`: people tiny and numerous, faces never visible, crowds as dots of bright clothing; trains, cars and boats as the main movers.
+- **Materials / rendering**: painted-plastic, model-railway look; punchy saturation; crisp detail only in the focus band; strong lens blur (not fog) at the top and bottom; a high camera angle of 30–50 degrees, never eye level.
+- **Light**: hard, bright midday or afternoon sun with crisp small shadows.
+- **Motion**: two layers at once. The camera: one slow, smooth, continuous move for the whole clip at a constant speed (a lateral drift plus a small push), same high angle throughout, written by where it ends ("ends framing the station in the centre"). The scene: many small sped-up movements (a train along a viaduct, cars in stepped bursts, people shuffling across a square). VE pushes in further than asked ("eases in very slightly" became a strong push into the station in 3 of 3 takes), so name the end framing and the size of the main subject at the end.
+- **Stability line**: "Strictly tilt-shift miniature look, a narrow band of sharp focus with strong lens blur at the top and bottom, high camera angle, bright saturated toy-like colours, the focus band stays a level horizontal strip through the whole camera move, stable colour and light throughout."
+- **Guards**: no eye-level view, no close-ups of faces, no fog or haze in place of lens blur, no muted colours, no illustration or cartoon look, no camera shake, no other text, no watermark.
+- **Artistly match**: Miniature (AI Art Illustrator). The same start-image prompt there gave a stronger physical-diorama look (chunky rocks, matte model-railway finish) and spelled the billboard correctly in 4 of 4 images; VE's own start images spelled it correctly too. Use only when the user has Artistly linked or owns it.
+- **Lettering**: the push enlarges whatever it ends on, and small lettering garbled as it grew (3 of 3 takes with a small billboard). With the billboard drawn large in the start image (about a third of the frame width) and the move ending "only slightly larger than in the opening frame", the lettering stayed sharp for the whole clip.
+- **Known failures**: none in the look in the test (an alpine valley town with a red train on a stone viaduct and a MINIATURE PAN station billboard, two runs of 3 takes): the focus band, blur, toy colours and time-lapse motion held through the move. Risks still worth watching: the push overshooting, small lettering garbling as it is enlarged, and the blur fading as the camera moves closer.
+
+Shared image recipe, video pattern and consistency rules: `README.md` in this folder.

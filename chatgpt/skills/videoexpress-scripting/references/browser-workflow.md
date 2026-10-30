@@ -47,6 +47,10 @@ Run it when the user says yes to opening the tabs after script sign-off (`projec
 3. In the Review tab, start a new project (**New**) or open one (**Open** → pick it → **Open**). VE won't save an empty project (Save only shows "Your project is empty"), so a new project gets its name on the first save, straight after the first **Add to Timeline** (**Save** → project name → **Save**).
 4. In the Creation tab: **Create with AI → Create Video From Prompt** (the arrow on that card). Leave the dialog open all session.
 
+### Linked companion products (Artistly, CloneVoice)
+
+When the user says they have Artistly.ai or CloneVoice.ai (asked on the skill's first use, SKILL.md, Companion products) and agrees to a check, or before offering a route that needs one: click the account name (top right of the header) → **Edit profile**. The Profile dialog has an **Artistly.ai API key** field (with an **Import** button beside it) and a **CloneVoice.ai API key** field. **A key in the field means that product is linked.** Read only whether each field is filled; never copy, quote or repeat a key. Close the dialog with **Close**, not **Save**. Use those routes only when the product is linked or the user has said they own it; the VE-only route must always work without them.
+
 ## The Create Video From Prompt dialog
 
 **Top:** orientation toggle, **Landscape 16:9** / **Vertical 9:16**.
@@ -66,14 +70,15 @@ The dialog's state can reset (after a page reload, or unexpectedly): prompts cle
 | Setting | Rule |
 |---|---|
 | Landscape 16:9 / Vertical 9:16 | Match the pack's aspect ratio; check it before the first Create Image |
-| Use Creative mode | Always on for image creation |
+| Use Creative mode | Always on for image creation, except the Stickman style (tested with Creative mode off and Image Type 2D) |
 | Automatically enhance my image prompt | Always off. It re-ticks itself after generations; untick before every Create Image |
 | Use Consistent Character | Affects **Create Image only**; Create Video ignores it and its slots, so its state doesn't matter when making clips. On for start images featuring the reference characters; **off** for images with no characters (point of view, empty environments, inserts). Unticking it leaves the reference slots filled, so clear both slots with their trash icons as well |
 | Advanced Mode + Manual Video Length | Tick Advanced Mode, then tick **Manual Video Length, sec**: it is unticked by default and the slider is ignored until it is ticked. Set the slider to the clip's length. Setting the slider by dragging can miss; verify its value |
 | Video Only (No Sound) | Off when the prompt has a `[PRODUCTION SOUND]` block. It can end up ticked unexpectedly; verify every time |
 | Automatically enhance my video prompt | Never on. It rewrites the prompt into about two hundred words of prose, drops the bible blocks, time labels and clip reference, and can refuse a clip whose dialogue it judges too long |
 | Lipsync HD Video | On only for dialogue clips using the Lipsync HD dialog (SKILL.md 6b, Method B). Off for dialogue written inside the multishot prompt, which uses the normal Manual Video Length. Set the length **before** ticking it (ticking hides the length controls) and untick it for the next clip |
-| Narration, Share to public gallery | Off unless the script calls for them. Check sharing before every Create Image and Create Video |
+| Narration Video | On only for narrated-story clips (Narration Video, below) |
+| Share this in the public gallery | Off unless asked. Check it before every Create Image and Create Video |
 
 Verify checkbox states and slider value by reading the page (a script on the visible inputs), not from a screenshot.
 
@@ -81,7 +86,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 
 - Tick **Use Consistent Character**. Clicking **Reference Photo** or **Reference Photo 2** opens the library picker (**Select Image**), not a system file picker.
 - In the picker: open **My AI Images**. It loads 20 items at a time; scroll to the bottom and click **More** for older ones. Search doesn't match prompt text, and titles are truncated. Images saved from the generator are titled with the start of their prompt and can't be renamed, so find references by their thumbnail and their `[Image R1]` title prefix.
-- Slot 1 is the main character; slot 2 is a second character. Screenshot to confirm each slot shows the right thumbnail. Both buttons share one CSS class, so picking by class alone can fill the wrong slot.
+- Slot 1 is the main character; slot 2 is a second character, or in a narrated story the empty location reference (`narrated-story.md`). Screenshot to confirm each slot shows the right thumbnail. Both buttons share one CSS class, so picking by class alone can fill the wrong slot.
 - Remove a reference with the trash icon on its thumbnail. The icon itself ignores clicks, so when clicking by script, click the element around it.
 - If the picker shows **Empty.**, close it and reopen it from the Reference Photo button.
 
@@ -99,6 +104,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 4. **Selection is per pass.** Each pass has its own tick, so several ticks can show across the carousel. The active pass's tick is the one used. Click the chosen candidate so its tick moves.
 5. Save accepted start images and references with the hover **save** icon (they land in My AI Images). VE saves them under the start of their prompt and they can't be renamed, so find them later by their `[Image 12A]` prefix. Only Save Last Frame lets you choose a name.
 6. With Consistent Character on, VE may rewrite the image prompt. Read the box after generation and tell the user if it changed.
+7. **Lettering in a start image** (a sign, a title board): VE usually spells it right when it's drawn large and well inside the frame; lettering at the frame edge, or small lettering a later push enlarges, garbles in the clip. If VE still misspells it after a regenerate and the user has **Artistly** linked (Linked companion products, above) or has said they own it, offer to make that start image in Artistly instead and bring it into the library (the **Import** button beside the Artistly key in Edit profile, or **Import Media / Text to Speech** → Artistly; follow the panel's own fields). Otherwise regenerate, enlarge the lettering, or add the text as a title in the edit.
 
 ## Generating a clip
 
@@ -192,7 +198,7 @@ The returned summary gives the take's length and size (check the clip ran its pl
 
 1. **Scroll the library to the top first.** A right-click lower down can scroll the list and hit the wrong tile.
 2. Right-click the take → **Save Last Frame**. **Check the title prefilled in the dialog** (the start of that take's prompt) to confirm it's the right tile. Replace it with a unique name that includes a project or version prefix (`v3 Clip 4`), because earlier projects' frames may already use `Clip 4`. Click **Save**.
-3. Right-click the same take → **Add to Timeline**. Check the timeline clip count went up by one.
+3. Right-click the same take → **Add to Timeline**. It lands straight after the last clip on track 1. Check the timeline clip count went up by one. If a gap opens between clips, **Auto Align Clips** (the first icon on the track row) closes it.
 4. **Save the project** after each add or two; a new project gets its name on the first save. The timeline only survives a reload if it was saved.
 
 ## Setting up a chained clip (Creation tab)
@@ -210,6 +216,91 @@ The returned summary gives the take's length and size (check the clip ran its pl
 5. **Check the Total characters counter.** If it doesn't match the typed lines, click in each script field and press a key (a space, then Backspace) so it registers.
 6. Click **Create** inside the dialog. For each further take, click the lipsync Create Video button again: the dialog reopens with its fields kept, so check them and click **Create**.
 7. The dialog keeps Actor 2 between clips; clear it for single-speaker clips. After a page reload, the dialog starts empty.
+
+## Narration Video (narrated stories)
+
+The format: `narrated-story.md`. Tested with VE's own Text to Speech.
+
+1. Select the scene's start image, enter the one-paragraph video prompt and verify it.
+2. Tick **Narration Video** (Choose my Audio). Leave Advanced Mode and Lipsync HD off; the narration sets the clip's length.
+3. Click **Create Video**. The **Create Narration Video - Create Audio** dialog opens with four tabs:
+   - **Text to Speech** (VE's own): Language (146), Voice (for example Andrew Multilingual), Emotions, Speed, Pitch, and a text box of **120 characters**. Type the line (typing registers; check the counter), click **Import Speech** and wait for the waveform and its duration. Keep the same language, voice and settings for every line.
+   - **CloneVoice.ai**: Category (Cloned or System), Language, Voice, Boost Similarity, Auto translate, text box. Only when the user owns CloneVoice and has added its API key in VE's settings; untested here.
+   - **Voice Recording**: Record and Stop, for the user's own voice.
+   - **Import Audio**: select an audio file; **10 seconds at most**.
+4. Click **Create Narration Video**. The dialog closes and the generator stays open with its references, so prepare the next scene while this one renders.
+5. The library tile's title is VE's rewrite of the video prompt, not the typed text (it starts, for example, "A wide side-on 2D shot…"), so record each scene's submission order and match tiles by thumbnail and order.
+
+**Assembling:** right-click each finished clip in story order → **Add to Timeline**; each add lands straight after the last clip on track 1. If a gap opens, click **Auto Align Clips** (the first icon on the track row) to close it. Check the clip count and order, then save the project.
+
+## Voice Changer
+
+When and why: `light-sound-dialogue.md`, Consistent voices across clips. Every change needs the user's yes, naming the clip, the speaker and the sample.
+
+**Saving a sample from a clip:** right-click the clip (timeline item or library tile) → **Save Audio** → replace the prefilled title (the clip's name) with the character's name (`Barnaby voice`) → **Save**. It lands in **My AI Audio**.
+
+**CloneVoice.ai** (only when it's linked: a key in Edit profile, see Linked companion products): right sidebar → **Import Media / Text to Speech** → **CloneVoice.ai (Text to Speech Integration)** to generate the sample from text, or **Import from CloneVoice.ai** to import audio already made in CloneVoice. Untested here (no API key); follow the panel's own fields.
+
+**Voice Recorder** (the user's own voice): the same panel → **Voice Recorder**. The user records a few clean sentences of their own voice (10–15 s, no music) and uses the recording as the sample.
+
+**VE text to speech:** the same panel → **Text to Speech** (the first option): pick the language and voice, enter a few sentences (10–15 s of speech), generate, and use the audio as the sample.
+
+**Audio Cutter** (right sidebar, bottom), for a long uploaded recording:
+1. Click **select** in "Please select an audio file". In the folder picker, **single-click** a folder to open it (a double-click closes the picker), click the file, then **Choose**. A player shows its length.
+2. Set **Duration** (seconds per part; the box allows up to 30). The dialog says equal parts, but it cuts fixed-length parts: a file a little over 60 s at 30 gives two 30 s parts plus a fraction-of-a-second tail.
+3. Click **Split Audio**. The dialog closes when done (about 10 s for a minute of audio) with no message. The parts appear in the source file's folder as `<name> (part N of M)`.
+
+**Applying it (one speaker):**
+1. Right-click the clip: a timeline item (audio items show Properties · Voice Changer · Delete) or a library tile → **Voice Changer**. The dialog shows the source's name, type and the span it will convert.
+2. **Choose Sample Audio** → open the folder (single click) → click the sample → **Choose**. A player shows the sample.
+3. Click **Apply**. It applies straight away: "Media on the timeline has been successfully replaced". From the timeline, the new file replaces the item in its slot, only the trimmed span is converted, and the new file is saved in the source clip's folder. The original stays in the library.
+4. Watch the dialog and the notifications for a warning or error (for example about sample length) and report its exact wording.
+5. Check the item's new length and whether anything after it moved; a converted piece came back 28 ms longer once and pushed the next piece along by the same amount.
+
+**Two speakers in one clip:**
+1. **Add an empty track first.** Separate Audio and Video puts the audio on the next free track, which may be one already in use (a slides or background track).
+2. Right-click the clip on the timeline → **Separate Audio and Video** → confirm. The video becomes a new silent file and the audio a new audio item.
+3. Zoom in (the plus magnifier) and find the pause between the two speakers. If the browser tool can run JavaScript in the page, measure it from the audio rather than reading the waveform by eye: decode the item's file, find the quiet stretch between the voices, and check which voice is which by pitch (in one test the man was about 100–120 Hz, the woman about 170–240 Hz). Otherwise ask the user to point to the gap.
+4. Click the ruler to put the playhead in the middle of the gap. The playhead time in ms is `$('.ruler.ui-slider').slider('option','value') / app.project.get('zoom')`.
+5. Select the audio item and click the **scissors**. There are now two pieces, one per speaker.
+6. Apply Voice Changer (above) to the piece that needs it.
+
+## Filters (finishing on the timeline)
+
+Filters are suggestions, not defaults: offer one only when the video or the user's request calls for it (a slow push on a still, a title card, a visualiser over narration, a speed change), and apply it on the user's yes.
+
+Right sidebar → **Filters**, then drag a filter onto a timeline item. The item's **Properties** (right-click → Properties; it also opens after a drop) lists its filters, each with × to remove it and **Setup** where it has settings. A video item's Properties also has **Volume**, 0–200%.
+
+| Filter | Use it for | Settings |
+|---|---|---|
+| **Camera Pan** | movement on a still image or a static shot | Setup → Animation: Zoom In, Zoom Out, Move Left, Move Right, Move Up, Move Down. Shows only in the rendered video, not the preview. |
+| **Resize And Move** | placing a layer (picture-in-picture, a keyed presenter over a background) | Setup: size and position on the frame. |
+| **Green Screen** | keying out a green or blue backdrop | Setup → dropper → click the backdrop colour → set Blend → Save. |
+| **Titles** | title cards, lower thirds, labels and shapes over the video | Not dropped on an item: drop it on an **empty track** and it becomes its own Titles item. Right-click → **Edit** opens the elements editor (text, image, rectangle, circle, pen, grid, delete). Its menu also has Transition In, Transition Out, Transition Between and Add voiceover. |
+| **Zoom In** | drawing attention to part of the frame | Setup → drag the crop box over the area to zoom into. |
+| **Audio Wave** | a visualiser over narration, podcast or music sections | Setup → 18 presets (wave, bars, centre bars, lines, circular, circular bars), primary and secondary colour, opacity. |
+| **Change Speed** | slow motion or speeding up a shot | 50–200%. |
+| **Fade In Audio / Fade Out Audio** | easing sound in at the start or out at the end | No options; not heard in the preview, only in the render. |
+| **Opacity** | fading a layer, a translucent overlay | 0–100%. |
+
+**Auto Crop** (no options) is for changing aspect ratio; it's rarely needed, since VE projects are made in their final orientation.
+
+## Screen Recorder (screen captures)
+
+For explainer and training videos that show software, a website or a desktop: VE records the screen straight into the media library, and the recording goes on the timeline like any clip.
+
+1. Right sidebar → **Import Media / Text to Speech** → **Screen Recorder** (last in the list).
+2. Set **Media Library Category** to the folder the recording should land in (the project's clips folder). Every My Media folder is listed.
+3. Turn the microphone **On/Off** as needed: on to narrate while recording.
+4. Click **Record**. Chrome's picker opens ("Choose what to share with app.videoexpress.ai"). **The user picks what to share**: the browser tool can't see or click this picker.
+   - **Chrome Tab**: one browser tab. **Share with tab audio** (whatever that tab plays) is **on** by default; turn it off when narrating over a tab that makes sound.
+   - **Window**: one app window, chosen from thumbnails; nothing else on the desktop is recorded.
+   - **Entire Screen**: one monitor (Screen 1, Screen 2…); check the number on a multi-monitor setup. Pop-ups and notifications are recorded too.
+   - Window and Entire Screen have **Share with system audio**, **off** by default; turn it on to record the app's sound.
+   - Then **Share** (Chrome Tab: **Share with Audio** when tab audio is on).
+5. Click **Stop** when done. The recording lands in the chosen category with no save step; add it to the timeline from there.
+
+Before recording, remind the user that the picker shows every open tab and window: close anything private. No length limit is known, but none is confirmed either; for a long session, check the file in the library before relying on it.
 
 ## Recovery
 
