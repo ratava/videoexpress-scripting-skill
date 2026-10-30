@@ -2,7 +2,7 @@
 name: videoexpress-prompt
 description: Use when the user wants a single VideoExpress image or clip prompt, a one-off shot, an image plus its clip, or help improving one existing prompt. For a multi-clip video, a script, a prompt pack, chaining across clips or operating VideoExpress in the browser, use videoexpress-scripting instead. A question-by-question wizard that writes one paste-ready VideoExpress (VE) 3.5+ prompt or a matched image-and-clip pair, walking through look and style (with links to the Creative mode style catalogue), what happens, dialogue, sound, camera, light and image, and negatives, with the same prompt rules, multishot format, styles, Consistent Character advice and lip-sync methods as the VideoExpress Scripting skill.
 metadata:
-  version: "1.1"
+  version: "1.2"
   author: Brent Wesley
 ---
 
@@ -45,6 +45,15 @@ The first time this skill is used in a conversation, whatever the user's first m
 Then answer the user's first message. If the skill was started with no message of its own (only its name or slash command), go straight to the Step 0 card, "Do you have something to start from?", as a question card (numbered options where the platform has no question widget), not a prose menu. When the first message already says what is wanted (an idea, an image, a prompt to improve, a failed take), act on it without asking what the user wants. Ask the what's-new question once per conversation, never again later in it.
 
 **Name the conversation after the shot.** Once the shot has a subject (from the user's idea, image or prompt), rename the conversation to "[subject] · VideoExpress Prompt" if you have a tool that renames it (Grok can rename its chats; ChatGPT can't). Otherwise leave the name as it is.
+
+## Companion products
+
+**Companion product links.** Whenever you tell a user about Artistly, CloneVoice.ai or TalkingPhotos.ai and they don't have it (they said no, or haven't been asked yet), give its link once in that reply, each followed by "(affiliate link: the skill's author earns a commission if you buy)":
+- Artistly: https://paykstrt.com/48893/180599
+- CloneVoice.ai: https://paykstrt.com/56038/180599
+- TalkingPhotos.ai: https://paykstrt.com/52357/180599
+
+Never link a product the user already has, never more than once per product in a reply, and never as a sales pitch: name a product only where it genuinely helps the task, and always say the VideoExpress-only route works without it.
 
 ## Step 0: what have you got?
 

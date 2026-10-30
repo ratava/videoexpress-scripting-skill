@@ -4,6 +4,26 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.6.0 and VideoExpress Prompt 1.2.0 (2026-10-30)
+
+### VideoExpress Scripting 2.6.0: headline
+
+- **Consistent voices with Voice Changer.** When a character speaks in more than one clip, the skill keeps their voice the same with VideoExpress's Voice Changer, from a voice sample per character: audio saved from one of their clips, a clean upload or Voice Recorder take, CloneVoice.ai (sold separately), or VE's own text to speech. Asked at intake; the sample is saved when a speaker's first dialogue clip is accepted, and a voice pass is offered once the timeline is trimmed. Two-speaker clips are separated and cut at the pause so only one voice changes.
+- **Narrated story videos.** A new format (`references/narrated-story.md`) for stickman videos, fables and children's stories: one narrated line per clip through Narration Video (VE text to speech, Voice Recording, Import Audio up to 10 s, or CloneVoice.ai), a character master in Reference Photo 1 and an empty-location reference in Reference Photo 2, a fresh start image per scene (chaining offered when the action needs it), then Add to Timeline and Auto Align Clips. Based on VideoExpress's own stickman workflow.
+- **Festive styles and scenes for Christmas.** Four Christmas styles (Christmas Diorama, Snow Globe, Gingerbread, Holiday Stop-Motion) and two add-ons for any style, Festive Winter and Festive Summer, for the half of the world that has Christmas in summer. The add-ons were tested on ten styles across 2D, 3D, craft, painted and print looks; `styles/festive-addons.md` has the rules for limited-palette and character styles.
+
+### VideoExpress Scripting 2.6.0: new
+
+- **Artistly and CloneVoice.ai, if you have them.** On first use the skill asks once whether you have VideoExpress's companion products, offers to check in your browser that their API keys are added to VideoExpress (Edit profile; a key means linked), and remembers the answer. Artistly can make the start images; CloneVoice, voices. Products you don't have are named with an affiliate link, disclosed beside it. Everything works with VideoExpress alone.
+- **Screen captures for training videos.** VideoExpress's Screen Recorder records a tab, window or screen with tab or system audio and your microphone, straight into the media library.
+- **Timeline filters as suggestions.** Camera Pan, Zoom In, Titles, Audio Wave, Change Speed, audio fades, Opacity, Resize And Move and Green Screen, suggested when a video calls for them and applied on your yes.
+- **18 new styles:** Greyscale Airbrush, Steampunk, Flat Vector Explainer, Marker Doodle, Modern 2D Cartoon, Chibi, Crayon Drawing, Impressionist, Colour Comic, Game Cinematic, Fantasy Painting, Travel Poster, Tilt-Shift Miniature, Voxel, Folk Art, Vintage Horror, Stickman, Miniature Pan. Style sheets gain an optional "Artistly match" field.
+- **Browser workflow.** Reference Photo 2 can hold an empty location; Add to Timeline appends and Auto Align Clips closes gaps; lettering in start images is drawn large and well inside the frame.
+
+### VideoExpress Prompt 1.2.0
+
+- **Festive styles and scenes for Christmas** (headline), the **18 new styles**, **consistent voices** guidance, **Reference Photo 2 for a location**, and **companion product links** (affiliate, disclosed), all from the shared references.
+
 ## VideoExpress Scripting 2.5.6 (2026-10-23)
 
 - **Straight into production.** As soon as the script is signed off, the skill gives the first paste-ready prompt in pack order (usually the first Consistent Character reference, otherwise Image 1A) in full with its settings, whoever operates VideoExpress. If the assistant operates it, the skill also asks whether to open the two VideoExpress tabs in the browser now, and runs Session setup on yes.

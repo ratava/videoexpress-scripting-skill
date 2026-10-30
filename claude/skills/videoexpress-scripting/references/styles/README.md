@@ -35,6 +35,29 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` | [▶](https://youtu.be/mIMmMPOeFqI) |
 | Acrylic | Custom | bold saturated thick paint | `acrylic.md` | [▶](https://youtu.be/DSxSGc_ih2M) |
 | Graffiti | Custom | aerosol spray-paint toon, caricatures, street mural | `graffiti.md` | demo pending |
+| Greyscale Airbrush | Custom | black-and-white fashion illustration, plain backdrop | `greyscale-airbrush.md` | demo pending |
+| Steampunk | Custom | painted Victorian-industrial adventure, brass and gaslight | `steampunk.md` | demo pending |
+| Flat Vector Explainer | Custom | clean flat-colour vector art for explainer and training videos | `flat-vector-explainer.md` | demo pending |
+| Marker Doodle | Custom | black felt-tip line and flat marker colour on white, whiteboard explainer | `marker-doodle.md` | demo pending |
+| Modern 2D Cartoon | Custom | contemporary TV animation, clean line and soft cel shading | `modern-2d-cartoon.md` | demo pending |
+| Chibi | Custom | cute super-deformed 3D characters, vinyl-toy look | `chibi.md` | demo pending |
+| Crayon Drawing | Custom | a young child's wax-crayon drawing come to life | `crayon-drawing.md` | demo pending |
+| Impressionist | Custom | broken-colour oil painting, light and atmosphere | `impressionist.md` | demo pending |
+| Colour Comic | Custom | bright clean-line adventure comic, even ink and flat colour | `colour-comic.md` | demo pending |
+| Game Cinematic | Custom | high-end video-game trailer CG, heroic and atmospheric | `game-cinematic.md` | demo pending |
+| Fantasy Painting | Custom | epic fantasy book-cover art, painterly with glowing light | `fantasy-painting.md` | demo pending |
+| Travel Poster | Custom | vintage screen-printed travel poster, flat shapes, limited palette | `travel-poster.md` | demo pending |
+| Tilt-Shift Miniature | Custom | real scenes that look like tiny scale models | `tilt-shift-miniature.md` | demo pending |
+| Voxel | Custom | a world built from cubes, blocky game look | `voxel.md` | demo pending |
+| Folk Art | Custom | Scandinavian decorative folk painting, dense flat florals | `folk-art.md` | demo pending |
+| Vintage Horror | Custom | eerie black-and-white antique photo and silent film | `vintage-horror.md` | demo pending |
+| Stickman | Custom | 2D stickman story cartoon for narrated stories | `stickman.md` | demo pending |
+| Miniature Pan | Custom | tilt-shift miniature with a slow Ken Burns pan and push | `miniature-pan.md` | demo pending |
+| Christmas Diorama | Custom | glossy ceramic miniature Christmas village on a fireplace mantel | `christmas-diorama.md` | demo pending |
+| Snow Globe | Custom | a tiny scene inside a glass globe, snow swirling | `snow-globe.md` | demo pending |
+| Gingerbread | Custom | a world baked from gingerbread, piped icing and sweets | `gingerbread.md` | demo pending |
+| Holiday Stop-Motion | Custom | 1960s TV Christmas special, felt-and-wood puppets | `holiday-stop-motion.md` | demo pending |
+| Festive Winter / Festive Summer | Add-on | Christmas snow or summer-sun blocks to add to any style | `festive-addons.md` | demo pending |
 | Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
 | Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
 | Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
