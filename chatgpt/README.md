@@ -43,6 +43,19 @@ gemini skills install https://github.com/ratava/videoexpress-scripting-skill.git
 
 Step-by-step: [Install in Gemini](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-Gemini).
 
+**DeepSeek.** This build is also the one for DeepSeek's agent tools: [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`, its desktop app and Web UI) and the Deep Code terminal assistant. The DeepSeek Chat website and app don't take skills. Two ways in:
+
+- **As a dsh plugin.** The repo root is a dsh bundle (`package.json` with `dsh.bundle`, `cordis.patch.yml` and the skill provider in `lib/index.js`) that serves both VideoExpress Scripting and VideoExpress Prompt from this build. In the desktop app or Web UI, open **Plugins**, add a plugin, enter `github:ratava/videoexpress-scripting-skill` as the package, and choose **Enable now** when it has installed. From a terminal, install into the profile you use (`desktop` for the desktop app, `web` for the Web UI) while that app is closed:
+
+  ```
+  dsh plugin --profile desktop add github:ratava/videoexpress-scripting-skill
+  ```
+
+  The desktop app adds the `dsh` command through **Manage dsh Command… → Install**, and refuses terminal changes to its profile until it has been opened once. Add `#<tag or commit>` to the package to pin a release (any release from the first one that includes the bundle), and install again with a newer tag to update. The bundle declares the dsh versions it supports (`engines.dsh`); dsh is a developer preview, and it refuses a bundle whose range doesn't include the running version until the range is updated here.
+- **As a plain skill folder.** Download `videoexpress-scripting-chatgpt.zip` from the [releases page](../../../releases), unzip it and copy the `videoexpress-scripting` folder into `~/.agents/skills/` (on Windows, `%USERPROFILE%\.agents\skills\`). dsh and Deep Code both read that folder; dsh picks the skill up without a restart. dsh also reads `~/.dsh/skills/` and, per project, `.dsh/skills/` or `.agents/skills/`. Updates are manual: replace the folder after each release. A copy here wins over the plugin's copy if both are installed.
+
+Browser operation in dsh needs one of its experimental browser providers (for example Chrome DevTools MCP in `attach` mode, which keeps your open tabs and sign-ins); the browser workflow hasn't been tested there yet. Planning and prompt writing need no browser. Step-by-step: [Install in DeepSeek](https://github.com/ratava/videoexpress-scripting-skill/wiki/Install-DeepSeek).
+
 ## Contents
 
 ```

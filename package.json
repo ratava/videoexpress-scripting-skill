@@ -1,0 +1,41 @@
+{
+  "name": "videoexpress-scripting",
+  "description": "VideoExpress Scripting for DeepSeek Harness: plan, script and produce multi-clip videos in VideoExpress 3.5+, plus the VideoExpress Prompt single-shot wizard.",
+  "version": "2.6.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "chatgpt/skills/videoexpress-scripting",
+    "chatgpt-prompt/skills/videoexpress-prompt"
+  ],
+  "author": "Brent Wesley",
+  "license": "CC-BY-NC-4.0",
+  "homepage": "https://github.com/ratava/videoexpress-scripting-skill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratava/videoexpress-scripting-skill.git"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "skills",
+    "videoexpress"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
