@@ -1,0 +1,5 @@
+# DeepSeek Harness bundle patch: mount the VideoExpress skill provider
+# (lib/index.js) as a host row, so every agent preset sees both skills.
+- insert:
+    - id: videoexpress-skills
+      name: 'videoexpress-scripting'
