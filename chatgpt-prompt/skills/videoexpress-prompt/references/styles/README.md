@@ -34,7 +34,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Blueprint | Custom | white line on cyanotype, extrude not rotate | `blueprint.md` | [▶](https://youtu.be/M70zJVSMZOY) |
 | Rubber-Hose Cartoon | Custom | 1930s black-and-white cel | `rubber-hose-cartoon.md` | [▶](https://youtu.be/mIMmMPOeFqI) |
 | Acrylic | Custom | bold saturated thick paint | `acrylic.md` | [▶](https://youtu.be/DSxSGc_ih2M) |
-| Graffiti | Custom | aerosol spray-paint toon, caricatures, street mural | `graffiti.md` | demo pending |
+| Graffiti | Custom | aerosol spray-paint toon, caricatures, street mural | `graffiti.md` | [▶](https://youtu.be/TmdnLbbsFBw) |
 | Greyscale Airbrush | Custom | black-and-white fashion illustration, plain backdrop | `greyscale-airbrush.md` | [▶](https://youtu.be/KOdhYT8EeR0) |
 | Steampunk | Custom | painted Victorian-industrial adventure, brass and gaslight | `steampunk.md` | [▶](https://youtu.be/_ojvHSyr-_w) |
 | Flat Vector Explainer | Custom | clean flat-colour vector art for explainer and training videos | `flat-vector-explainer.md` | [▶](https://youtu.be/lEUm5V1ygvA) |
@@ -74,7 +74,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Anime: 1990s Cel | Custom | bold ink, hard cel, film grain | `anime-1990s-cel.md` | [▶](https://youtu.be/-P3H4GO4mCw) |
 | Anime: Shōnen Action | Custom | thick line, speed lines, one fast beat | `anime-shonen-action.md` | [▶](https://youtu.be/9RIUV06uVfA) |
 | Anime: Cyberpunk 90s Cel | Custom | muted teal, rain, dense painted city | `anime-cyberpunk-90s-cel.md` | [▶](https://youtu.be/SaFG80NfwnA) |
-| Anime: Shōnen Cyberpunk | Custom | shōnen line and action, cybernetic characters, one hot accent | `anime-shonen-cyberpunk.md` | demo pending |
+| Anime: Shōnen Cyberpunk | Custom | shōnen line and action, cybernetic characters, one hot accent | `anime-shonen-cyberpunk.md` | [▶](https://youtu.be/Ot1HSFAVcWc) |
 | Anime: Mecha | Custom | hard-surface cel, hangar | `anime-mecha.md` | [▶](https://youtu.be/V5gI8FeqX8Q) |
 
 Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep each sheet short; anything shared by all styles belongs in this file, not in a sheet.
