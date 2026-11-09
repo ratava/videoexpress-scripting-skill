@@ -4,6 +4,24 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.7.0 and VideoExpress Prompt 1.3.0 (2026-11-09)
+
+### Headline (both skills)
+
+- **Works in your language.** The skills talk to you and write every prompt in the language you use with them (or have set), section tags and negatives included: `[SCÈNE]`, `[ACTION 0-5s]`, `[NÉGATIFS]` and "Pas de musique" in French, for example. Bible blocks and style lines are translated once and pasted word for word. A fully French prompt, tags, negatives and lip-synced dialogue included, worked first time in VideoExpress. Prompts switch to English only after a test shows the language is causing a failure (`multishot-template.md`, Language).
+- **Cleaner start images.** Image prompts carry no bracketed label (VideoExpress painted it onto signs, boards and shirts: 3 of 7 tagged signage images, 0 of 6 untagged); rename each saved image in the Media Library instead. Image prompts carry no negatives: each exclusion is written as its positive, and the tagged start-image format has no [NEGATIVES] section. A location block's out-of-frame sentence goes into clip prompts only (drawn into start images 5 of 5 times, 0 of 5 without it).
+
+### New
+
+- **Thanksgiving festive add-on** (`styles/festive-addons.md`): harvest dinner table, roast turkey, pumpkin pie, cornucopia, plain pumpkins, autumn leaves, candle and late-afternoon light, with guards against carved pumpkins, Halloween and Christmas. Tested on one style (3 takes).
+
+### Fixed
+
+- VideoExpress rewrites an image prompt only when "Automatically enhance my image prompt" is ticked, not because Consistent Character is on.
+- Saved images can be renamed from the Media Library (Organize → Rename); only the save step can't set a name.
+- Removed "references revive features VE used to ignore": no recorded evidence.
+- VideoExpress Prompt: the wizard asks in the user's language, writes image prompts with no label and no negatives, and its checks flag either.
+
 ## VideoExpress Scripting 2.6.0 and VideoExpress Prompt 1.2.0 (2026-10-30)
 
 ### VideoExpress Scripting 2.6.0: headline

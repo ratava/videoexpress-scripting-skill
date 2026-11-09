@@ -57,7 +57,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Snow Globe | Custom | a tiny scene inside a glass globe, snow swirling | `snow-globe.md` | [▶](https://youtu.be/OG_R_pQfiUQ) |
 | Gingerbread | Custom | a world baked from gingerbread, piped icing and sweets | `gingerbread.md` | [▶](https://youtu.be/_7G1bDKxzVQ) |
 | Holiday Stop-Motion | Custom | 1960s TV Christmas special, felt-and-wood puppets | `holiday-stop-motion.md` | [▶](https://youtu.be/qdjlp5JLoTE) |
-| Festive Winter / Festive Summer | Add-on | Christmas snow or summer-sun blocks to add to any style | `festive-addons.md` | [▶ Winter](https://youtu.be/YOMQUbGsZU0) · [▶ Summer](https://youtu.be/tA0AHdnvbcU) |
+| Festive Winter / Festive Summer / Thanksgiving | Add-on | Christmas snow, Christmas summer-sun or Thanksgiving harvest-table blocks to add to any style | `festive-addons.md` | [▶ Winter](https://youtu.be/YOMQUbGsZU0) · [▶ Summer](https://youtu.be/tA0AHdnvbcU) |
 | Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
 | Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
 | Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
@@ -83,7 +83,7 @@ Adding a style: copy `_TEMPLATE.md`, fill every field, add one row here. Keep ea
 
 The official image prompts are long, precise and ordered. Follow this order:
 
-1. **Medium and format first** (after the `[Image 12A]` pack reference): the style's medium phrase + "still, widescreen 16:9" (e.g. "Cinematic high-end 3D animated feature film still, widescreen 16:9").
+1. **Medium and format first**: the style's medium phrase + "still, widescreen 16:9" (e.g. "Cinematic high-end 3D animated feature film still, widescreen 16:9").
 2. **Subject, placement and framing**: who, where in the frame ("slightly left of center", "in the right third"), how much of them ("waist-up", "full length", "from the top of her hood to just below her knees"), pose and gaze, expression.
 3. **Face details**: shape, eyes, brows, nose, cheeks, distinguishing marks.
 4. **Hair, accessories, wardrobe**: each item with colour, material, wear and fastenings.
@@ -91,11 +91,11 @@ The official image prompts are long, precise and ordered. Follow this order:
 6. **Lighting**: key direction and colour, fill, rim ("soft warm light from the front left, balanced by cool twilight and subtle rim light").
 7. **Material and render vocabulary** for the style, depth of field, what is sharp and what is soft.
 8. **Mood** in a few words.
-9. **Closing guards**: "No text or watermark", plus readability ("keep the mole, cloth, flowers and rosettes clearly readable"), and style exclusions ("no smooth photographic surfaces").
+9. **Closing anchors**, all positive (image prompts carry no negatives, see `../bible.md`): readability ("keep the mole, cloth, flowers and rosettes clearly readable") and the style's own finish in place of a style exclusion ("matte hand-painted surfaces" rather than "no smooth photographic surfaces"). A style sheet's guards go into the clip's [NEGATIVES], not the image prompt.
 
 **Left and right**: when a body side and an image side differ, say both — "a thick braid hanging over her right shoulder on the left side of the image". This avoids mirrored accessories.
 
-**Text-like objects** (signs, marquees, screens): describe them as shapes and light "with no legible lettering".
+**Text-like objects** (signs, marquees, screens): describe them as shapes and light: "a blank, unlettered panel glowing soft blue", "abstract coloured shapes on the screen".
 
 ## Video-prompt pattern (all styles)
 
