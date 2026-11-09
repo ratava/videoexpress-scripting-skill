@@ -1,4 +1,4 @@
-# Festive add-ons (Christmas winter or summer, for any style)
+# Festive add-ons (Christmas winter or summer, and Thanksgiving, for any style)
 
 **Type**: add-on, tested in production (pass)
 
@@ -21,6 +21,17 @@ Seasonal blocks to add to any style's prompts, not styles of their own. Use the 
 - **Guards**: no snow, no winter clothing, no frost, no snowflakes, no falling sparkles. VE links Christmas with falling snow: in the action, say the air is dry and sunny with nothing falling from the sky.
 - **Local touches**: Australian (Christmas bush, beach cricket, prawns on the barbecue, a lifesaver flag), New Zealand (red-flowering pōhutukawa), South African (a braai), South American (a summer garden party). Use the one that fits the audience.
 - **Tested on**: Cinematic Photoreal (an Australian beach on Christmas Day: a tinsel tree in the sand, a tinsel-wrapped umbrella, Christmas bush, a family in Santa hats at a barbecue, 2 takes). The summer-Christmas look held with no snow; a "gentle drift" ran wide, so name the end framing.
+
+## Thanksgiving
+
+- **Image line**: "Thanksgiving: a wooden dining table set for Thanksgiving dinner: a golden roast turkey on a platter, a pumpkin pie, a bowl of cranberry sauce, a wicker cornucopia spilling small gourds, squash and dried corn, small whole orange pumpkins with smooth plain skins, scattered orange and gold autumn leaves, amber glass candle holders with lit candles, a window showing golden autumn trees in late-afternoon sun."
+- **Video line**: "Thanksgiving: a harvest dinner table with a golden roast turkey, pumpkin pie, a cornucopia of gourds and squash, small orange pumpkins, autumn leaves, warm candlelight and golden late-afternoon light."
+- **Light**: warm late-afternoon light from the window, warm candle glow.
+- **Motion**: candle flames flickering, a little steam rising from the turkey.
+- **Stability**: "warm golden autumn light".
+- **Guards**: no carved pumpkins, no faces on the pumpkins, no jack-o'-lanterns, no Halloween decorations, no Christmas decorations, no snow. With these guards the pumpkins stayed plain in every image and clip; they have not been tested without them.
+- **Clothing**: the table carries the holiday, so a character needs no festive clothing.
+- **Tested on**: one style so far (a figure at the front of a Thanksgiving table, 3 takes). The turkey, pie, cornucopia, plain pumpkins, autumn leaves, candles and autumn window held in every take.
 
 ## Tested across style families
 

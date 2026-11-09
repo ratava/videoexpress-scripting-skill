@@ -85,7 +85,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 ## Consistent Character reference slots
 
 - Tick **Use Consistent Character**. Clicking **Reference Photo** or **Reference Photo 2** opens the library picker (**Select Image**), not a system file picker.
-- In the picker: open **My AI Images**. It loads 20 items at a time; scroll to the bottom and click **More** for older ones. Search doesn't match prompt text, and titles are truncated. Images saved from the generator are titled with the start of their prompt and can't be renamed, so find references by their thumbnail and their `[Image R1]` title prefix.
+- In the picker: open **My AI Images**. It loads 20 items at a time; scroll to the bottom and click **More** for older ones. Search doesn't match prompt text, and titles are truncated. Images saved from the generator are titled with the start of their prompt, and image prompts carry no pack reference, so rename each one to its reference as soon as it's saved (tile right-click → **Organize** → **Rename**) and find it by that name and its thumbnail.
 - Slot 1 is the main character; slot 2 is a second character, or in a narrated story the empty location reference (`narrated-story.md`). Screenshot to confirm each slot shows the right thumbnail. Both buttons share one CSS class, so picking by class alone can fill the wrong slot.
 - Remove a reference with the trash icon on its thumbnail. The icon itself ignores clicks, so when clicking by script, click the element around it.
 - If the picker shows **Empty.**, close it and reopen it from the Reference Photo button.
@@ -94,7 +94,7 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 
 1. Select the textarea's content and replace it. Typing is reliable. Setting the value programmatically also works, but then **nudge it with a real keystroke** (click in the box, press Ctrl+End, type a space, then Backspace) so the page registers the change.
 2. **Verify the content, not just the length.** Check a phrase unique to this clip is present and one unique to the previous clip is gone.
-3. **Check the prompt starts with its pack reference** in square brackets, exactly as the pack declares it (`[Clip 12]`, `[Image 12A]`, `[Clip 12 TEST 1]`), with nothing before it. Library tiles show the first words of the prompt, so this is how each tile is matched to the pack, and how takes are reported to the user ("Clip 12, take 3"). Lipsync takes show VE's own caption instead, so identify those by position.
+3. **Check a video prompt starts with its pack reference** in square brackets, exactly as the pack declares it (`[Clip 12]`, `[Clip 12 TEST 1]`), with nothing before it, and an image prompt has none. Library tiles show the first words of the prompt, so this is how each take is matched to the pack, and how takes are reported to the user ("Clip 12, take 3"). Lipsync takes show VE's own caption instead, so identify those by position.
 
 ## Start images
 
@@ -102,8 +102,8 @@ Verify checkbox states and slider value by reading the page (a script on the vis
 2. VideoExpress makes **one candidate per pass with Consistent Character off, and two with it on**. The carousel keeps every pass from the session, so check the pass count (the dots under the carousel) and describe **only the newest pass**, unless the user refers to another.
 3. **Checkpoint, straight away:** say what the image should show, from its prompt, describe honestly where each candidate misses it, and ask: left or right (or use it, when there is one candidate), or regenerate (same or altered prompt). Ask when you can't tell.
 4. **Selection is per pass.** Each pass has its own tick, so several ticks can show across the carousel. The active pass's tick is the one used. Click the chosen candidate so its tick moves.
-5. Save accepted start images and references with the hover **save** icon (they land in My AI Images). VE saves them under the start of their prompt and they can't be renamed, so find them later by their `[Image 12A]` prefix. Only Save Last Frame lets you choose a name.
-6. With Consistent Character on, VE may rewrite the image prompt. Read the box after generation and tell the user if it changed.
+5. Save accepted start images and references with the hover **save** icon (they land in My AI Images). VE saves them under the start of their prompt (the save step can't set a name), and image prompts carry no pack reference, so save one at a time and **rename each straight away** to its reference (Image 12A): right-click its tile in the Media Library → **Organize** → **Rename**, the same as a clip. An unrenamed image can only be matched by its thumbnail. Save Last Frame asks for a name when it saves.
+6. If **Automatically enhance my image prompt** was ticked, VE rewrites the image prompt. Read the box after generation and tell the user if it changed.
 7. **Lettering in a start image** (a sign, a title board): VE usually spells it right when it's drawn large and well inside the frame; lettering at the frame edge, or small lettering a later push enlarges, garbles in the clip. If VE still misspells it after a regenerate and the user has **Artistly** linked (Linked companion products, above) or has said they own it, offer to make that start image in Artistly instead and bring it into the library (the **Import** button beside the Artistly key in Edit profile, or **Import Media / Text to Speech** → Artistly; follow the panel's own fields). Otherwise regenerate, enlarge the lettering, or add the text as a title in the edit.
 
 ## Generating a clip

@@ -2,7 +2,7 @@
 name: videoexpress-prompt
 description: Use when the user wants a single VideoExpress image or clip prompt, a one-off shot, an image plus its clip, or help improving one existing prompt. For a multi-clip video, a script, a prompt pack, chaining across clips or operating VideoExpress in the browser, use videoexpress-scripting instead. A question-by-question wizard that writes one paste-ready VideoExpress (VE) 3.5+ prompt or a matched image-and-clip pair, walking through look and style (with links to the Creative mode style catalogue), what happens, dialogue, sound, camera, light and image, and negatives, with the same prompt rules, multishot format, styles, Consistent Character advice and lip-sync methods as the VideoExpress Scripting skill.
 metadata:
-  version: "1.2"
+  version: "1.3"
   author: Brent Wesley
 ---
 
@@ -110,14 +110,17 @@ Key light direction and colour, fill or rim, time of day, and the style line fro
 
 ## Step 7: negatives
 
-Suggest the list: the style sheet's guards, anti-realism negatives for stylised looks, the clip's specific guards (camera reversing, new characters, face or costume drift, unwanted motion), sound exclusions, and "no text, no letters, no numbers, no logos, no watermark". Every exclusion lives here and nowhere else, each written with "No". Ask what else the user wants kept out.
+Negatives are for clip prompts only. Suggest the list: the style sheet's guards, anti-realism negatives for stylised looks, the clip's specific guards (camera reversing, new characters, face or costume drift, unwanted motion), sound exclusions, and "no text, no letters, no numbers, no logos, no watermark". Every exclusion lives in [NEGATIVES] and nowhere else, each written with "No". Ask what else the user wants kept out.
+
+**Image prompts get no negatives** (`bible.md`, Image prompts carry no negatives). For an image, turn each thing the user wants kept out into the positive it stands for, in the section it belongs to: "the rest of the room empty", "her hands empty", "a blank, unlettered sign board", and show the user where each one went.
 
 ## Writing the prompts
 
-- **Label.** Each prompt starts with a short bracketed label so the library tile can be found: `[Image 1]`, `[Clip 1]` by default, or the user's own (`[Clip 1 TEST 1]` for test variants). Nothing goes before it.
+- **Label.** Each video prompt starts with a short bracketed label so the library take can be found: `[Clip 1]` by default, or the user's own (`[Clip 1 TEST 1]` for test variants). Nothing goes before it. **Image prompts get no label:** VE paints it onto signs, boards and shirts in the image. Tell the user to rename the saved image in the Media Library instead (right-click its tile → Organize → Rename).
 - **Image prompt:** follow the image-prompt recipe in `styles/README.md`, self-contained, with the full character, outfit and location wording inline and the head in frame. Prose or the tagged form in `bible.md` (Tagged start-image prompts) both work; use the one the user prefers.
+- **Language:** ask the questions and write the prompts in the user's language, section tags and negatives included (`multishot-template.md`, Language). Switch the prompts to English only after a failed take, retested with English tags, works in English; then tell the user why.
 - **Clip prompt:** the tag order in `multishot-template.md`. In a pair, reuse the image prompt's exact character, outfit and location wording, and use the fresh-clip [REFERENCE USE] form. For a clip from the user's image, describe what the image shows.
-- **Check before showing:** quotation marks only around spoken lines, once each; signs and screens described as abstract shapes and light; positives everywhere outside [NEGATIVES]; under about 6,000 characters (trim repeated style text and negatives first).
+- **Check before showing:** quotation marks only around spoken lines, once each; signs and screens described as abstract shapes and light; positives everywhere outside [NEGATIVES]; no [NEGATIVES] and no "no …" phrases in an image prompt; under about 6,000 characters (trim repeated style text and negatives first).
 
 ## Delivering
 

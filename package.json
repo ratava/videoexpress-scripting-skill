@@ -1,7 +1,7 @@
 {
   "name": "videoexpress-scripting",
   "description": "VideoExpress Scripting for DeepSeek Harness: plan, script and produce multi-clip videos in VideoExpress 3.5+, plus the VideoExpress Prompt single-shot wizard.",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "private": true,
   "type": "module",
   "main": "lib/index.js",
