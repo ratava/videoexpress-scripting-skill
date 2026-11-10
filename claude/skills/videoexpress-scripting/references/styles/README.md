@@ -57,7 +57,7 @@ Demo clips: every style has a ten-second test clip (title held, then one beat). 
 | Snow Globe | Custom | a tiny scene inside a glass globe, snow swirling | `snow-globe.md` | [▶](https://youtu.be/OG_R_pQfiUQ) |
 | Gingerbread | Custom | a world baked from gingerbread, piped icing and sweets | `gingerbread.md` | [▶](https://youtu.be/_7G1bDKxzVQ) |
 | Holiday Stop-Motion | Custom | 1960s TV Christmas special, felt-and-wood puppets | `holiday-stop-motion.md` | [▶](https://youtu.be/qdjlp5JLoTE) |
-| Festive Winter / Festive Summer / Thanksgiving | Add-on | Christmas snow, Christmas summer-sun or Thanksgiving harvest-table blocks to add to any style | `festive-addons.md` | [▶ Winter](https://youtu.be/YOMQUbGsZU0) · [▶ Summer](https://youtu.be/tA0AHdnvbcU) |
+| Festive Winter / Festive Summer / Thanksgiving | Add-on | Christmas snow, Christmas summer-sun or Thanksgiving harvest-table blocks to add to any style | `festive-addons.md` | [▶ Winter](https://youtu.be/YOMQUbGsZU0) · [▶ Summer](https://youtu.be/tA0AHdnvbcU) · [▶ Thanksgiving](https://youtu.be/3XelAuXjXpg) |
 | Pure Watercolour | Custom | transparent washes, no line | `pure-watercolour.md` | [▶](https://youtu.be/slTEpvHj_8E) |
 | Mosaic | Custom | glass tesserae, near-static | `mosaic.md` | [▶](https://youtu.be/T5JEUEOc5Go) |
 | Stained Glass | Custom | leaded window, light-driven motion | `stained-glass.md` | [▶](https://youtu.be/kB2DqLNJOh8) |
