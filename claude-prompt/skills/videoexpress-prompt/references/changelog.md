@@ -2,6 +2,13 @@
 
 Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 1.3): show them as a bulleted list, in plain words: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet). Never fold the notes into a sentence or a parenthesis. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
+## 1.3.1
+
+### Fixed
+
+- **Two characters talking in one clip.** When both speakers came out in the same voice, or one line was dropped or came from the wrong mouth, the cause was in the prompt: a voice described two different ways, no stated contrast, or the listener's mouth open. The wizard now writes each voice once, word for word everywhere it appears, states the contrast and keeps the listener's mouth closed.
+- **Dialogue goes in the prompt by default**, even for two people talking with no action between the lines: it controls the pause between speakers, which is hard to do in Lipsync HD. Lipsync HD is still there if you prefer it.
+
 ## 1.3
 
 ### Headline
