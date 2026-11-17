@@ -4,6 +4,13 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.7.1 and VideoExpress Prompt 1.3.1 (2026-11-17)
+
+### Fixed (both skills)
+
+- **Two speakers in one clip.** A shared voice, a dropped line or a line from the wrong mouth came from a voice described differently in different places in one prompt, no stated contrast, or the listener's mouth open in the start image or character block. New failure row in `prompt-rules.md`; the voice-bleed rule in `light-sound-dialogue.md` now covers repeats within a prompt as well as across clips; `bible.md` keeps the expression baseline closed-mouthed and closes non-speakers' mouths in dialogue start images.
+- **Dialogue in the multishot prompt by default**, with or without action between the lines. Two speakers with no action between them worked in VideoExpress, and the prompt controls the pause between speakers, which Lipsync HD makes hard. Lipsync HD is now used when the user prefers it, not for every talking-head clip (`light-sound-dialogue.md`, `project-intake.md`, the Prompt wizard's method choice).
+
 ## VideoExpress Scripting 2.7.0 and VideoExpress Prompt 1.3.0 (2026-11-09)
 
 ### Headline (both skills)

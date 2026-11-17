@@ -2,7 +2,7 @@
 name: videoexpress-prompt
 description: Use when the user wants a single VideoExpress image or clip prompt, a one-off shot, an image plus its clip, or help improving one existing prompt. For a multi-clip video, a script, a prompt pack, chaining across clips or operating VideoExpress in the browser, use videoexpress-scripting instead. A question-by-question wizard that writes one paste-ready VideoExpress (VE) 3.5+ prompt or a matched image-and-clip pair, walking through look and style (with links to the Creative mode style catalogue), what happens, dialogue, sound, camera, light and image, and negatives, with the same prompt rules, multishot format, styles, Consistent Character advice and lip-sync methods as the VideoExpress Scripting skill.
 metadata:
-  version: "1.3"
+  version: "1.3.1"
   author: Brent Wesley
 ---
 
@@ -92,7 +92,7 @@ If yes, ask first: **"Do you have an idea who is speaking and where?"**
 - **No:** offer two or three suggestions built from steps 1 and 2, each naming the speaker, where they are, a short line that fits the clip length, and a voice. The user picks one, adjusts it, or types their own.
 
 Then:
-- Recommend the method per `light-sound-dialogue.md`: **in the prompt** (Method A) when the clip also has action, or **Lipsync HD** (Method B) for a pure talking head.
+- Recommend the method per `light-sound-dialogue.md`: **in the prompt** (Method A) by default, with or without action between the lines; **Lipsync HD** (Method B) when the user prefers it (the pause between two speakers is hard to control there).
 - Method A: check the lines fit the length (about two seconds per short line plus pauses) and that every speaker's face is in frame.
 - Method B: each actor's line under 100 characters. Output the dialog fields separately (below).
 
