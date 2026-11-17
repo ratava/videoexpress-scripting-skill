@@ -2,7 +2,7 @@
 name: videoexpress-scripting
 description: Plan, script and produce multi-clip videos in VideoExpress (VE) 3.5 and later by PaulPonna.com, where each 3–10 second clip is a start image plus a motion prompt. Covers guided project intake from a concept or script, the Core Bible, the VE multishot prompt format, Create Mode and custom Creative mode styles, clip chaining, Consistent Character references, lip-synced dialogue (in the multishot prompt or the Lipsync HD dialog), production sound, and driving app.videoexpress.ai with Claude in Chrome. Use whenever the user wants to start or run a VideoExpress project, asks for VideoExpress image, video or multishot prompts, asks Claude to operate VideoExpress, or reports VideoExpress problems such as drifting characters or outfits, camera direction flips, stylised clips turning realistic, props changing shape, actions in the wrong place or order, dark scenes, text in footage, background hiss or unwanted music.
 metadata:
-  version: "2.7.1"
+  version: "2.7.2"
   author: Brent Wesley
 ---
 
@@ -89,7 +89,7 @@ Never link a product the user already has, never more than once per product in a
 These are the ones that cause the most damage when forgotten. The references hold the detail and the rest.
 
 - **When following a prompt pack, every video prompt starts with its clip reference in square brackets,** exactly as the pack declares it: `[Clip 12]`, or `[Clip 12 TEST 1]` for a test variant. It comes first, before any style anchor or [REFERENCE USE], so every take can be matched to the pack. **Image prompts carry no reference:** VE paints it onto signs, boards and shirts. Rename each saved image tile to its reference (Image 12A) instead. Details in `multishot-template.md`.
-- **Work in the user's language.** Talk to the user and write every prompt in the language they use with you (or have set), section tags and negatives included. Translate the bible blocks and style lines once and paste that translation word for word. Switch the prompts to English only after a test shows the language is causing a failure; then tell the user why, and keep the conversation and every spoken line in their language. Details in `multishot-template.md` (Language).
+- **Work in the user's language.** Talk to the user and write image prompts and clips without speech in the language they use with you (or have set), section tags and negatives included. Translate the bible blocks and style lines once and paste that translation word for word, keeping the English wording too. **Any video prompt with speech is written in English**, with only the spoken lines in the user's language, in plain double quotes and with "speaking [language] as a native [language] speaker" in each voice; partial translation doesn't work. Tell the user why, once. Switch image prompts and clips without speech to English only after a test shows the language is causing a failure. Details in `multishot-template.md` (Language).
 - **Bible blocks are pasted word for word.** Paraphrase is drift. When a start image nails the look, the video prompts reuse that image prompt's exact wording, not the bible's older wording.
 - **Match the frame, not the plan.** Look at the chained opening frame or accepted start image before writing: describe props, framing and the geometry of obstacles exactly as the frame shows them.
 - **Quotation marks mean speech.** Quote each spoken line once, in [ACTION], and quote nothing else. Two speakers per clip, maximum.

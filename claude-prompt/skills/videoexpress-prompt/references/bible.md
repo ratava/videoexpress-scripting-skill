@@ -5,7 +5,7 @@ Read when writing or revising character, outfit or location blocks, start-image 
 Write these once, paste them **word for word** into every image and video prompt that features them. Never paraphrase — paraphrase is drift. The one exception: a location block's out-of-frame sentence goes into video prompts only (below).
 
 **Character core block** (identity, constant across scenes): age range, build, skin, face, eye colour, expression baseline, hair (cut, colour, how it's worn — use "always"), signature accessory (e.g. a hat, glasses or jewellery) with material, shape and how it's worn. Give the character a short unique name used in every prompt.
-- **Keep the mouth closed in the expression baseline** ("a closed-mouth smile", never "mouth often open in a big smile"). The block goes into every prompt, so an open mouth there starts every dialogue clip with the listener's mouth open, and lines get dropped or spoken by the wrong mouth. In a dialogue clip's start image, close the mouth of anyone who isn't speaking first.
+- **A closed-mouth expression baseline is good practice** ("a closed-mouth smile" rather than "mouth often open in a big smile"), and so is closing the mouth of anyone who isn't speaking first in a dialogue clip's start image. It's optional: in testing, open mouths didn't cause dropped or misattributed lines (the prompt's language did; `multishot-template.md`, Language).
 
 **Outfit blocks** (one per scene): every garment with colour, material, cut, neckline, length, fastenings, and exactly which body parts are bare.
 - **Describe asymmetric items per side, positively and separately.** "Her right wrist wears a slim silver watch. Her left wrist is bare." Adjacent mentions ("a watch and a bracelet on her wrists") bleed into each other.
