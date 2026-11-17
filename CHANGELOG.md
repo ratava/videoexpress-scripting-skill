@@ -4,6 +4,17 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.7.2 and VideoExpress Prompt 1.3.2 (2026-11-18)
+
+### Headline (both skills)
+
+- **Speech prompts are written in English.** Any video prompt with a spoken line, one speaker or two, is written in English, with only the lines in the user's language, in plain double quotes and with "speaking [language] as a native [language] speaker" in each voice. Written in the user's language, wholly or partly, two-speaker clips merged the voices, dropped lines or gave them to the wrong mouth. Ruled out in about three hours of testing: voice pitch order, guillemets, open mouths in the start image, voice wording. Image prompts and clips without speech stay in the user's language. Lipsync HD with non-English lines is untested (`multishot-template.md`, Language; `light-sound-dialogue.md`, Other languages).
+
+### Fixed
+
+- **Dialogue timing.** One segment per line, sized to it (two short lines: 0-4 s and 4-8 s in an 8 s clip); no pauses written between lines; a line, an action and a line split across two clips (`light-sound-dialogue.md`, `prompt-rules.md`, `project-intake.md`).
+- **2.7.1 / 1.3.1 voice-description fix withdrawn.** Its failure row and the word-for-word-within-a-prompt rule are replaced by the language and timing rows in `prompt-rules.md`; the closed-mouth baseline in `bible.md` is now optional good practice.
+
 ## VideoExpress Scripting 2.7.1 and VideoExpress Prompt 1.3.1 (2026-11-17)
 
 ### Fixed (both skills)

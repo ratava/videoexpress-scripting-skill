@@ -2,6 +2,17 @@
 
 Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 1.3): show them as a bulleted list, in plain words: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet). Never fold the notes into a sentence or a parenthesis. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
+## 1.3.2
+
+### Headline
+
+- **Speech clips are written in English.** A clip prompt with spoken lines is written in English, with only the lines in your language (plain quotes, "speaking [language] as a native [language] speaker"). Written in your language, even partly, two-speaker clips merged the voices, dropped lines or gave them to the wrong mouth. Image prompts and clips without speech stay in your language.
+
+### Fixed
+
+- **Dialogue timing.** One segment per line, sized to it (two short lines: 8 s as 0-4 s and 4-8 s), no pauses written between lines, and a line, an action and a line split into two clips.
+- **The 1.3.1 voice-description fix is withdrawn:** the prompt's language was the cause, not the voice wording or open mouths. A closed-mouth smile stays as optional good practice.
+
 ## 1.3.1
 
 ### Fixed
