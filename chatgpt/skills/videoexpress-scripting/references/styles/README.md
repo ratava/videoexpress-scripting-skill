@@ -95,7 +95,7 @@ The official image prompts are long, precise and ordered. Follow this order:
 
 **Left and right**: when a body side and an image side differ, say both — "a thick braid hanging over her right shoulder on the left side of the image". This avoids mirrored accessories.
 
-**Text-like objects** (signs, marquees, screens): describe them as shapes and light: "a blank, unlettered panel glowing soft blue", "abstract coloured shapes on the screen".
+**Text-like objects** (signs, marquees, screens): when a sign's wording matters, name it in the image prompt, drawn large and well inside the frame (`multishot-template.md`, Text-bearing objects); otherwise describe it as shapes and light: "a blank, unlettered panel glowing soft blue", "abstract coloured shapes on the screen".
 
 ## Video-prompt pattern (all styles)
 

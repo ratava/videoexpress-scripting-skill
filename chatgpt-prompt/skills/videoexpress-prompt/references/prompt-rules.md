@@ -24,7 +24,7 @@ Rules that hold regardless of format, learned from how VE's own prompt pipeline 
 
 | Failure observed | Cause | Rule |
 |---|---|---|
-| Digits or letters rendered in footage | Signage, screens or other text-bearing objects described with their text | Describe screens, signs and holograms as "abstract shapes and flowing light, with no letters or numbers". |
+| Garbled letters or digits in footage | The clip prompt spelling out a sign's text, or text VE has to invent | Name sign wording in the start-image prompt, large and well inside the frame; in the clip, the sign "keeps exactly the lettering shown in the opening frame", never its words. Describe screens, holograms and signs the start image shows blank as "abstract shapes and flowing light, with no letters or numbers". |
 | Several objects where one was meant | Counting events ("pulses five times") | Never count events; describe a rate on one named source. Only count real plural objects. |
 | Water instead of fog | Water vocabulary | Fog is dry, luminous smoke; ban pool, ripple, wave, surface, flood, tide. |
 | Features bleeding between characters or crowd cloning the lead | Shared adjectives, one look for everyone | Unique name per character, distinct crowd outfits, "only [Name] wears…", "no crowd member sharing [Name]'s face, hair or outfit, no identical or cloned faces". |
