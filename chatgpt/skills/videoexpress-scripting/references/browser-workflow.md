@@ -302,6 +302,18 @@ For explainer and training videos that show software, a website or a desktop: VE
 
 Before recording, remind the user that the picker shows every open tab and window: close anything private. No length limit is known, but none is confirmed either; for a long session, check the file in the library before relying on it.
 
+## Exporting a video longer than 10 minutes
+
+VE won't export more than 10 minutes. For a longer video, export it in parts and keep the master project intact:
+
+1. **Choose a cut point** where nothing on any track spans the cut: a title card or a scene change, with every track checked, not only the clips.
+2. With the master open, the Save button's dropdown → **Save Project As** → "<name> - Part 1". Delete everything from the cut point on, then **Save**.
+3. Reopen the master, **Save Project As** → "<name> - Part 2". Delete everything before the cut, move the rest to start at 0 s, then **Save**. Repeat for further parts.
+4. **Export every part with the same settings.**
+5. **Joining the parts** into one file needs a tool outside VE. Ask the user whether they want them joined and whether they have a tool for it; don't name one.
+
+Start each part with **Save Project As**, never **New**: New keeps the open project's id, and Save then overwrites the master. Save fails silently while an Upload Media dialog is open, so close it first. After reopening a project VE may keep showing "Unable to update timeline videos… Try again?"; the timeline is loaded, so close the message (or reload the tab) and carry on.
+
 ## Recovery
 
 - **Page reloaded or tab lost:** reopen the saved project in the Review tab (**Open** → project → **Open**) and check the timeline clip count against the last known state. Clips added after the last save are gone; re-add them in order.

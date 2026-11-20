@@ -4,6 +4,26 @@ Release notes for the skills in this repo. Full notes for each release are on th
 
 Each skill also carries its latest notes in `references/changelog.md`, and offers a short summary of what's new the first time it's used in a conversation.
 
+## VideoExpress Scripting 2.8.0 and VideoExpress Prompt 1.4.0 (2026-11-21)
+
+### Headline (both skills)
+
+- **Every prompt is written in English.** Image prompts and clip prompts, with or without speech, are always in English: tags, bible blocks, style lines and negatives. Only spoken lines stay in the user's language. VideoExpress support confirmed it translates non-English prompts first, and word order and nouns go wrong; 2.7.2 moved only speech clips to English. The skills still talk to the user, and explain each prompt, in the user's language (`SKILL.md`, `multishot-template.md`, `prompt-rules.md`).
+
+### New (both skills)
+
+- **Consistent Character check.** Create Video ignores Consistent Character and its slots, so a clip's characters come only from its start image and prompt. When the user wants Consistent Character used for a clip, or a character not in the start image to appear, the skill stops, explains, links the Consistent Character training video and asks "I am aware, just do it" or "Let's change the approach" (`bible.md`, `SKILL.md`).
+- **Locked-off camera warning.** A known VideoExpress fault, confirmed by VE support and being fixed: the camera can move in a shot written as locked off. The skill warns before generating such a shot and doesn't keep rewording the camera when a take drifts (`camera-and-motion.md`).
+- **Prompts translated for reading.** Users who don't work in English are asked once whether to see each prompt in their language too; the English prompt comes first and is the one to paste.
+- **Reference sheet standard and user references checked.** A ten-point standard for Consistent Character sheets. References the user brings, and every sheet made in the project, are checked against it at full size; misses are reported with their effect in VideoExpress, with a "Use it as it is" or "Regenerate it" choice. A plain object of known size beside the character sets scale between characters; the skill asks each character's size and explains the guide first (`bible.md`).
+- **A new outfit doesn't need its own sheet.** In testing, a sheet in one outfit with a new outfit in the start-image prompt gave the new outfit as well as a sheet in that outfit did (a parka, and a strapless evening gown). A sheet per outfit is only for garment details that must match from shot to shot; new outfits are written in full, down to the footwear (`bible.md`, standard point 8).
+- **Lipsync HD tested further.** Lines in another language work in the actor scripts (French tested), with the dialog's Video Prompt in English. There's no pause between the two actors, and emotion tags such as [laugh] do nothing, so dialogue in the clip prompt stays the default (`light-sound-dialogue.md`, `multishot-template.md`).
+- **A line, an action and a line can share a clip** while the speech and action fit 10 seconds with room to spare: a full sentence counts three to four seconds and a laugh two or more. When it's close, the line and the action get one clip and the next line its own, because VideoExpress lets a laugh run long and squeezes or drops the answer (`light-sound-dialogue.md`, `prompt-rules.md`, `project-intake.md`). 2.7.2 always split them.
+- **Advised prompt lengths.** VideoExpress's developers advise image prompts under about 2,000 characters and clip prompts under about 6,000; advice, not hard limits (`prompt-rules.md`, `SKILL.md`).
+- **Garment states and one-sided details.** A suggestion to describe one finished garment state ("fully zipped to the top of the collar") when the user cares how a garment is worn, and a warning that a small one-sided detail (hair tucked behind one ear) may not render (`bible.md`).
+- **Artistly prompts are all positive**, with no negatives block (`prompt-rules.md`).
+- **Exports over 10 minutes.** VideoExpress exports up to 10 minutes; the browser workflow now covers exporting in parts with Save Project As (`browser-workflow.md`, scripting only).
+
 ## VideoExpress Scripting 2.7.2 and VideoExpress Prompt 1.3.2 (2026-11-18)
 
 ### Headline (both skills)

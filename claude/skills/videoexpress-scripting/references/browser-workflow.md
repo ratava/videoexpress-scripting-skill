@@ -8,7 +8,7 @@ Assume the script is approved (or approved enough for a test). The user owns eve
 
 - **Stop at every checkpoint.** Never accept an image or take, chain from a frame, or change a prompt without the user's pick. After any image generation, ask which image to use **immediately**, in the same reply.
 - **Every review question says what the result should look like.** Before asking the user to pick or accept an image or take, describe what a correct one shows, taken from its prompt: framing and subject position, each action beat in order, the camera move, the ending frame, key props, and for clips the sound and any spoken line. Nobody can review a take properly without knowing what it was meant to be.
-- **Every choice is a question card.** Go-ahead questions are yes/no. Cards hold four options at most. If a choice has more (e.g. five takes), use three direct options plus a combined "2/1 (I'll type) / none" option, then ask in plain text if needed.
+- **Every choice is a question card.** A card is a call to the question tool where there is one (AskUserQuestion in Claude Code, the options widget in the Claude apps), not a question written in prose. Go-ahead questions are yes/no. Cards hold four options at most. If a choice has more (e.g. five takes), use three direct options plus a combined "2/1 (I'll type) / none" option, then ask in plain text if needed.
 - **Drift checks are the user's job.** Claude sees sampled frames, not motion, unless asked to run a Clip review (below). Flag obvious drift only. Don't edit prompts unasked.
 - **Paste prompts exactly.** Only code-block text from the script. Never paraphrase.
 - **Never announce an action without doing it** in the same reply ("Generating image B now" must be followed by the actual clicks).
@@ -292,6 +292,18 @@ For explainer and training videos that show software, a website or a desktop: VE
 5. Click **Stop** when done. The recording lands in the chosen category with no save step; add it to the timeline from there.
 
 Before recording, remind the user that the picker shows every open tab and window: close anything private. No length limit is known, but none is confirmed either; for a long session, check the file in the library before relying on it.
+
+## Exporting a video longer than 10 minutes
+
+VE won't export more than 10 minutes. For a longer video, export it in parts and keep the master project intact:
+
+1. **Choose a cut point** where nothing on any track spans the cut: a title card or a scene change, with every track checked, not only the clips.
+2. With the master open, the Save button's dropdown → **Save Project As** → "<name> - Part 1". Delete everything from the cut point on, then **Save**.
+3. Reopen the master, **Save Project As** → "<name> - Part 2". Delete everything before the cut, move the rest to start at 0 s, then **Save**. Repeat for further parts.
+4. **Export every part with the same settings.**
+5. **Joining the parts** into one file needs a tool outside VE. Ask the user whether they want them joined and whether they have a tool for it; don't name one.
+
+Start each part with **Save Project As**, never **New**: New keeps the open project's id, and Save then overwrites the master. Save fails silently while an Upload Media dialog is open, so close it first. After reopening a project VE may keep showing "Unable to update timeline videos… Try again?"; the timeline is loaded, so close the message (or reload the tab) and carry on.
 
 ## Recovery
 
