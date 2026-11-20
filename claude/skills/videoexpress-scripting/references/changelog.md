@@ -1,41 +1,24 @@
 # What's new
 
-Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.7.0): show them as a bulleted list: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet), in plain words, Headline items first. Never fold the notes into a sentence or a parenthesis, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 2.8.0): show them as a bulleted list: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet), in plain words, Headline items first. Never fold the notes into a sentence or a parenthesis, and offer every Headline item that has a question. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
-## 2.7.2
-
-### Headline
-
-- **Speech clips are written in English.** Any clip prompt with a spoken line, one speaker or two, is now written in English, with only the lines in your language, in plain quotes and with "speaking [language] as a native [language] speaker" in each voice. Written in your language, even partly, two-speaker clips merged the voices, dropped lines or gave them to the wrong mouth; in English they played correctly. Image prompts and clips without speech stay in your language, and the conversation and every spoken line stay in your language.
-
-### Fixed
-
-- **Dialogue timing.** Each line gets its own segment, sized to it: two short lines fit an 8-second clip as 0-4 s and 4-8 s. No pauses are written between lines, and a line, an action and another line are split across two clips.
-- **The 2.7.1 voice-description fix is withdrawn.** Wider testing showed the voice wording and open mouths weren't the cause of two speakers sharing a voice; the prompt's language was. A closed-mouth smile in character descriptions stays as optional good practice.
-
-## 2.7.1
-
-### Fixed
-
-- **Two characters talking in one clip.** When both speakers came out in the same voice, or one character's line was dropped or came from the wrong mouth, the cause was in the prompt: a character's voice described two different ways in one prompt, no stated contrast between the two voices, or the listener's mouth open in the start image or the character description. Each character's voice is now written once and repeated word for word everywhere it appears in the prompt, the contrast between the voices is stated, and the listener's mouth is closed. Character descriptions now use a closed-mouth expression ("a closed-mouth smile").
-- **Dialogue goes in the prompt by default.** Lines are written into the clip prompt even when the clip is just two people talking with no action between the lines; this worked in VideoExpress, and it controls the pause between the two speakers, which is hard to do in Lipsync HD. Lipsync HD is still there if you prefer it.
-
-## 2.7.0
+## 2.8.0
 
 ### Headline
 
-- **Works in your language.** The skill talks to you and writes every prompt in the language you use with it (or have set), section tags and negatives included: `[SCÈNE]`, `[ACTION 0-5s]`, `[NÉGATIFS]` and "Pas de musique" in French, for example. The bible blocks and style lines are translated once and pasted word for word. A fully French prompt, tags, negatives and lip-synced dialogue included, worked first time in VideoExpress. The prompts switch to English only if a test shows the language is causing a failure, and the skill tells you why.
-- **Cleaner start images.** Three changes to image prompts, each from VideoExpress tests:
-  - **No label on image prompts.** VideoExpress painted a prompt's bracketed reference onto signs, boards and shirts ("3A" on a bakery sign; 3 of 7 tagged signage images, 0 of 6 untagged). Image prompts now start straight with their content; rename each saved image to its reference in the Media Library (right-click its tile → Organize → Rename). Video prompts keep their `[Clip 12]` label.
-  - **No negatives in image prompts.** Start images and reference sheets have no [NEGATIVES] section and no "no …" phrases. Each exclusion is written as the positive it stands for: "the rest of the terrace empty", "a blank sign board". Negatives stay in video prompts, where they work.
-  - **What's behind the camera stays out of the image.** A location block's "behind the camera, out of frame" sentence was drawn into start images in 5 of 5 tests (0 of 5 without it). It now goes into clip prompts only.
+- **Every prompt is written in English.** Image prompts and clip prompts, with or without speech, are now always in English: tags, character and location descriptions, style lines and negatives. Only the spoken lines stay in your language. VideoExpress doesn't reliably understand prompts in other languages: actions and speech came out inconsistent. 2.7.2 moved only speech clips to English and left image prompts and clips without speech in your language; that was not enough. The skill still talks to you, and explains each prompt, in your language.
 
 ### New
 
-- **Thanksgiving add-on.** A third festive add-on for any style: a harvest dinner table with a roast turkey, pumpkin pie, a cornucopia of gourds and squash, plain orange pumpkins, autumn leaves and warm candle and late-afternoon light, with guards that keep the pumpkins uncarved and Halloween and Christmas out. Tested on one style so far (3 takes, everything held).
-
-### Fixed
-
-- **Prompt rewrites come from auto-enhance, not Consistent Character.** VideoExpress rewrites an image prompt only when "Automatically enhance my image prompt" is ticked, with or without Consistent Character. The skill said otherwise; VideoExpress hasn't changed.
-- **Images can be renamed.** Saved images can be renamed from the Media Library (Organize → Rename); only the save step can't set a name.
-- Removed the claim that reference images revive features VideoExpress had ignored: there was no recorded evidence for it.
+- **A check before going against Consistent Character.** Consistent Character works on images only: VideoExpress ignores it when making a clip, and a character who isn't in the clip's start image is invented from the prompt. When you ask for either, the skill now stops, explains, links the [Consistent Character training video](https://youtu.be/CVeYOk7Rkf0) and asks "I am aware, just do it" or "Let's change the approach", each time it comes up. Changing the approach means putting the character in the start image.
+- **A warning on locked-off shots.** VideoExpress has a known fault, confirmed by VE support and being fixed: the camera can still move in a shot written as locked off. When your scene needs a locked-off camera, the skill now warns you before you generate it, so a moving camera isn't mistaken for a prompt problem, and it won't keep rewording the camera when a take drifts.
+- **Prompts translated for reading.** If you don't work in English, the skill asks once whether you want each prompt also shown in your language, so you can check what it does before using it, and remembers your answer. The English prompt comes first and is the one to paste; the translation follows under a warning not to use it in VideoExpress.
+- **Your own character references are checked first.** If you bring reference images or sheets you made yourself, the skill now checks each one against its reference sheet standard before using it (one character, plain grey background, a calm pose where the body allows, no small badges or logos, every design detail visible), tells you what a reference misses and what that will do in VideoExpress, and asks whether to use it as it is or regenerate it, in your own image tool, VideoExpress or Artistly. Sheets made during the project, regenerations included, are checked the same way before use. Where it fits, a sheet shows a plain object of known size beside the character as a size guide (it doesn't appear in your images); those guides set how big characters come out next to each other, so the skill asks how big each character is and explains the guide before writing a sheet.
+- **Lipsync HD, tested further.** Lines in another language work in the Lipsync HD dialog (French tested), with its Video Prompt in English. It has no way to put a pause between the two actors, and emotion tags such as [laugh] or [chuckle] do nothing there, so dialogue in the clip prompt stays the default.
+- **A line, an action and a line can share a clip.** 2.7.2 split them across two clips; they now stay in one multishot clip, each in its own segment, as long as the speech and the action fit 10 seconds with room to spare. A full sentence counts three to four seconds and a laugh two or more; when it's close, the line and the action get one clip and the next line its own, because VideoExpress lets a laugh run long and squeezes or drops the answer.
+- **Advised prompt lengths.** VideoExpress's developers advise image prompts under about 2,000 characters and clip prompts under about 6,000. The skill aims to stay under both; they are advice, not hard limits, and longer prompts have worked.
+- **Garment states.** If you care how a garment is worn (zipped, buttoned, a hood up), the skill suggests describing one finished state: "fully zipped to the top of the collar" holds where "zipped to mid-chest" comes back open.
+- **A warning on small one-sided details.** A detail on one side only, such as hair tucked behind one ear, was ignored in about 28 images; if your character has one and it matters to you, the skill warns you it may not appear.
+- **Artistly prompts are all positive.** Start images and reference sheets made in Artistly get no negatives block: in testing, Artistly ignored it and positive descriptions did the work.
+- **Exporting over 10 minutes.** VideoExpress exports up to 10 minutes; the skill now explains how to export a longer video in parts with Save Project As.
+- **A new outfit doesn't need its own sheet.** Testing showed a Consistent Character sheet carries the character, not the clothes: with a sheet in one outfit, the start-image prompt put her in a parka, or a strapless evening gown, just as well as a sheet in that outfit did. The skill now makes a sheet per outfit only when a garment's small details must match from shot to shot, and writes every new outfit in full, down to the footwear.

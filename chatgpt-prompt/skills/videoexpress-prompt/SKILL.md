@@ -2,7 +2,7 @@
 name: videoexpress-prompt
 description: Use when the user wants a single VideoExpress image or clip prompt, a one-off shot, an image plus its clip, or help improving one existing prompt. For a multi-clip video, a script, a prompt pack, chaining across clips or operating VideoExpress in the browser, use videoexpress-scripting instead. A question-by-question wizard that writes one paste-ready VideoExpress (VE) 3.5+ prompt or a matched image-and-clip pair, walking through look and style (with links to the Creative mode style catalogue), what happens, dialogue, sound, camera, light and image, and negatives, with the same prompt rules, multishot format, styles, Consistent Character advice and lip-sync methods as the VideoExpress Scripting skill.
 metadata:
-  version: "1.3.2"
+  version: "1.4.0"
   author: Brent Wesley
 ---
 
@@ -36,7 +36,13 @@ The references were written for multi-clip projects. For one shot, read them thi
 
 ## First use in a conversation: what's new
 
+**Language first.** Before the first question, settle the user's language: the language of their first message, or, when it has no words of its own (only the skill's name or slash command), the language they have used earlier in this conversation, in saved memory or custom instructions, or set in the platform. Ask every question from here on in that language, translating the wording quoted below, and keep to it for the whole project (Work in the user's language). If nothing shows a language, use English.
+
+**Translated copy (users who don't work in English).** Once the language is settled and it isn't English, check any persistent memory you can read (Claude's memory, a project memory file) for a "VideoExpress translated prompts" note; if there is one, use it and don't ask. If not, ask once (yes/no, question widget where available), in the user's language: "VideoExpress prompts are always written in English, because VideoExpress doesn't reliably understand other languages. Would you like me to also show each prompt translated into [language], so you can check what it does? You would still paste only the English version." Don't assume from the user's language that they need it: many users read English well. If memory is on, save one line whatever the answer: "VideoExpress translated prompts: yes ([language])." or "VideoExpress translated prompts: no.", and tell the user once: "I'll remember this, so I won't ask next time." Update the note if they change their mind. Without memory, ask once per conversation. On yes, show every image and clip prompt both ways (`multishot-template.md`, Translated copy for reading). This question is asked in development builds too.
+
 The first time this skill is used in a conversation, whatever the user's first message is, ask this before anything else, as a yes/no question, with numbered options where the platform has no question widget:
+
+**Development builds skip this.** If this skill's `metadata.version` (in the frontmatter above) ends in `-dev`, skip the what's-new question altogether: don't ask it and don't save the memory note. Go straight to the user's first message.
 
 **Once per version where memory allows.** First check any persistent memory you can read (the assistant's saved memories, a project memory file) for a note that this version's what's-new question was already shown. If there is one, skip it. If not, ask it; then, if memory is on, save the one-line note "VideoExpress Prompt [version]: what's-new shown." and tell the user once: "I'll remember you've seen this, so I won't ask again for this version." Without memory, or when no note is found, ask as below: asking again is the safe fallback.
 
@@ -77,7 +83,7 @@ Then: **"What do you want out of this?"**
 What should it look like?
 - **Style.** Link the catalogue so the user can see every style before choosing: [Style catalogue](https://github.com/ratava/videoexpress-scripting-skill/wiki/Styles) (one page and demo clip per style) and the [demo playlist](https://www.youtube.com/playlist?list=PLGPXytdy02o0). Suggest two or three styles from `styles/README.md` that fit the idea (default Cinematic Photoreal), and say whether each is a Create Mode preset or a custom style. Then read that style's sheet.
 - **Aspect ratio:** Landscape 16:9 or Vertical 9:16.
-- **Characters:** who is in it and what they look like (face, hair, build, outfit, signature accessory), written once as a block per `bible.md`. Ask whether they'll use **Consistent Character**, and whether a reference image of the character is already in the library. If not, offer a reference-image prompt (full length, plain grey background) as an extra image prompt. Two reference characters maximum (slot 1 and slot 2); Consistent Character off for shots with no characters.
+- **Characters:** who is in it and what they look like (face, hair, build, outfit, signature accessory), written once as a block per `bible.md`. Ask whether they'll use **Consistent Character**, and whether a reference image of the character is already in the library. If not, offer a reference-image prompt (full length, plain grey background) as an extra image prompt; before writing it, ask how big the character is and explain the size guide beside them on the sheet (`bible.md`, reference sheet standard, point 10). If the user brings a reference they made themselves, inspect it against the reference sheet standard before using it, tell them what it misses and why, and ask "Use it as it is" or "Regenerate it" (their own image tool, VE Create Image, or Artistly if they own it) (`bible.md`, References the user brings). Two reference characters maximum (slot 1 and slot 2); Consistent Character off for shots with no characters. Consistent Character works on the image only. If the user wants it used for the clip, or wants a character who isn't in the start image to appear during the clip, run the Consistent Character check in `bible.md` every time: explain, link the [training video](https://youtu.be/CVeYOk7Rkf0), and ask "I am aware, just do it" or "Let's change the approach" before writing the prompt.
 - **Where:** the location, including what is out of frame if the camera will move.
 
 ## Step 2: what happens
@@ -92,8 +98,8 @@ If yes, ask first: **"Do you have an idea who is speaking and where?"**
 - **No:** offer two or three suggestions built from steps 1 and 2, each naming the speaker, where they are, a short line that fits the clip length, and a voice. The user picks one, adjusts it, or types their own.
 
 Then:
-- Recommend the method per `light-sound-dialogue.md`: **in the prompt** (Method A) by default, with or without action between the lines; **Lipsync HD** (Method B) when the user prefers it (the pause between two speakers is hard to control there).
-- Method A: one segment per line, sized to it (two short lines: 8 s as 0-4 s and 4-8 s), no pauses written between lines, a line, an action and a line split into two clips; every speaker's face in frame.
+- Recommend the method per `light-sound-dialogue.md`: **in the prompt** (Method A) by default, with or without action between the lines; **Lipsync HD** (Method B) when the user prefers it (it sizes the clip to the audio, but there's no pause between the two speakers and emotion tags such as [laugh] do nothing).
+- Method A: one segment per line, sized to it (two short lines: 8 s as 0-4 s and 4-8 s), no pauses written between lines, a line, an action and a line in one clip while they fit 10 s with room to spare (split at the action when it's close); every speaker's face in frame.
 - Method B: each actor's line under 100 characters. Output the dialog fields separately (below).
 
 ## Step 4: sound (clips only)
@@ -103,6 +109,8 @@ Production sound, or Video Only (No Sound)? With sound: suggest short, distinct 
 ## Step 5: camera (clips only)
 
 Suggest **locked** unless the shot needs a move. A move is one per segment, named with its direction and physical nature (a push, not a zoom) and its end framing. A move must not enlarge a face or detailed prop beyond the size the opening frame shows it: if the user wants a closer shot, that's a new start image at that framing.
+
+If the user wants the camera locked off, warn them before giving the prompt: VideoExpress has a known fault (confirmed by VE support, November 2026, fix in progress) where the camera can still move in a shot written as locked off. If it moves anyway, it is this fault, not the prompt; re-roll or pick the steadiest take rather than rewording the camera.
 
 ## Step 6: light and image
 
@@ -118,7 +126,7 @@ Negatives are for clip prompts only. Suggest the list: the style sheet's guards,
 
 - **Label.** Each video prompt starts with a short bracketed label so the library take can be found: `[Clip 1]` by default, or the user's own (`[Clip 1 TEST 1]` for test variants). Nothing goes before it. **Image prompts get no label:** VE paints it onto signs, boards and shirts in the image. Tell the user to rename the saved image in the Media Library instead (right-click its tile → Organize → Rename).
 - **Image prompt:** follow the image-prompt recipe in `styles/README.md`, self-contained, with the full character, outfit and location wording inline and the head in frame. Prose or the tagged form in `bible.md` (Tagged start-image prompts) both work; use the one the user prefers.
-- **Language:** ask the questions in the user's language and write image prompts and clips without speech in it, section tags and negatives included (`multishot-template.md`, Language). A clip prompt with speech is written in English, with only the spoken lines in the user's language (plain double quotes, "speaking [language] as a native [language] speaker"); tell the user why. Switch the other prompts to English only after a failed take, retested with English tags, works in English.
+- **Language:** ask the questions and explain each prompt in the user's language, and write every prompt in English, image or clip, with or without speech: tags, descriptions and negatives (`multishot-template.md`, Language). Only spoken lines stay in the user's language (plain double quotes, "speaking [language] as a native [language] speaker"). Tell the user why once; if they ask for the prompt in their language, explain instead of switching. If they asked for translated copies (Translated copy, above), show the English prompt first, then a warning not to use it and the translation (`multishot-template.md`, Translated copy for reading).
 - **Clip prompt:** the tag order in `multishot-template.md`. In a pair, reuse the image prompt's exact character, outfit and location wording, and use the fresh-clip [REFERENCE USE] form. For a clip from the user's image, describe what the image shows.
 - **Check before showing:** quotation marks only around spoken lines, once each; signs and screens described as abstract shapes and light; positives everywhere outside [NEGATIVES]; no [NEGATIVES] and no "no …" phrases in an image prompt; under about 6,000 characters (trim repeated style text and negatives first).
 

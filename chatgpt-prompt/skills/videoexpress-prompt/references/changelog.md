@@ -1,36 +1,22 @@
 # What's new
 
-Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 1.3): show them as a bulleted list, in plain words: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet). Never fold the notes into a sentence or a parenthesis. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
+Read on the skill's first use in a conversation, when the user says yes to a summary of what's new (SKILL.md, First use in a conversation). The current release notes are every section from the top of this file down to and including the latest x.y release (now 1.4): show them as a bulleted list, in plain words: a short heading per version, newest first, then one short bullet per Headline and New item (a version's Fixed items can share one bullet). Never fold the notes into a sentence or a parenthesis. Don't paste this file. Older versions are on the [releases page](https://github.com/ratava/videoexpress-scripting-skill/releases).
 
-## 1.3.2
-
-### Headline
-
-- **Speech clips are written in English.** A clip prompt with spoken lines is written in English, with only the lines in your language (plain quotes, "speaking [language] as a native [language] speaker"). Written in your language, even partly, two-speaker clips merged the voices, dropped lines or gave them to the wrong mouth. Image prompts and clips without speech stay in your language.
-
-### Fixed
-
-- **Dialogue timing.** One segment per line, sized to it (two short lines: 8 s as 0-4 s and 4-8 s), no pauses written between lines, and a line, an action and a line split into two clips.
-- **The 1.3.1 voice-description fix is withdrawn:** the prompt's language was the cause, not the voice wording or open mouths. A closed-mouth smile stays as optional good practice.
-
-## 1.3.1
-
-### Fixed
-
-- **Two characters talking in one clip.** When both speakers came out in the same voice, or one line was dropped or came from the wrong mouth, the cause was in the prompt: a voice described two different ways, no stated contrast, or the listener's mouth open. The wizard now writes each voice once, word for word everywhere it appears, states the contrast and keeps the listener's mouth closed.
-- **Dialogue goes in the prompt by default**, even for two people talking with no action between the lines: it controls the pause between speakers, which is hard to do in Lipsync HD. Lipsync HD is still there if you prefer it.
-
-## 1.3
+## 1.4
 
 ### Headline
 
-- **Works in your language.** The wizard asks its questions and writes the prompts in the language you use with it, section tags and negatives included (`[SCÈNE]`, `[NÉGATIFS]`, "Pas de musique" in French, for example). A fully French prompt worked first time in VideoExpress. The prompts switch to English only if a test shows the language is causing a failure, and the wizard tells you why.
-- **Cleaner start images.** Image prompts now start straight with their content, with no bracketed label: VideoExpress painted labels onto signs, boards and shirts. Rename the saved image in the Media Library instead (right-click its tile → Organize → Rename). Image prompts also carry no negatives: whatever you want kept out of the image is written as its positive ("the rest of the room empty", "a blank sign board"), and the wizard shows where each one went. And a location's "behind the camera" detail goes into the clip prompt only, because image prompts drew it into the picture.
+- **Every prompt is written in English.** Image prompts and clip prompts, with or without speech, are always in English; only spoken lines stay in your language. VideoExpress doesn't reliably understand prompts in other languages. 1.3.2 left image prompts and clips without speech in your language; that was not enough. The wizard still asks its questions and explains each prompt in your language.
 
 ### New
 
-- **Thanksgiving add-on.** A third festive add-on for any style: a harvest dinner table with a roast turkey, pumpkin pie, a cornucopia, plain orange pumpkins, autumn leaves and warm candlelight, with guards that keep the pumpkins uncarved and Halloween and Christmas out.
-
-### Fixed
-
-- Consistent Character guidance: VideoExpress rewrites an image prompt only when auto-enhance is ticked, and saved images can be renamed from the Media Library. An unevidenced claim about references reviving ignored features was removed.
+- **A check before going against Consistent Character.** If you want Consistent Character used for a clip, or a character who isn't in the start image to appear during it, the wizard stops, explains, links the [Consistent Character training video](https://youtu.be/CVeYOk7Rkf0) and asks "I am aware, just do it" or "Let's change the approach".
+- **A warning on locked-off shots.** VideoExpress has a known fault, confirmed by VE support and being fixed: the camera can still move in a shot written as locked off. If you ask for a locked-off camera, the wizard warns you first, so a moving camera isn't mistaken for a prompt problem.
+- **Prompts translated for reading.** If you don't work in English, the wizard asks once whether you want each prompt also shown in your language, so you can check what it does before using it, and remembers your answer. The English prompt comes first and is the one to paste; the translation follows under a warning not to use it in VideoExpress.
+- **Your own character references are checked first.** If you bring reference images or sheets you made yourself, the wizard now checks each one against its reference sheet standard before using it (one character, plain grey background, a calm pose where the body allows, no small badges or logos, every design detail visible), tells you what a reference misses and what that will do in VideoExpress, and asks whether to use it as it is or regenerate it, in your own image tool, VideoExpress or Artistly. Sheets made during the project, regenerations included, are checked the same way before use. Where it fits, a sheet shows a plain object of known size beside the character as a size guide (it doesn't appear in your images); those guides set how big characters come out next to each other, so the wizard asks how big each character is and explains the guide before writing a sheet.
+- **Lipsync HD, tested further.** Lines in another language work in the Lipsync HD dialog (French tested), with its Video Prompt in English. It has no way to put a pause between the two actors, and emotion tags such as [laugh] or [chuckle] do nothing there, so dialogue in the clip prompt stays the default.
+- **A line, an action and a line can share a clip.** 1.3.2 split them across two clips; they now stay in one multishot clip, each in its own segment, as long as the speech and the action fit 10 seconds with room to spare. A full sentence counts three to four seconds and a laugh two or more; when it's close, the line and the action get one clip and the next line its own, because VideoExpress lets a laugh run long and squeezes or drops the answer.
+- **Advised prompt lengths.** VideoExpress's developers advise image prompts under about 2,000 characters and clip prompts under about 6,000. The wizard aims to stay under both; they are advice, not hard limits, and longer prompts have worked.
+- **Garment states.** If you care how a garment is worn (zipped, buttoned, a hood up), the wizard suggests describing one finished state: "fully zipped to the top of the collar" holds where "zipped to mid-chest" comes back open.
+- **A warning on small one-sided details.** A detail on one side only, such as hair tucked behind one ear, was ignored in about 28 images; if your character has one and it matters to you, the wizard warns you it may not appear.
+- **A new outfit doesn't need its own sheet.** Testing showed a Consistent Character sheet carries the character, not the clothes: with a sheet in one outfit, the start-image prompt put her in a parka, or a strapless evening gown, just as well as a sheet in that outfit did. The wizard now makes a sheet per outfit only when a garment's small details must match from shot to shot, and writes every new outfit in full, down to the footwear.

@@ -4,12 +4,12 @@ Every new VideoExpress project starts here, before any prompt is written. The go
 
 ## How to ask
 
-- **Question cards, one topic at a time.** Each card has one to three questions, each with two to four short options. Include a "Something else (I'll type)" or "You suggest" option where the choice is open.
+- **Question cards, one topic at a time.** A card is a call to the question tool where there is one (AskUserQuestion in Claude Code, the options widget in the Claude apps), not a question written in prose. Each card has one to three questions, each with two to four short options. Include a "Something else (I'll type)" or "You suggest" option where the choice is open.
 - **Suggest, then ask.** For every decision, give a one-line recommendation based on what the user has said so far and on what VE does well ("Landscape suits a two-character fight; portrait suits a single character talking to camera"). Then ask.
 - **Never ask what the user has already answered.** Pull answers from their idea or script first, then confirm them in one summary card instead of asking again.
 - **Keep a running brief.** After each round, show a short "decisions so far" list so the user can correct anything.
 - **Order matters.** Delivery decisions (platform, aspect ratio, length) come first because they constrain everything else. Style and characters come next, then sound and dialogue, then production logistics.
-- **Stop at gates.** The user signs off the brief, the Core Bible, the script, and any test results before production starts.
+- **Stop at gates.** The user signs off the brief, the Core Bible, the script, and any test results before production starts. At each gate, show what is being signed off in full in the reply, then ask for the sign-off as a question card ("Approve", "Change something (I'll type)"). Never ask for sign-off on a file path and a summary (SKILL.md, Show it, then ask).
 
 ## Step 1: choose the starting point
 
@@ -18,6 +18,8 @@ Card: **"How do you want to start?"**
 2. With a full or partial script
 3. With existing images or footage (a character, a location, a storyboard)
 4. Something else (I'll type)
+
+When a prompt pack for an ongoing project has been found (SKILL.md, Resuming comes first), add "Continue [project] (next: Clip N)" as the first option and move the others down. Picking it skips intake and goes to Resuming a project in SKILL.md.
 
 Path 1 is "Concept first" below. Path 2 is "Script first". Path 3 uses the Concept first path, but starts by reading the user's images and treating them as fixed references.
 
@@ -35,7 +37,7 @@ Path 1 is "Concept first" below. Path 2 is "Script first". Path 3 uses the Conce
 1. **Ask for the script** (paste, upload, or a link). A partial script is fine: an outline, a scene list, dialogue only.
 2. **Read it and extract everything it already decides:** characters, locations, props, dialogue lines, sound cues, runtime hints, tone. Flag gaps and contradictions.
 3. **Confirm the extracted decisions** in one summary card, then run only the decision rounds the script doesn't answer.
-4. **Adapt the script to VE:** break it into clips of 3–10 seconds; for each dialogue clip choose the method (SKILL.md 6b): lines inside the multishot prompt by default, with or without action (one segment per line sized to it, two short lines in 8 s as 0-4 s and 4-8 s, a line, an action and a line split across two clips; the prompt in English with the lines in the user's language), or Lipsync HD when the user prefers it (each line under 100 characters per speaker per clip); mark beats that need splitting, and flag anything on the "does badly" list with a suggested workaround.
+4. **Adapt the script to VE:** break it into clips of 3–10 seconds; for each dialogue clip choose the method (SKILL.md 6b): lines inside the multishot prompt by default, with or without action (one segment per line sized to it, two short lines in 8 s as 0-4 s and 4-8 s, a line, an action and a line in one clip while they fit 10 s with room to spare, split at the action when it's close; like every prompt, in English with only the lines in the user's language), or Lipsync HD when the user prefers it (each line under 100 characters per speaker per clip); mark beats that need splitting, and flag anything on the "does badly" list with a suggested workaround.
 5. **Review round** on the adapted script and clip breakdown.
 6. **Build the Core Bible**, offer development tests, then the production plan.
 
@@ -59,9 +61,9 @@ Work through these in order. Each line is a card or part of one; skip anything a
 
 ### Characters and world
 - **Number of characters,** and which are recurring.
-- **Consistent Character:** yes or no. Slot 1 holds the main character and slot 2 a second. More than two recurring characters needs a plan (start images carrying the others, or fewer speaking roles).
+- **Consistent Character:** yes or no. Slot 1 holds the main character and slot 2 a second. More than two recurring characters needs a plan (start images carrying the others, or fewer speaking roles). It holds characters in start images only, never in clips: plan every bible character into the start image of each clip they appear in, with no entrances partway through a clip. If the user wants Consistent Character on a clip or a mid-clip entrance, run the Consistent Character check (`bible.md`) each time.
 - **Character design:** for each, age, build, face, hair, outfit per scene, signature accessory, and how props are carried. For non-human characters, suggest humanoid builds and joint-by-joint weapon descriptions.
-- **Reference assets:** does the user have images of a character, a product, a logo or a location? Use them as references. Check they have the rights to any real person's likeness, and never recreate a real person without consent.
+- **Reference assets:** does the user have images of a character, a product, a logo or a location? Use them as references, but inspect each character reference against the reference sheet standard first, tell the user what it misses and why, and ask "Use it as it is" or "Regenerate it" (`bible.md`, References the user brings). Check they have the rights to any real person's likeness, and never recreate a real person without consent.
 - **Locations:** each environment, including what's out of frame, time of day and weather.
 - **Key props, vehicles or effects,** and any hero or payoff shots that earlier clips must set up.
 
@@ -118,7 +120,7 @@ Does badly (plan around these):
 Offer each test as a yes/no card. Tests use one take each unless the user wants more, and every result gets a review round that can change the Bible.
 
 - **Style test (image):** one start image in the chosen style with the main character. Confirms the look before references are built.
-- **Character reference test (image):** a clean full-length reference on a plain grey background for each Consistent Character. It becomes slot 1 or slot 2.
+- **Character reference test (image):** a clean full-length reference on a plain grey background for each Consistent Character. It becomes slot 1 or slot 2. Before writing it, ask how big each character is and explain the size guide on the sheet (`bible.md`, reference sheet standard, point 10).
 - **Location test (image):** a key environment as a start image.
 - **Motion test (video):** one representative clip, such as the hardest action beat, to check the action, camera and style hold.
 - **Sound test (video):** one clip with the planned production sound, to check for hiss, music and weapon sound.
