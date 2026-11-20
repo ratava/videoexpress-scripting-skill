@@ -68,7 +68,12 @@ The translation is for reading only: it never goes into VE, into the browser or 
 
 ## Text-bearing objects
 
-VE draws text badly and unstably. Describe signs, screens, labels, holograms and any object that would carry numbers or lettering as abstract shapes and light, with no letters or numbers, and end every prompt's [NEGATIVES] with "no text, no letters, no numbers". Numbers elsewhere in the prompt (ages, lengths, counts) can be written as digits or words: in testing, digits there produced no numerals in the frame with those negatives in place.
+VE garbles text it has to invent, but keeps lettering the start image already shows: in testing, a carved sign in the start frame held letter for letter until it left the shot. So lettering comes from the start image, never from the clip prompt.
+
+- **A sign, board or label whose wording matters:** name the wording in the start-image prompt (a green neon sign reading OPEN 24 HOURS), drawn large and well inside the frame, and check the candidate's spelling before accepting it (`browser-workflow.md`, Lettering in a start image). In the clip prompt, don't spell or quote the words: say the sign "keeps exactly the lettering shown in the opening frame", and put "No new text, no changing or morphing letters" in [NEGATIVES]. Lettering at the frame edge, or small lettering that a push-in enlarges, garbles: keep the sign at the size and place the start image drew it.
+- **Text the clip would have to invent** (a screen whose content changes, a hologram, a sign that comes into view during the clip, a sign the start image shows blank): describe it as abstract shapes and light, with no letters or numbers, and end [NEGATIVES] with "no text, no letters, no numbers".
+
+Numbers elsewhere in the prompt (ages, lengths, counts) can be written as digits or words: in testing, digits there produced no numerals in the frame with those negatives in place.
 
 ## Blank template
 
